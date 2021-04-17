@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-namespace UnityStandardAssets.Characters.ThirdPerson
-{
+//namespace UnityStandardAssets.Characters.ThirdPerson
+//{
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Animator))]
@@ -50,11 +50,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			if (move.magnitude > 1f) move.Normalize();
-			move = transform.InverseTransformDirection(move);
+			//move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
-			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-			m_TurnAmount = Mathf.Atan2(move.x, move.z);
-			m_ForwardAmount = move.z;
+			//move = Vector3.ProjectOnPlane(move, m_GroundNormal);
+			//m_TurnAmount = Mathf.Atan2(move.x, move.z);
+			//m_ForwardAmount = move.z;
 
 			ApplyExtraTurnRotation();
 
@@ -73,6 +73,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			// send input and other state parameters to the animator
 			//UpdateAnimator(move);
+
+			m_Rigidbody.MovePosition(m_Rigidbody.transform.position + move/10);
 		}
 
 
@@ -222,4 +224,4 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 		}
 	}
-}
+//}
