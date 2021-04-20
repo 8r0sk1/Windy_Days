@@ -9,11 +9,11 @@ public class Manager2D3D : MonoBehaviour
     public Camera camera;
     public GameObject player;
 
-    private CharacterController2D characterController2D_script;
-    private TPCController characterController3D_script;
+    private CC2D characterController2D_script;
+    //private TPCController characterController3D_script;
 
-    private PlayerMovement playerMovement2D_script;
-    private ThirdPersonUserControl playerMovement3D_script;
+    //private PlayerMovement playerMovement2D_script;
+    //private ThirdPersonUserControl playerMovement3D_script;
     //private CharacterController controller;
 
     private Rigidbody rbody;
@@ -30,10 +30,10 @@ public class Manager2D3D : MonoBehaviour
         instance = this;
 
         //Get obj components
-        characterController2D_script = player.GetComponent<CharacterController2D>();
-        characterController3D_script = player.GetComponent<TPCController>();
-        playerMovement2D_script = player.GetComponent<PlayerMovement>();
-        playerMovement3D_script = player.GetComponent<ThirdPersonUserControl>();
+        characterController2D_script = player.GetComponent<CC2D>();
+        //characterController3D_script = player.GetComponent<TPCController>();
+        //playerMovement2D_script = player.GetComponent<PlayerMovement>();
+        //playerMovement3D_script = player.GetComponent<ThirdPersonUserControl>();
         //controller = player.GetComponent<CharacterController>();
 
         rbody = player.GetComponent<Rigidbody>();
@@ -48,7 +48,7 @@ public class Manager2D3D : MonoBehaviour
         //Disabilito 3D features e abilito 2D
         //controller.enabled = false;
         characterController2D_script.enabled = true;
-        playerMovement2D_script.enabled = true;
+        //playerMovement2D_script.enabled = true;
 
         //RigidBody setup
 
@@ -72,7 +72,7 @@ public class Manager2D3D : MonoBehaviour
                 //Disabilito 3D features e abilito 2D
                 //controller.enabled = false;
                 characterController2D_script.enabled = true;
-                playerMovement2D_script.enabled = true;
+                //playerMovement2D_script.enabled = true;
 
                 //RigidBody setup
 
@@ -86,10 +86,10 @@ public class Manager2D3D : MonoBehaviour
             else //3D setup
             {
                 //Disabilito 2D features e abilito 3D
-                characterController2D_script.enabled = false;
-                characterController3D_script.enabled = true;
-                playerMovement2D_script.enabled = false;
-                playerMovement3D_script.enabled = true;
+                //characterController2D_script.enabled = false;
+                //characterController3D_script.enabled = true;
+                //playerMovement2D_script.enabled = false;
+                //playerMovement3D_script.enabled = true;
                 //controller.enabled = true;
 
                 //RigidBody setup
