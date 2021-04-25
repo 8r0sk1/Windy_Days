@@ -6,6 +6,9 @@ public class CC2D : MonoBehaviour
 {
     private Rigidbody rBody;
 
+    private float t = 0f;
+    private Quaternion initialRot, finalRot;
+    private float oldInputX = 0f;
     private float inputX;
     //private float inputY
     public float airDrag, groundDrag;
@@ -49,6 +52,29 @@ public class CC2D : MonoBehaviour
         {
             isJumping = false;
         }
+
+        //Gestione rotazione
+        
+        if (inputX < 0f)
+        { //quando cambia direzione
+            t = 0f;
+            //initialRot = this.transform.rotation;
+            //finalRot = Quaternion.LookRotation(Vector3.left, Vector3.up) * this.transform.rotation;
+            this.transform.forward = Vector3.left;
+        }
+        if(inputX > 0f)
+        {
+            this.transform.forward = Vector3.right;
+        }
+
+        if (t < 1f)
+        {
+            //this.transform.rotation = Quaternion.Lerp(initialRot, finalRot, t);
+            t += Time.deltaTime / 500;
+        }
+
+        oldInputX = inputX;
+
     }
 
     private void FixedUpdate()

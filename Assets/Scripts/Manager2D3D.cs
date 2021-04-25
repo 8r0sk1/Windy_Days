@@ -10,11 +10,7 @@ public class Manager2D3D : MonoBehaviour
     public GameObject player;
 
     private CC2D characterController2D_script;
-    //private TPCController characterController3D_script;
-
-    //private PlayerMovement playerMovement2D_script;
-    //private ThirdPersonUserControl playerMovement3D_script;
-    //private CharacterController controller;
+    private CC3D characterController3D_script;
 
     private Rigidbody rbody;
 
@@ -30,13 +26,11 @@ public class Manager2D3D : MonoBehaviour
         instance = this;
 
         //Get obj components
-        characterController2D_script = player.GetComponent<CC2D>();
-        //characterController3D_script = player.GetComponent<TPCController>();
-        //playerMovement2D_script = player.GetComponent<PlayerMovement>();
-        //playerMovement3D_script = player.GetComponent<ThirdPersonUserControl>();
-        //controller = player.GetComponent<CharacterController>();
 
         rbody = player.GetComponent<Rigidbody>();
+
+        characterController2D_script = player.GetComponent<CC2D>();
+        characterController3D_script = player.GetComponent<CC3D>();
 
         followPlayer2D_script = camera.GetComponent<FollowPlayer2D>();
         followPlayer3D_script = camera.GetComponent<FollowPlayer3D>();
@@ -45,15 +39,13 @@ public class Manager2D3D : MonoBehaviour
         //2D setup
         is2D = true;
 
-        //Disabilito 3D features e abilito 2D
-        //controller.enabled = false;
         characterController2D_script.enabled = true;
-        //playerMovement2D_script.enabled = true;
+        characterController3D_script.enabled = false;
 
         //RigidBody setup
-
         //Blocco rotazione su X e Z, blocco posizione su Z
-        rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
+        rbody.constraints = RigidbodyConstraints.FreezePositionZ;
+        rbody.freezeRotation = true;
 
         //Camera setup
         followPlayer3D_script.enabled = false;
@@ -70,9 +62,8 @@ public class Manager2D3D : MonoBehaviour
             if (is2D) //2D setup
             {
                 //Disabilito 3D features e abilito 2D
-                //controller.enabled = false;
+                characterController3D_script.enabled = false;
                 characterController2D_script.enabled = true;
-                //playerMovement2D_script.enabled = true;
 
                 //RigidBody setup
 
@@ -86,11 +77,8 @@ public class Manager2D3D : MonoBehaviour
             else //3D setup
             {
                 //Disabilito 2D features e abilito 3D
-                //characterController2D_script.enabled = false;
-                //characterController3D_script.enabled = true;
-                //playerMovement2D_script.enabled = false;
-                //playerMovement3D_script.enabled = true;
-                //controller.enabled = true;
+                characterController2D_script.enabled = false;
+                characterController3D_script.enabled = true;
 
                 //RigidBody setup
                 rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
