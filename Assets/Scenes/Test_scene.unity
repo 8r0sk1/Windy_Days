@@ -955,6 +955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8aabd6f2cab05c47a68f0da90f9855f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8aabd6f2cab05c47a68f0da90f9855f, type: 3}
 --- !u!1001 &523096576
@@ -1043,6 +1048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a37ee063d51a7841a26b82a2053ef5c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a37ee063d51a7841a26b82a2053ef5c, type: 3}
@@ -1312,7 +1322,7 @@ GameObject:
   - component: {fileID: 759006838}
   - component: {fileID: 759006837}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,10 +1340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da8c87060071cd459ca3ebc460e0973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 881771839}
-  relativePosition: {x: 0, y: 15, z: -10}
-  offSet: {x: 0, y: 0, z: 0}
-  slowFactor: 5
+  target: {fileID: 881771844}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 20, z: -10}
+  targetOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &759006838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,10 +1356,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c3301c1133e084d8a67f6407c539b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 881771844}
-  relativePosition: {x: 0, y: 1.5, z: -11}
-  offSet: {x: 0, y: 2.5, z: 0}
-  slowFactor: 1
+  target: {fileID: 881771844}
+  smoothSpeed: 0.09
+  offset: {x: 0, y: 7, z: -20}
+  targetOffset: {x: 0, y: 2, z: 0}
 --- !u!81 &759006839
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1609,6 +1619,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5934ec6504c159d4bb2626022d0a3c2a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5934ec6504c159d4bb2626022d0a3c2a, type: 3}
 --- !u!1 &805820610
@@ -1767,7 +1782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  dashSpeed: 12
+  dashSpeed: 7
+  rotationSpeed: 0.25
 --- !u!114 &881771841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2131,6 +2147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11e51be79e01ab64cad95e89f8cfec11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e51be79e01ab64cad95e89f8cfec11, type: 3}
@@ -2580,6 +2601,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11e51be79e01ab64cad95e89f8cfec11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e51be79e01ab64cad95e89f8cfec11, type: 3}
 --- !u!1 &1187936784
@@ -2744,6 +2770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3242012c0e5855947aa90ea571987534,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3242012c0e5855947aa90ea571987534, type: 3}
@@ -3035,6 +3066,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Column1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ee90609fc5fc46443b5505d43e08fc2f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee90609fc5fc46443b5505d43e08fc2f, type: 3}
 --- !u!1 &1391064369
@@ -3186,16 +3222,46 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4dfe720d54444b1499a40aae75f9d397, type: 2}
+    - target: {fileID: -2448291503356149056, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1356865452462262862, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 679485379000347949, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c9a9d2b000f37cc44a15873540170133,
         type: 3}
       propertyPath: m_Name
       value: Bridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300555853203769477, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1375695833286228610, guid: c9a9d2b000f37cc44a15873540170133,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8952ecd1f4d2bf4e8870b0676539bba, type: 2}
+    - target: {fileID: 1673956385097412181, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4315476527732330034, guid: c9a9d2b000f37cc44a15873540170133,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3206,6 +3272,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8952ecd1f4d2bf4e8870b0676539bba, type: 2}
+    - target: {fileID: 5542267356743961983, guid: c9a9d2b000f37cc44a15873540170133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7222297326355928671, guid: c9a9d2b000f37cc44a15873540170133,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3370,6 +3441,25 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0009998977, y: 0.007603839, z: 0.00028842688}
     m_Extent: {x: 0.80239844, y: 0.23826995, z: 0.5723474}
   m_DirtyAABB: 0
+--- !u!1 &1462769510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3242012c0e5855947aa90ea571987534,
+    type: 3}
+  m_PrefabInstance: {fileID: 1244873225}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1462769514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462769510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0132382, y: 2.2164688, z: 2.063531}
+  m_Center: {x: 0.0068449974, y: 0.048321187, z: 0.0317654}
 --- !u!1 &1568818249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,7 +3691,7 @@ GameObject:
   - component: {fileID: 1651253551}
   - component: {fileID: 1651253550}
   - component: {fileID: 1651253549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

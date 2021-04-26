@@ -47,7 +47,9 @@ public class CC2D : MonoBehaviour
             elapsedJumpTime = 0;
             isJumping = true;
             isGrounded = false;
-            Debug.Log("JUMP UP SUPERSTAR");
+            
+            //DEBUG
+            //Debug.Log("JUMP UP SUPERSTAR");
         }
         if (Input.GetButtonUp("Jump"))
         {

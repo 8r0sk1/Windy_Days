@@ -8,10 +8,10 @@ public class CC3D : MonoBehaviour
     private Rigidbody rBody;
 
     //public float maxSpeed;
-    public float movementSpeed = 5f, dashSpeed = 7.5f;
+    public float movementSpeed = 5f, dashSpeed = 7.5f, rotationSpeed = 0.125f;
     private float InputX, InputZ;
     private bool toDash = false;
-    private bool isDashing;
+    private bool isDashing = false;
 
     void Start()
     {
@@ -24,34 +24,48 @@ public class CC3D : MonoBehaviour
         InputZ = Input.GetAxis("Vertical");
 
         if (Input.GetButtonDown("Jump"))
-            if(!isDashing)
+            if (!isDashing && !toDash)
+            {
                 toDash = true;
-        Debug.Log("DASH");
+                isDashing = true;
+
+                //DEBUG
+                Debug.Log("Inizio dash");
+            }
     }
 
     private void FixedUpdate()
     {
-        Vector3 move = new Vector3(InputX, 0f, InputZ);
+        Vector3 move;
+        if (!isDashing)
+            move = new Vector3(InputX, 0f, InputZ);
+        else
+            move = Vector3.zero;
 
         //rotazione
-        if(move.magnitude > 0f && !isDashing)
-            this.transform.forward = move.normalized;
+        if (move.magnitude > 0f && !isDashing)
+            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
 
         //controllo dash
         if (toDash)
         {
-            rBody.velocity = Vector3.zero;
+            //rBody.velocity = Vector3.zero;
             rBody.AddForce(this.transform.forward * dashSpeed, ForceMode.VelocityChange);
-            isDashing = true;
             toDash = false; //dash è già iniziato
         }
-
-        if (isDashing)
+        else if (isDashing)
         {
-            if (rBody.velocity.magnitude <= 0.1f)
+            if (rBody.velocity.magnitude < 0.01f)
+            {
                 isDashing = false;
+                //DEBUG
+                Debug.Log("Fine dash");
+            }
         }
         else 
-            rBody.MovePosition(this.transform.position + move * movementSpeed * Time.deltaTime);
+            rBody.MovePosition(this.transform.position + move.normalized * movementSpeed * Time.deltaTime);
+
+        //DEBUG
+        //Debug.Log(rBody.velocity);
     }
 }
