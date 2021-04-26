@@ -26,6 +26,7 @@ public class CC3D : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
             if(!isDashing)
                 toDash = true;
+        Debug.Log("DASH");
     }
 
     private void FixedUpdate()
