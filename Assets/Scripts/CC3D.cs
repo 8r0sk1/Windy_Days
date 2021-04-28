@@ -62,6 +62,7 @@ public class CC3D : MonoBehaviour
                 Debug.Log("Fine dash");
             }
         }
+        //controllo move
         else 
             rBody.MovePosition(this.transform.position + move.normalized * movementSpeed * Time.deltaTime);
 
