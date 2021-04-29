@@ -24,10 +24,14 @@ public class CC2D : MonoBehaviour
     private float jumpVelocity;
     private bool isGrounded;
     public bool isJumping {get; private set;}
+    private Vector3 windForce;
+    private float windForceJumpReduction;
 
     // Start is called before the first frame update
     void Start()
     {
+        windForce = Vector3.zero;
+
         isGrounded = false;
 
         rBody = this.GetComponent<Rigidbody>();
@@ -89,12 +93,10 @@ public class CC2D : MonoBehaviour
         //spostamento orizzontale
 
         Vector3 move = new Vector3(inputX,0,0);
-        if (!(Mathf.Abs(rBody.velocity.x) > maxVelocity) || inputX * oldInputX < 0)
-        { //controllo di non aver raggiunto vel massima
-            //rBody.AddForce(move * moveSpeed, ForceMode.VelocityChange);
-            rBody.AddForce(move * moveSpeed, ForceMode.Acceleration);
-        }
-        //rBody.MovePosition(this.transform.position + move * moveSpeed * Time.fixedDeltaTime);
+        
+        //controllo di non aver raggiunto vel massima
+        //rBody.AddForce(move * moveSpeed, ForceMode.VelocityChange);
+        //rBody.AddForce(move * moveSpeed, ForceMode.Impulse);
 
         //rBody.velocity = new Vector3(Mathf.Clamp(rBody.velocity.x, -maxVelocity, maxVelocity), rBody.velocity.y, rBody.velocity.z);
 
@@ -122,6 +124,36 @@ public class CC2D : MonoBehaviour
             //rBody.drag = groundDrag;
         }
 
+        //Velocity CAP
+        if (rBody.velocity.x > maxVelocity)
+            rBody.velocity = new Vector3(maxVelocity, rBody.velocity.y, rBody.velocity.z);
+        else if (rBody.velocity.x < -maxVelocity)
+            rBody.velocity = new Vector3(-maxVelocity, rBody.velocity.y, rBody.velocity.z);
+
+        /*
+        if (!rBody.GetComponent<CC2D>().isJumping)
+            rBody.AddForce(this.transform.forward * windForce, forceMode);
+        //rBody.MovePosition(rBody.transform.position + this.transform.forward * windForce * Time.fixedDeltaTime);
+        else
+            rBody.AddForce(this.transform.forward * windForce / forceJumpReduction, forceMode);
+        */
+
         oldInputX = inputX;
+
+        //calcolo forza vento applicata
+        Vector3 totalWindForce = Vector3.zero;
+        if (!isJumping)
+            totalWindForce = windForce;
+        else
+            totalWindForce = windForce / windForceJumpReduction;
+
+        //applico movimento orizzontale finale
+        if ( (rBody.velocity.x < maxVelocity) && (rBody.velocity.x > -maxVelocity)) //CAP di velocità
+            rBody.AddForce(move * moveSpeed + totalWindForce,ForceMode.Acceleration);
+    }
+
+    public void AddWindForce(Vector3 force)
+    {
+        windForce += force;
     }
 }
