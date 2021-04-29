@@ -63,8 +63,11 @@ public class CC3D : MonoBehaviour
             }
         }
         //controllo move
-        else 
-            rBody.MovePosition(this.transform.position + move.normalized * movementSpeed * Time.deltaTime);
+        else
+        {
+            float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
+            rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);
+        }
 
         //DEBUG
         //Debug.Log(rBody.velocity);

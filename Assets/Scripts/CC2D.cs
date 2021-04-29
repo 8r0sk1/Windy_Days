@@ -7,11 +7,11 @@ public class CC2D : MonoBehaviour
     private Rigidbody rBody;
 
     private float t = 0f;
-    private Quaternion initialRot, finalRot;
     private float oldInputX = 0f;
     private float inputX;
     //private float inputY
-    public float airDrag, groundDrag;
+    //public float airDrag = 0, groundDrag = 0;
+    public float moveSpeed = 10;
     public float maxVelocity;
     //public float jumpVelocity;
     public float maxJumpHeight, minJumpHeight;
@@ -22,11 +22,14 @@ public class CC2D : MonoBehaviour
     private float maxJumpTime;
     private float elapsedJumpTime;
     private float jumpVelocity;
-    private bool isGrounded, isJumping;
+    private bool isGrounded;
+    public bool isJumping {get; private set;}
 
     // Start is called before the first frame update
     void Start()
     {
+        isGrounded = false;
+
         rBody = this.GetComponent<Rigidbody>();
 
         rBody.freezeRotation = false;
@@ -46,6 +49,7 @@ public class CC2D : MonoBehaviour
         {
             elapsedJumpTime = 0;
             isJumping = true;
+            //rBody.drag = airDrag;
             isGrounded = false;
             
             //DEBUG
@@ -85,9 +89,14 @@ public class CC2D : MonoBehaviour
         //spostamento orizzontale
 
         Vector3 move = new Vector3(inputX,0,0);
-        //rBody.AddForce(move,ForceMode.Acceleration);
-        //rBody.MovePosition(move + this.transform.position);
-        rBody.AddForce(move, ForceMode.VelocityChange);
+        if (!(Mathf.Abs(rBody.velocity.x) > maxVelocity) || inputX * oldInputX < 0)
+        { //controllo di non aver raggiunto vel massima
+            //rBody.AddForce(move * moveSpeed, ForceMode.VelocityChange);
+            rBody.AddForce(move * moveSpeed, ForceMode.Acceleration);
+        }
+        //rBody.MovePosition(this.transform.position + move * moveSpeed * Time.fixedDeltaTime);
+
+        //rBody.velocity = new Vector3(Mathf.Clamp(rBody.velocity.x, -maxVelocity, maxVelocity), rBody.velocity.y, rBody.velocity.z);
 
         //jump
 
@@ -99,18 +108,20 @@ public class CC2D : MonoBehaviour
         {
             elapsedJumpTime += Time.fixedDeltaTime;
             Vector3 jumpMove = new Vector3(0, jumpVelocity, 0);
-            rBody.velocity = new Vector3(rBody.velocity.x, 0f, rBody.velocity.z);
-            rBody.AddForce(-Physics.gravity,ForceMode.Force);
+            //rBody.velocity = new Vector3(rBody.velocity.x, 0f, rBody.velocity.z);
+            rBody.AddForce(new Vector3(0f,-rBody.velocity.y,0f),ForceMode.VelocityChange);
+            rBody.AddForce(-Physics.gravity,ForceMode.Acceleration);
             rBody.AddForce(jumpMove,ForceMode.VelocityChange);
         }
 
-        rBody.velocity = new Vector3(Mathf.Clamp(rBody.velocity.x, -maxVelocity, maxVelocity), rBody.velocity.y, rBody.velocity.z);
 
         //GROUND CHECK
         if (Physics.CheckSphere(groundCheck.transform.position, 0.1f, groundMask) && !isJumping)
         {
             isGrounded = true;
-            rBody.drag = groundDrag;
+            //rBody.drag = groundDrag;
         }
+
+        oldInputX = inputX;
     }
 }
