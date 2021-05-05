@@ -15,6 +15,7 @@ public class CC2D : MonoBehaviour
     public float maxVelocity;
     //public float jumpVelocity;
     public float maxJumpHeight, minJumpHeight;
+    public float bottleJumpHeight;
 
     public GameObject groundCheck;
     public LayerMask groundMask;
@@ -23,9 +24,11 @@ public class CC2D : MonoBehaviour
 
     private float maxJumpTime;
     private float elapsedJumpTime;
-    private float jumpVelocity;
+    private float jumpVelocity, bottleJumpVelocity;
+    private bool bottlingEnabled;
     private bool isGrounded;
     public bool isJumping;
+    private bool isBottling;
     private bool isOpposingDirection;
     private Vector3 windForce;
     private Vector3 totalWindForce;
@@ -39,6 +42,7 @@ public class CC2D : MonoBehaviour
         move = Vector3.zero;
 
         isGrounded = false;
+        bottlingEnabled = true;
 
         rBody = this.GetComponent<Rigidbody>();
 
@@ -47,6 +51,7 @@ public class CC2D : MonoBehaviour
 
         //calcolo massimo tempo di jump
         jumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * minJumpHeight);
+        bottleJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * bottleJumpHeight);
         maxJumpTime = (maxJumpHeight - minJumpHeight)/jumpVelocity; //moto rettilineo uniforme finchè si tiene premuto spazio
     }
 
@@ -68,6 +73,14 @@ public class CC2D : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+        }
+        if (Input.GetButtonUp("Crouch"))
+        {
+            if (bottlingEnabled)
+            {
+                isBottling = true;
+                bottlingEnabled = false;
+            }
         }
 
         //Gestione rotazione
@@ -116,10 +129,19 @@ public class CC2D : MonoBehaviour
             rBody.AddForce(jumpMove, ForceMode.VelocityChange);
         }
 
+        if (isBottling)
+        {
+            isJumping = false;
+            rBody.AddForce(new Vector3(0f, -rBody.velocity.y, 0f), ForceMode.VelocityChange);
+            rBody.AddForce(new Vector3(0f, bottleJumpVelocity, 0f), ForceMode.VelocityChange);
+            isBottling = false;
+        }
+
         //GROUND CHECK
         else if (Physics.CheckSphere(groundCheck.transform.position, 0.1f, groundMask))
         {
             isGrounded = true;
+            bottlingEnabled = true;
             //rBody.drag = groundDrag;
         }
         else

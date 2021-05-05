@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 881771844}
-  smoothSpeed: 0.09
+  smoothSpeed: 1
   offset: {x: 0, y: 7, z: -20}
   targetOffset: {x: 0, y: 2, z: 0}
 --- !u!81 &759006839
@@ -1796,14 +1796,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268125215a5ee754288d6fc0ea2205eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  maxVelocity: 4
+  moveSpeed: 20
+  maxVelocity: 5
   maxJumpHeight: 4
   minJumpHeight: 2
+  bottleJumpHeight: 5
   groundCheck: {fileID: 1160573318}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  isJumping: 0
 --- !u!54 &881771842
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2172,7 +2174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &959292809
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6921,7 +6923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ca1fcdb649ea846813122489e2a6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windForce: 5
+  windForce: 15
 --- !u!65 &959292813
 BoxCollider:
   m_ObjectHideFlags: 0
