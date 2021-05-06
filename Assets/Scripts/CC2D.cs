@@ -32,7 +32,10 @@ public class CC2D : MonoBehaviour
     private bool isOpposingDirection;
     private Vector3 windForce;
     private Vector3 totalWindForce;
-    private float windForceJumpReduction;
+    public float windForceJumpReduction;
+
+    private Vector3 yVel;
+    private Vector3 totalMove;
 
     //animator
     Animator anim;
@@ -43,6 +46,7 @@ public class CC2D : MonoBehaviour
         windForce = Vector3.zero;
         totalWindForce = Vector3.zero;
         move = Vector3.zero;
+        yVel = Vector3.zero;
 
         isGrounded = false;
         bottlingEnabled = true;
@@ -121,6 +125,10 @@ public class CC2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //controllo gravità
+        if (!isGrounded) yVel += Physics.gravity * Time.fixedDeltaTime;
+        else yVel = new Vector3(0, 0, 0);
+
         //spostamento orizzontale
         move.x = inputX;
 
@@ -134,16 +142,23 @@ public class CC2D : MonoBehaviour
         {
             elapsedJumpTime += Time.fixedDeltaTime;
             Vector3 jumpMove = new Vector3(0, jumpVelocity, 0);
+            /*
             rBody.AddForce(new Vector3(0f, -rBody.velocity.y, 0f), ForceMode.VelocityChange);
             rBody.AddForce(-Physics.gravity, ForceMode.Acceleration);
             rBody.AddForce(jumpMove, ForceMode.VelocityChange);
+            */
+            yVel = jumpMove;
         }
 
         if (isBottling)
         {
+            isGrounded = false;
             isJumping = false;
+            /*
             rBody.AddForce(new Vector3(0f, -rBody.velocity.y, 0f), ForceMode.VelocityChange);
             rBody.AddForce(new Vector3(0f, bottleJumpVelocity, 0f), ForceMode.VelocityChange);
+            */
+            yVel = new Vector3(0, bottleJumpVelocity, 0);
             isBottling = false;
         }
 
@@ -173,16 +188,20 @@ public class CC2D : MonoBehaviour
         else
             totalWindForce = windForce / windForceJumpReduction;
 
+        /*
         if (move.x * rBody.velocity.x < 0f) 
             isOpposingDirection = true;
         else
             isOpposingDirection = false;
-
+        */
         //applico movimento orizzontale finale
-        if ((rBody.velocity.x < maxVelocity) && (rBody.velocity.x > -maxVelocity) || isOpposingDirection){ //CAP di velocità
-            Vector3 totalMove = move * moveSpeed + totalWindForce;
-            rBody.AddForce(totalMove, ForceMode.Acceleration);
-        }
+        //if ((rBody.velocity.x < maxVelocity) && (rBody.velocity.x > -maxVelocity) || isOpposingDirection){ //CAP di velocità
+            //Vector3 totalMove = move * moveSpeed + totalWindForce;
+            //rBody.AddForce(totalMove, ForceMode.Acceleration);
+
+            totalMove = move * moveSpeed / 200 + (totalWindForce/4) * Time.fixedDeltaTime + yVel * Time.fixedDeltaTime;
+            rBody.MovePosition(rBody.position + totalMove);
+        //}
     }
 
     public void AddWindForce(Vector3 force)
