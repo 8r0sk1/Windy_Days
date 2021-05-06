@@ -34,6 +34,9 @@ public class CC2D : MonoBehaviour
     private Vector3 totalWindForce;
     private float windForceJumpReduction;
 
+    //animator
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,7 @@ public class CC2D : MonoBehaviour
         bottlingEnabled = true;
 
         rBody = this.GetComponent<Rigidbody>();
+        anim = this.GetComponentInChildren<Animator>();
 
         rBody.freezeRotation = false;
         rBody.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -59,6 +63,12 @@ public class CC2D : MonoBehaviour
     void Update()
     {
         inputX = Input.GetAxis("Horizontal");
+
+        //update animation condition
+        if (Mathf.Abs(inputX) > 0.1) anim.SetBool("isRunning", true);
+        else anim.SetBool("isRunning", false);
+        anim.SetFloat("runSpeed", Mathf.Abs(inputX));
+
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
