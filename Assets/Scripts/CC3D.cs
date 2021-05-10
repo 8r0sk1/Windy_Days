@@ -12,22 +12,39 @@ public class CC3D : MonoBehaviour
     private float InputX, InputZ;
     private bool toDash = false;
     private bool isDashing = false;
+    private Vector2 speedVector;
+    private Animator anim;
 
     void Start()
     {
         rBody = this.GetComponent<Rigidbody>();
+        anim = this.GetComponentInChildren<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        rBody.useGravity = true;
     }
 
     void Update()
     {
         InputX = Input.GetAxis("Horizontal");
         InputZ = Input.GetAxis("Vertical");
+        speedVector = new Vector2(InputX, InputZ);
+        if (speedVector.magnitude > 0.1) 
+                anim.SetBool("isRunning", true);
+        else 
+                anim.SetBool("isRunning", false);
+        anim.SetFloat("runSpeed", speedVector.magnitude);
+        anim.SetFloat("dashSpeed", dashSpeed/5);
 
         if (Input.GetButtonDown("Jump"))
             if (!isDashing && !toDash)
             {
                 toDash = true;
                 isDashing = true;
+                anim.SetTrigger("toDash");
+                
 
                 //DEBUG
                 Debug.Log("Inizio dash");
@@ -50,12 +67,13 @@ public class CC3D : MonoBehaviour
         if (toDash)
         {
             //rBody.velocity = Vector3.zero;
+            
             rBody.AddForce(this.transform.forward * dashSpeed, ForceMode.VelocityChange);
             toDash = false; //dash è già iniziato
         }
         else if (isDashing)
         {
-            if (rBody.velocity.magnitude < 0.01f)
+            if ((new Vector2(rBody.velocity.x, rBody.velocity.z)).magnitude < 0.01f)
             {
                 isDashing = false;
                 //DEBUG

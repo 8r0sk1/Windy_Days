@@ -64,6 +64,10 @@ public class CC2D : MonoBehaviour
         maxJumpTime = (maxJumpHeight - minJumpHeight)/jumpVelocity; //moto rettilineo uniforme finchè si tiene premuto spazio
     }
 
+    private void OnEnable()
+    {
+        rBody.useGravity = false;
+    }
     // Update is called once per frame
     void Update()
     {
