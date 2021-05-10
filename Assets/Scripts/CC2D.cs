@@ -36,6 +36,7 @@ public class CC2D : MonoBehaviour
 
     private Vector3 yVel;
     private Vector3 totalMove;
+    private Vector3 playerVelocity;
 
     //animator
     Animator anim;
@@ -125,6 +126,9 @@ public class CC2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //reset velocità a 0
+        rBody.velocity = Vector3.zero;
+
         //controllo gravità
         if (!isGrounded) yVel += Physics.gravity * Time.fixedDeltaTime;
         else yVel = new Vector3(0, 0, 0);
@@ -201,6 +205,7 @@ public class CC2D : MonoBehaviour
 
             totalMove = move * moveSpeed / 200 + (totalWindForce/4) * Time.fixedDeltaTime + yVel * Time.fixedDeltaTime;
             rBody.MovePosition(rBody.position + totalMove);
+            playerVelocity = rBody.velocity;
         //}
     }
 
