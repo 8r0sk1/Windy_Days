@@ -14,16 +14,29 @@ public class CC3D : MonoBehaviour
     private bool isDashing = false;
     private Vector2 speedVector;
     private Animator anim;
+    private float dashElapsedTime;
+    public float dashTime;
 
     void Start()
     {
         rBody = this.GetComponent<Rigidbody>();
         anim = this.GetComponentInChildren<Animator>();
+
+        rBody.useGravity = true;
     }
 
-    private void OnEnable()
+    /*
+    void OnEnable()
     {
         rBody.useGravity = true;
+    } */
+
+    public void DashEvent(int arg)
+    {
+        isDashing = (arg == 0) ? false : true;
+
+        //DEBUG
+        Debug.Log(isDashing);
     }
 
     void Update()
@@ -36,19 +49,16 @@ public class CC3D : MonoBehaviour
         else 
                 anim.SetBool("isRunning", false);
         anim.SetFloat("runSpeed", speedVector.magnitude);
-        anim.SetFloat("dashSpeed", dashSpeed/5);
+        anim.SetFloat("dashSpeed", dashSpeed);
 
-        if (Input.GetButtonDown("Jump"))
-            if (!isDashing && !toDash)
-            {
-                toDash = true;
-                isDashing = true;
-                anim.SetTrigger("toDash");
-                
+        if (Input.GetButtonDown("Jump") && !isDashing)
+        {
+            //dashElapsedTime = 0f;
+            //toDash = true;
 
-                //DEBUG
-                Debug.Log("Inizio dash");
-            }
+            isDashing = true;
+            anim.SetTrigger("toDash");
+        }
     }
 
     private void FixedUpdate()
@@ -63,25 +73,47 @@ public class CC3D : MonoBehaviour
         if (move.magnitude > 0f && !isDashing)
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
 
+        /*
         //controllo dash
         if (toDash)
         {
+            anim.SetTrigger("toDash");
+            isDashing = true;
             //rBody.velocity = Vector3.zero;
-            
-            rBody.AddForce(this.transform.forward * dashSpeed, ForceMode.VelocityChange);
+
+            //rBody.AddForce(this.transform.forward * dashSpeed, ForceMode.VelocityChange);
             toDash = false; //dash è già iniziato
         }
+
         else if (isDashing)
         {
+            /*
             if ((new Vector2(rBody.velocity.x, rBody.velocity.z)).magnitude < 0.01f)
             {
                 isDashing = false;
                 //DEBUG
                 Debug.Log("Fine dash");
+            }*/
+
+            /*
+            rBody.velocity = this.transform.forward * dashSpeed;
+
+            if(dashElapsedTime > dashTime)
+            {
+                isDashing = false;
             }
-        }
+
+            dashElapsedTime += Time.fixedDeltaTime; 
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
+            {
+                isDashing = false;
+                //DEBUG
+                Debug.Log("Fine dash");
+            }
+        } */
+        
         //controllo move
-        else
+        if(!isDashing)
         {
             float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
             rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);

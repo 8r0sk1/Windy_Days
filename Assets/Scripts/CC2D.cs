@@ -62,15 +62,20 @@ public class CC2D : MonoBehaviour
         jumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * minJumpHeight);
         bottleJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * bottleJumpHeight);
         maxJumpTime = (maxJumpHeight - minJumpHeight)/jumpVelocity; //moto rettilineo uniforme finchè si tiene premuto spazio
+
+        rBody.useGravity = false; ////////////////
     }
 
-    private void OnEnable()
+    /*
+    void OnEnable()
     {
         rBody.useGravity = false;
-    }
+    } */
+
     // Update is called once per frame
     void Update()
     {
+
         inputX = Input.GetAxis("Horizontal");
 
         //update animation condition

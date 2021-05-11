@@ -133,7 +133,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: dashSpeed
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -235,7 +235,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: roll
+  m_Name: Roll
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -249,7 +249,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 911cb525267f53849a611df3fe522a80,
+  m_Motion: {fileID: -203655887218126122, guid: f6f0560fdd53367478ae45fc26c62e0d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: dashSpeed
