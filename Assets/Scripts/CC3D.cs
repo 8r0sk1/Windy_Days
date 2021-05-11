@@ -70,7 +70,7 @@ public class CC3D : MonoBehaviour
             move = Vector3.zero;
 
         //rotazione
-        if (move.magnitude > 0f && !isDashing)
+        if (Mathf.Clamp(move.magnitude,0,1) > 0f && !isDashing)
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
 
         /*
