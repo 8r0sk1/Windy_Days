@@ -6916,11 +6916,36 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: -7256422204137769251, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a3f827237e1aae4f83061d9fa06302f, type: 2}
+    - target: {fileID: -7073476632356709592, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 16bd4b132a390044d8382c54a41bdbe5, type: 2}
+    - target: {fileID: -6582592935443357254, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 074b9cbf59c714d4caac77c5c6fb7942, type: 2}
     - target: {fileID: 919132149155446097, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
         type: 3}
       propertyPath: m_Name
       value: CharacterModel
       objectReference: {fileID: 0}
+    - target: {fileID: 1649600995327676896, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f18f7cd80d0b3d340aeb0d9f2150c3c2, type: 2}
+    - target: {fileID: 5678234273906759569, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b947341d4a8132b43a951d3f743150ca, type: 2}
     - target: {fileID: 5866666021909216657, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
         type: 3}
       propertyPath: m_Controller
@@ -6931,6 +6956,11 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: f1eb639652e1f1a4a93fbe9a3e22feb0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 074b9cbf59c714d4caac77c5c6fb7942, type: 2}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: f1eb639652e1f1a4a93fbe9a3e22feb0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1eb639652e1f1a4a93fbe9a3e22feb0, type: 3}
