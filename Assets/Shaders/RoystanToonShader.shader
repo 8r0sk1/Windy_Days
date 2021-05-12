@@ -32,6 +32,7 @@ Shader "Unlit/RoystanToonShader"
 			#include "Lighting.cginc"
 
 			#include "UnityCG.cginc"
+			//#pragma multi_compile_fdwbase; //added
 
 			struct appdata
 			{
@@ -46,6 +47,7 @@ Shader "Unlit/RoystanToonShader"
 				float2 uv : TEXCOORD0;
 				float3 worldNormal : NORMAL;
 				float3 viewDir : TEXCOORD1;
+				//SHADOW_COORDS(3);  //added
 			};
 
 			sampler2D _MainTex;
@@ -58,6 +60,7 @@ Shader "Unlit/RoystanToonShader"
 				o.pos = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				o.viewDir = WorldSpaceViewDir(v.vertex);
+				//TRANSFER_SHADOW(OUT);
 				return o;
 			}
 
