@@ -696,6 +696,14 @@ MonoBehaviour:
     m_Bits: 256
   isJumping: 0
   windForceJumpReduction: 1
+  windIdleClip: {fileID: -203655887218126122, guid: eafe1b3bdc7eb7d4f894d0a4de244179,
+    type: 3}
+  windWalkClip: {fileID: -203655887218126122, guid: 78b5bbd8b2763274e957eb4e50e38e9e,
+    type: 3}
+  idleClip: {fileID: -203655887218126122, guid: c0189ab12b063484ca09b3a684879412,
+    type: 3}
+  runningClip: {fileID: -203655887218126122, guid: cf8f718b690c1c5468e7556a799ec51b,
+    type: 3}
 --- !u!114 &2405249793791140675
 MonoBehaviour:
   m_ObjectHideFlags: 0

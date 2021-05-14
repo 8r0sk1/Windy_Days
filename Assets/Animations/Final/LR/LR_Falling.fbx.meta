@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 076dbe3df1dfa9740a1784adf56bfb2a
+guid: 0a0853416b7751f46a3493e4d06b4cec
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: LR_StandingJump
+    second: LR_Falling
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -19,12 +19,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 7.033697 mm\n\t'mixamorig:LeftLeg' : position error = 4.345236
-      mm\n\t'mixamorig:LeftFoot' : position error = 26.005159 mm\n\t'mixamorig:RightUpLeg'
-      : position error = 5.546765 mm\n\t'mixamorig:RightLeg' : position error = 4.329040
-      mm\n\t'mixamorig:RightFoot' : position error = 25.945171 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -40,19 +35,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LR_StandingJump
+      name: LR_Falling
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 42
-      lastFrame: 91
+      firstFrame: 0
+      lastFrame: 63
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 36.5
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1

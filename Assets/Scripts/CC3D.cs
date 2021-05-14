@@ -59,6 +59,16 @@ public class CC3D : MonoBehaviour
             isDashing = true;
             anim.SetTrigger("toDash");
         }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            anim.SetTrigger("attack1");
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            anim.SetTrigger("attack2");
+        }
     }
 
     private void FixedUpdate()

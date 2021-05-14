@@ -38,6 +38,9 @@ public class CC2D : MonoBehaviour
     private Vector3 totalMove;
     private Vector3 playerVelocity;
 
+    public AnimationClip windIdleClip, windWalkClip, idleClip, runningClip;
+    private AnimatorOverrideController windAnimatorController;
+
     //animator
     Animator anim;
 
@@ -54,6 +57,8 @@ public class CC2D : MonoBehaviour
 
         rBody = this.GetComponent<Rigidbody>();
         anim = this.GetComponentInChildren<Animator>();
+
+        windAnimatorController = new AnimatorOverrideController(anim.runtimeAnimatorController);
 
         rBody.freezeRotation = false;
         rBody.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -81,7 +86,7 @@ public class CC2D : MonoBehaviour
         //update animation condition
         if (Mathf.Abs(inputX) > 0.1) anim.SetBool("isRunning", true);
         else anim.SetBool("isRunning", false);
-        anim.SetFloat("runSpeed", Mathf.Abs(inputX));
+        anim.SetFloat("runSpeed", Mathf.Abs(inputX) - totalWindForce.magnitude/20);
 
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -179,11 +184,15 @@ public class CC2D : MonoBehaviour
         else if (Physics.CheckSphere(groundCheck.transform.position, 0.1f, groundMask))
         {
             isGrounded = true;
+            anim.SetBool("isGrounded", true);
             bottlingEnabled = true;
             //rBody.drag = groundDrag;
         }
         else
+        {
             isGrounded = false;
+            anim.SetBool("isGrounded", false);
+        }
 
         //Velocity CAP
         /*
@@ -221,5 +230,22 @@ public class CC2D : MonoBehaviour
     public void AddWindForce(Vector3 force)
     {
         windForce += force;
+
+        ////////////////////TO FIX///////////////////////////////////
+        //wind animation change
+        if (totalWindForce.magnitude != 0)
+        {
+            windAnimatorController["Idle"] = windIdleClip;
+            windAnimatorController["Running"] = windWalkClip;
+        }
+        else
+        {
+            windAnimatorController["Idle"] = idleClip;
+            windAnimatorController["Running"] = runningClip;
+        }
+
+        anim.runtimeAnimatorController = windAnimatorController;
+
+        /////////////////////////////////////////////////////////////////
     }
 }
