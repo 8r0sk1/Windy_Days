@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 11be91123529f13489b2deccc0919b12
+guid: e01af5b9a789a9b49aac749ab934a444
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: LR_RunningJump
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -21,10 +21,12 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
-      : position error = 7.033697 mm\n\t'mixamorig:LeftLeg' : position error = 4.345236
-      mm\n\t'mixamorig:LeftFoot' : position error = 26.005159 mm\n\t'mixamorig:RightUpLeg'
-      : position error = 5.546765 mm\n\t'mixamorig:RightLeg' : position error = 4.329040
-      mm\n\t'mixamorig:RightFoot' : position error = 25.945171 mm\n"
+      : position error = 3.768591 mm\n\t'mixamorig:LeftLeg' : position error = 2.619058
+      mm\n\t'mixamorig:LeftFoot' : position error = 1.581025 mm\n\t'mixamorig:LeftToeBase'
+      : position error = 1.933729 mm\n\t'mixamorig:RightUpLeg' : position error =
+      3.510116 mm\n\t'mixamorig:RightLeg' : position error = 2.621281 mm\n\t'mixamorig:RightFoot'
+      : position error = 1.580130 mm\n\t'mixamorig:RightToeBase' : position error
+      = 1.078637 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -40,11 +42,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LR_RunningJump
+      name: mixamo.com
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 54
+      lastFrame: 325
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -54,8 +56,8 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
