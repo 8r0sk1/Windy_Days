@@ -86,7 +86,7 @@ public class CC2D : MonoBehaviour
         //update animation condition
         if (Mathf.Abs(inputX) > 0.1) anim.SetBool("isRunning", true);
         else anim.SetBool("isRunning", false);
-        anim.SetFloat("runSpeed", Mathf.Abs(inputX) - totalWindForce.magnitude/20);
+        anim.SetFloat("runSpeed", Mathf.Abs(inputX));
 
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -231,7 +231,23 @@ public class CC2D : MonoBehaviour
     {
         windForce += force;
 
-        ////////////////////TO FIX///////////////////////////////////
+        int[] layerIndex = new int[2];
+        layerIndex[0] = anim.GetLayerIndex("Normal");
+        layerIndex[1] = anim.GetLayerIndex("Winded");
+
+        if (windForce.magnitude > 0.1f)
+        {
+            anim.SetLayerWeight(layerIndex[0], 0);
+            anim.SetLayerWeight(layerIndex[1], 1);
+        }
+
+        else
+        {
+            anim.SetLayerWeight(layerIndex[0], 1);
+            anim.SetLayerWeight(layerIndex[1], 0);
+        }
+
+        /*///////////////////TO FIX///////////////////////////////////
         //wind animation change
         if (totalWindForce.magnitude != 0)
         {
@@ -246,6 +262,6 @@ public class CC2D : MonoBehaviour
 
         anim.runtimeAnimatorController = windAnimatorController;
 
-        /////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////*/
     }
 }
