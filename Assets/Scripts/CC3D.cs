@@ -48,7 +48,7 @@ public class CC3D : MonoBehaviour
                 anim.SetBool("isRunning", true);
         else 
                 anim.SetBool("isRunning", false);
-        anim.SetFloat("runSpeed", speedVector.magnitude);
+        anim.SetFloat("runSpeed", Mathf.Max(speedVector.x,speedVector.y));
         anim.SetFloat("dashSpeed", dashSpeed);
 
         if (Input.GetButtonDown("Jump") && !isDashing)
