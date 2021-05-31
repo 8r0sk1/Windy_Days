@@ -618,6 +618,7 @@ GameObject:
   - component: {fileID: 2405249793791140677}
   - component: {fileID: 2405249793791140676}
   - component: {fileID: 2405249793791140675}
+  - component: {fileID: 2320969102865504879}
   - component: {fileID: 2405249793791140674}
   m_Layer: 0
   m_Name: PlayerLR
@@ -695,6 +696,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isJumping: 0
+  onLadder: 0
+  isGrabbing: 0
   windForceJumpReduction: 1
   windIdleClip: {fileID: -203655887218126122, guid: eafe1b3bdc7eb7d4f894d0a4de244179,
     type: 3}
@@ -720,6 +723,20 @@ MonoBehaviour:
   dashSpeed: 1.5
   rotationSpeed: 0.25
   dashTime: 0
+--- !u!114 &2320969102865504879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405249793791140673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07198ca8c8f22e64b82a9e47ea670411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_hp: 6
+  checkPoint: {fileID: 0}
 --- !u!95 &2405249793791140674
 Animator:
   serializedVersion: 3

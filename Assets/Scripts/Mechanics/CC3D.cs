@@ -7,7 +7,6 @@ public class CC3D : MonoBehaviour
 
     private Rigidbody rBody;
 
-    //public float maxSpeed;
     public float movementSpeed = 5f, dashSpeed = 7.5f, rotationSpeed = 0.125f;
     private float InputX, InputZ;
     private bool toDash = false;
