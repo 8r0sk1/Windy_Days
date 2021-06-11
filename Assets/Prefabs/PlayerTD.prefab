@@ -77,7 +77,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2068269315062871617
 Transform:
   m_ObjectHideFlags: 0
@@ -274,7 +274,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isJumping: 0
+  onLadder: 0
+  isGrabbing: 0
   windForceJumpReduction: 1
+  windIdleClip: {fileID: 0}
+  windWalkClip: {fileID: 0}
+  idleClip: {fileID: 0}
+  runningClip: {fileID: 0}
 --- !u!114 &2068269315511584613
 MonoBehaviour:
   m_ObjectHideFlags: 0

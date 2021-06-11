@@ -190,8 +190,8 @@ public class CC2D : MonoBehaviour
         windForce += force;
 
         int[] layerIndex = new int[2];
-        layerIndex[0] = anim.GetLayerIndex("Normal");
-        layerIndex[1] = anim.GetLayerIndex("Winded");
+        layerIndex[0] = anim.GetLayerIndex("LR_Normal");
+        layerIndex[1] = anim.GetLayerIndex("LR_Winded");
 
         if (windForce.magnitude > 0.1f)
         {
