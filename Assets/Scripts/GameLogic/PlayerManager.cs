@@ -2,21 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : AliveEntity
 {
-    public int max_hp;
-    public int hp;
     public int saved_hp;
 
     public GameObject checkPoint;
-    private Rigidbody rBody;
     private CC2D controller2d;
     private CC3D controller3d;
-
-    public void HPsum(int sum)
-    {
-        hp += sum;
-    }
 
     public void Respawn()
     {
@@ -30,7 +22,6 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        hp = max_hp;
         controller2d = this.GetComponent<CC2D>();
         rBody = this.GetComponent<Rigidbody>();
     }
@@ -44,5 +35,9 @@ public class PlayerManager : MonoBehaviour
 
             this.Respawn();
         }
+    }
+    public void SaveHP()
+    {
+        saved_hp = hp;
     }
 }
