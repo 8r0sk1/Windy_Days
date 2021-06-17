@@ -6074,7 +6074,7 @@ PrefabInstance:
     - target: {fileID: 2405249793791140679, guid: c2f1866d8bf1ab6498da284a3e5836dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 201.1
       objectReference: {fileID: 0}
     - target: {fileID: 2405249793791140679, guid: c2f1866d8bf1ab6498da284a3e5836dd,
         type: 3}
@@ -6084,7 +6084,7 @@ PrefabInstance:
     - target: {fileID: 2405249793791140679, guid: c2f1866d8bf1ab6498da284a3e5836dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -111
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2405249793791140679, guid: c2f1866d8bf1ab6498da284a3e5836dd,
         type: 3}
@@ -6986,9 +6986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92f4452fb63eeb4ea9daaabd363bce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <max_hp>k__BackingField: 0
-  hp: 6
-  rBody: {fileID: 0}
 --- !u!95 &471401333
 Animator:
   serializedVersion: 3
@@ -32048,9 +32045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92f4452fb63eeb4ea9daaabd363bce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <max_hp>k__BackingField: 0
-  hp: 6
-  rBody: {fileID: 0}
 --- !u!1001 &1770791311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37733,7 +37727,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.7830189, g: 0.74058086, b: 0.5577163, a: 1}
+      maxColor: {r: 0.6037736, g: 0.53841716, b: 0.259167, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -37795,7 +37789,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -38171,7 +38165,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -38257,7 +38251,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 4
       mode: 0
       spread: 0
       speed:
@@ -38376,7 +38370,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 70
+      scalar: 400
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -41135,7 +41129,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -41247,11 +41241,11 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
+    enabled: 0
     collisionShape0: {fileID: 0}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}

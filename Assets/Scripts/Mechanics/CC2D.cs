@@ -92,7 +92,7 @@ public class CC2D : MonoBehaviour
             if (isGrabbing)
                 isGrabbing = false;
         }
-        if (Input.GetButtonUp("Crouch"))
+        if (Input.GetButtonDown("Crouch"))
         {
             if (bottlingEnabled)
             {
