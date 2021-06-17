@@ -15,6 +15,8 @@ public class CC3D : MonoBehaviour
     private Animator anim;
     private float dashElapsedTime;
     public float dashTime;
+    private bool isBottling;
+    private bool bottlingEnabled;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class CC3D : MonoBehaviour
         anim = this.GetComponentInChildren<Animator>();
 
         rBody.useGravity = true;
+        bottlingEnabled = true;
     }
 
     /*
@@ -68,6 +71,14 @@ public class CC3D : MonoBehaviour
         {
             anim.SetTrigger("attack2");
         }
+        if (Input.GetButtonDown("Crouch"))
+        {
+            if (bottlingEnabled)
+            {
+                isBottling = true;
+                bottlingEnabled = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -77,6 +88,28 @@ public class CC3D : MonoBehaviour
             move = new Vector3(InputX, 0f, InputZ);
         else
             move = Vector3.zero;
+
+        if (isBottling)
+        {
+            //Debug.Log("Woooosh");
+            RaycastHit hit;
+            if(Physics.Raycast(this.transform.position, this.transform.forward*5, out hit, 20000 ))
+            {
+                Debug.DrawRay(this.transform.position, this.transform.forward*5, Color.red, 5f);
+                if (hit.transform.gameObject.CompareTag("Movable_sand")) 
+                {
+                    Debug.Log("SAND");
+                    //Play disappearing sand animation from sand mass animator 
+                    MeshRenderer m = hit.transform.gameObject.GetComponent<MeshRenderer>();
+                    BoxCollider b = hit.transform.gameObject.GetComponent<BoxCollider>();
+                    m.enabled = false;
+                    b.enabled = false;
+                }
+
+            }
+            isBottling = false;
+            bottlingEnabled = true;
+        }
 
         //rotazione
         if (Mathf.Clamp(move.magnitude,0,1) > 0f && !isDashing)
