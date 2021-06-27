@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Movable_sand
+  - 3d_object
+  - 2d_object
   layers:
   - Default
   - TransparentFX

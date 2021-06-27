@@ -6,6 +6,9 @@ public class Manager2D3D : MonoBehaviour
 {
     public static Manager2D3D instance;
 
+    public string tag_3d = "3d_object";
+    public string tag_2d = "2d_object";
+
     public Camera camera;
     public GameObject player;
 
@@ -62,6 +65,21 @@ public class Manager2D3D : MonoBehaviour
         //Camera setup
         followPlayer3D_script.enabled = false;
         followPlayer2D_script.enabled = true;
+
+        //Activate and deactivate 3d/2d objects
+        foreach (Transform obj in player.GetComponentsInChildren<Transform>())
+        {
+            if (obj.CompareTag(tag_3d))
+            {
+                if (is2D) obj.gameObject.SetActive(false);
+                else obj.gameObject.SetActive(true);
+            }
+            else if (obj.CompareTag(tag_2d))
+            {
+                if (is2D) obj.gameObject.SetActive(true);
+                else obj.gameObject.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -70,6 +88,21 @@ public class Manager2D3D : MonoBehaviour
         if (dimChange)
         {
             is2D = !is2D;
+
+            //Activate and deactivate 3d/2d objects
+            foreach(Transform obj in player.GetComponentsInChildren<Transform>())
+            {
+                if (obj.CompareTag(tag_3d))
+                {
+                    if (is2D) obj.gameObject.SetActive(false);
+                    else obj.gameObject.SetActive(true);
+                }
+                else if (obj.CompareTag(tag_2d))
+                {
+                    if (is2D) obj.gameObject.SetActive(true);
+                    else obj.gameObject.SetActive(false);
+                }
+            }
 
             if (is2D) //2D setup
             {

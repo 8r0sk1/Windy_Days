@@ -32,7 +32,7 @@ public class PlayerManager : AliveEntity
         {
             //DEBUG
             Debug.Log("HAI PERSO STRONZO");
-
+            
             this.Respawn();
         }
     }

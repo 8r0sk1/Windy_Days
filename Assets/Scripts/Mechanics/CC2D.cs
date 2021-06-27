@@ -208,8 +208,9 @@ public class CC2D : MonoBehaviour
 
     public void Reset()
     {
-        windForce = Vector3.zero;
-        totalWindForce = Vector3.zero;
+        //operazioni automatiche quando esce da wind
+        //windForce = Vector3.zero;
+        //totalWindForce = Vector3.zero;
         move = Vector3.zero;
         yVel = Vector3.zero;
 
