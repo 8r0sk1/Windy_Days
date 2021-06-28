@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    private GameObject hitBox;
+    public GameObject hitBox;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,13 @@ public class MeleeWeapon : MonoBehaviour
         
     }
 
-    public void HitBoxActivate(bool flag)
+    public void EnableHitbox()
     {
-        hitBox.SetActive(flag);
+        hitBox.SetActive(true);
+    }
+
+    public void DisableHitbox()
+    {
+        hitBox.SetActive(false);
     }
 }

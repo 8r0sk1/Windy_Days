@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AliveEntity : MonoBehaviour
 {
-    public int max_hp { private set; get; }
+    public int max_hp { protected set; get; }
     public int hp;
 
     protected Rigidbody rBody;

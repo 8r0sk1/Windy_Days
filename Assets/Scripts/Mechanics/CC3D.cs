@@ -17,6 +17,7 @@ public class CC3D : MonoBehaviour
     public float dashTime;
     private bool isBottling;
     private bool bottlingEnabled;
+    public MeleeWeapon weapon;
 
     void Start()
     {
@@ -163,5 +164,15 @@ public class CC3D : MonoBehaviour
 
         //DEBUG
         //Debug.Log(rBody.velocity);
+    }
+
+    public void EnableWeaponHitbox()
+    {
+        weapon.EnableHitbox();
+    }
+
+    public void DisableWeaponHitbox()
+    {
+        weapon.DisableHitbox();
     }
 }

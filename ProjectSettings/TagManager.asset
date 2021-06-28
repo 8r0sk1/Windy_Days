@@ -8,6 +8,7 @@ TagManager:
   - Movable_sand
   - 3d_object
   - 2d_object
+  - Enemy
   layers:
   - Default
   - TransparentFX
