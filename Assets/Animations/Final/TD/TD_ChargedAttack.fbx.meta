@@ -6,6 +6,18 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: TD_ChargedAttack
+  - first:
+      74: 4061839508520268033
+    second: mixamo.com
+  - first:
+      74: -3780516532778130023
+    second: mixamo.com (1)
+  - first:
+      74: 2055468689366577538
+    second: mixamo.com (2)
+  - first:
+      74: 2042803829534017116
+    second: mixamo.com (3)
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,6 +56,202 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
+      lastFrame: 287
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.1442953
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 3
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.31543624
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 2
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.40412977
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 1
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.44178957
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 4
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.45286137
+        functionName: EnableWeaponHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.53181905
+        functionName: DisableWeaponHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5402684
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 3
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.74496645
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 2
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9081613
+        functionName: AnimSpeedChange
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 1
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9356943
+        functionName: AttackEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c0d4c052f3c0a6241beb1a3363647993,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 36.8
+      lastFrame: 86
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com (1)
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 86
+      lastFrame: 155
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com (2)
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 155
+      lastFrame: 193
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com (3)
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 193
       lastFrame: 287
       wrapMode: 0
       orientationOffsetY: 0

@@ -1,7 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
+namespace GameLib
+{
+    public enum attack_type { slash1, slash2 };
+}
 public class CC3D : MonoBehaviour
 {
 
@@ -9,15 +14,15 @@ public class CC3D : MonoBehaviour
 
     public float movementSpeed = 5f, dashSpeed = 7.5f, rotationSpeed = 0.125f;
     private float InputX, InputZ;
-    private bool toDash = false;
     private bool isDashing = false;
+    private bool isAttacking = false;
     private Vector2 speedVector;
     private Animator anim;
-    private float dashElapsedTime;
     public float dashTime;
     private bool isBottling;
     private bool bottlingEnabled;
     public MeleeWeapon weapon;
+    private attack_type attack;
 
     void Start()
     {
@@ -28,18 +33,20 @@ public class CC3D : MonoBehaviour
         bottlingEnabled = true;
     }
 
-    /*
-    void OnEnable()
-    {
-        rBody.useGravity = true;
-    } */
-
     public void DashEvent(int arg)
     {
         isDashing = (arg == 0) ? false : true;
 
         //DEBUG
         Debug.Log(isDashing);
+    }
+
+    public void AttackEvent(int arg)
+    {
+        isAttacking = (arg == 0) ? false : true;
+
+        //DEBUG
+        Debug.Log(isAttacking);
     }
 
     void Update()
@@ -65,12 +72,16 @@ public class CC3D : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
+            attack = attack_type.slash1;
             anim.SetTrigger("attack1");
+            isAttacking = true;
         }
 
         if (Input.GetButtonDown("Fire2"))
         {
+            attack = attack_type.slash2;
             anim.SetTrigger("attack2");
+            isAttacking = true;
         }
         if (Input.GetButtonDown("Crouch"))
         {
@@ -80,12 +91,17 @@ public class CC3D : MonoBehaviour
                 bottlingEnabled = false;
             }
         }
+
+        if (isDashing)
+        {
+            if (weapon.hitBox.active) DisableWeaponHitbox();
+        }
     }
 
     private void FixedUpdate()
     {
         Vector3 move;
-        if (!isDashing)
+        if (!isDashing && !isAttacking)
             move = new Vector3(InputX, 0f, InputZ);
         else
             move = Vector3.zero;
@@ -115,48 +131,9 @@ public class CC3D : MonoBehaviour
         //rotazione
         if (Mathf.Clamp(move.magnitude,0,1) > 0f && !isDashing)
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
-
-        /*
-        //controllo dash
-        if (toDash)
-        {
-            anim.SetTrigger("toDash");
-            isDashing = true;
-            //rBody.velocity = Vector3.zero;
-
-            //rBody.AddForce(this.transform.forward * dashSpeed, ForceMode.VelocityChange);
-            toDash = false; //dash è già iniziato
-        }
-
-        else if (isDashing)
-        {
-            /*
-            if ((new Vector2(rBody.velocity.x, rBody.velocity.z)).magnitude < 0.01f)
-            {
-                isDashing = false;
-                //DEBUG
-                Debug.Log("Fine dash");
-            }*/
-
-            /*
-            rBody.velocity = this.transform.forward * dashSpeed;
-
-            if(dashElapsedTime > dashTime)
-            {
-                isDashing = false;
-            }
-
-            dashElapsedTime += Time.fixedDeltaTime; 
-            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("Roll"))
-            {
-                isDashing = false;
-                //DEBUG
-                Debug.Log("Fine dash");
-            }
-        } */
         
         //controllo move
-        if(!isDashing)
+        if(!isDashing && !isAttacking)
         {
             float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
             rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);
@@ -168,11 +145,16 @@ public class CC3D : MonoBehaviour
 
     public void EnableWeaponHitbox()
     {
-        weapon.EnableHitbox();
+        weapon.EnableHitbox(attack);
     }
 
     public void DisableWeaponHitbox()
     {
         weapon.DisableHitbox();
+    }
+
+    public void AnimSpeedChange(float arg)
+    {
+        anim.SetFloat("animSpeed", arg);
     }
 }

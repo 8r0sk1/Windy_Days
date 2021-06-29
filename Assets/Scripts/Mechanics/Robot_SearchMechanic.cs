@@ -15,6 +15,8 @@ public class Robot_SearchMechanic : MonoBehaviour
     {
         playerInSight = false;
         isOutOfRange = false;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -23,10 +25,11 @@ public class Robot_SearchMechanic : MonoBehaviour
         if (player != null)
         {
             distance = (player.transform.position - this.transform.position).magnitude;
+
             if (distance > this.transform.localScale.x)
-            {
                 isOutOfRange = true;
-            }
+            else if (isOutOfRange)
+                isOutOfRange = false;
         }
     }
 
@@ -34,7 +37,7 @@ public class Robot_SearchMechanic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            player = other.gameObject;
+            //player = other.gameObject;
 
             //DEBUG
             Debug.Log("Collide with " + other.gameObject);

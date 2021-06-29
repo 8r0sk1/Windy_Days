@@ -80,6 +80,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 1
+        functionName: AttackEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: c0d4c052f3c0a6241beb1a3363647993,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

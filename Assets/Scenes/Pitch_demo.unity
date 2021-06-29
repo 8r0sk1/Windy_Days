@@ -5864,7 +5864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBox: {fileID: 1269550002}
-  damage: 5
+  damageA: 5
+  damageB: 10
 --- !u!1001 &291259566
 PrefabInstance:
   m_ObjectHideFlags: 0

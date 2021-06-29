@@ -22,7 +22,8 @@ public class WeaponHitBox : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyManager>().HPsum(-weapon.damage);
+            other.GetComponent<EnemyManager>().HPsum(-weapon.damage);
+            other.GetComponent<Animator>().SetTrigger("hasBeenDamaged");
             //DEBUG
             Debug.Log("Hitted " + other);
         }

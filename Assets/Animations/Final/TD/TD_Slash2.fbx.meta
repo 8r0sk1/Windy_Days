@@ -63,7 +63,31 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.43781096
+        functionName: EnableWeaponHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6318408
+        functionName: DisableWeaponHitbox
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: AttackEvent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 237d094f8acf1c14992c1e4c7f0c3e2f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
