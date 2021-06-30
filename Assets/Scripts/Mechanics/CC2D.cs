@@ -6,7 +6,6 @@ public class CC2D : MonoBehaviour
 {
     private Rigidbody rBody;
 
-    private float oldInputX = 0f;
     private float inputX, inputY;
     public float moveSpeed = 10;
     public float maxVelocity;
@@ -21,18 +20,25 @@ public class CC2D : MonoBehaviour
     private float maxJumpTime;
     private float elapsedJumpTime;
     private float jumpVelocity, bottleJumpVelocity;
+    public float maxCloudTime = 3;
+    private float elapsedCloudTime;
     private bool bottlingEnabled;
     private bool isGrounded;
-    public bool isJumping, onLadder, isGrabbing;
+    public bool isJumping, onLadder, isGrabbing, isShielded, isCloud;
     private bool isBottling;
     private bool isOpposingDirection;
     private Vector3 windForce;
     private Vector3 totalWindForce;
     public float windForceJumpReduction;
 
+
     private Vector3 yVel;
     private Vector3 totalMove;
     //private Vector3 playerVelocity;
+
+    public GameObject shield;
+    public GameObject bodyMesh;
+    public GameObject cloudMesh;
 
     public AnimationClip windIdleClip, windWalkClip, idleClip, runningClip;
     private AnimatorOverrideController windAnimatorController;
@@ -48,6 +54,7 @@ public class CC2D : MonoBehaviour
         move = Vector3.zero;
         yVel = Vector3.zero;
 
+        isShielded = false;
         isGrounded = false;
         bottlingEnabled = true;
 
@@ -82,9 +89,13 @@ public class CC2D : MonoBehaviour
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && (isGrounded || onLadder))
         {
-            elapsedJumpTime = 0;
             isJumping = true;
             isGrounded = onLadder = isGrabbing = false;
+
+            if (isShielded)
+                elapsedJumpTime = maxJumpTime - 0.1f;
+            else
+                elapsedJumpTime = 0;
         }
         if (Input.GetButtonUp("Jump"))
         {
@@ -94,16 +105,33 @@ public class CC2D : MonoBehaviour
         }
         if (Input.GetButtonDown("Crouch"))
         {
-            if (bottlingEnabled)
+            if (bottlingEnabled && !isShielded)
             {
                 isBottling = true;
                 bottlingEnabled = false;
             }
         }
+        if (Input.GetButtonDown("Shield") && !isCloud)
+        {
+            isShielded = !isShielded;
+            shield.SetActive(!shield.active);
+            if (isShielded)
+                moveSpeed = moveSpeed / 2;
+            else
+                moveSpeed = moveSpeed * 2;
+        }
+        if (Input.GetButtonDown("Cloud") && !isShielded)
+        {
+            isCloud = true;
+            elapsedCloudTime = 0;
+            bodyMesh.SetActive(false);
+            cloudMesh.SetActive(true);
+            this.GetComponent<CapsuleCollider>().height = 1f;
+        }
 
-        //Gestione rotazione
-        
-        
+            //Gestione rotazione
+
+
         if (inputX < 0f)
         {
             this.transform.forward = Vector3.left;
@@ -113,8 +141,6 @@ public class CC2D : MonoBehaviour
             this.transform.forward = Vector3.right;
         }  
 
-        oldInputX = inputX;
-
     }
 
     private void FixedUpdate()
@@ -122,54 +148,73 @@ public class CC2D : MonoBehaviour
         //reset velocità a 0
         rBody.velocity = Vector3.zero;
 
-        //controllo gravità
-        if (!isGrounded && !isGrabbing) yVel += Physics.gravity * Time.fixedDeltaTime;
-        else yVel = new Vector3(0, 0, 0);
+        if (!isCloud) {
 
-        //spostamento orizzontale
-        move.x = inputX;
+            //controllo gravità
+            if (!isGrounded && !isGrabbing) yVel += Physics.gravity * Time.fixedDeltaTime;
+            else yVel = new Vector3(0, 0, 0);
 
-        //jump
+            //spostamento orizzontale
+            move.x = inputX;
 
-        //controllo se sforo tempo salto
-        if (elapsedJumpTime > maxJumpTime)
-            isJumping = false;
+            //jump
 
-        if (isJumping)
-        {
-            elapsedJumpTime += Time.fixedDeltaTime;
-            Vector3 jumpMove = new Vector3(0, jumpVelocity, 0);
-            yVel = jumpMove;
+            //controllo se sforo tempo salto
+            if (elapsedJumpTime > maxJumpTime)
+                isJumping = false;
+
+            if (isJumping)
+            {
+                elapsedJumpTime += Time.fixedDeltaTime;
+                Vector3 jumpMove = new Vector3(0, jumpVelocity, 0);
+                yVel = jumpMove;
+            }
+
+            if (isBottling)
+            {
+                isGrounded = false;
+                isJumping = false;
+                yVel = new Vector3(0, bottleJumpVelocity, 0);
+                isBottling = false;
+            }
+
+            //GROUND CHECK
+            else if (Physics.CheckSphere(groundCheck.transform.position, 0.1f, groundMask))
+            {
+                isGrounded = true;
+                anim.SetBool("isGrounded", true);
+                bottlingEnabled = true;
+            }
+            else
+            {
+                isGrounded = false;
+                anim.SetBool("isGrounded", false);
+            }
         }
-
-        if (isBottling)
+        else //if isCloud
         {
-            isGrounded = false;
-            isJumping = false;
-            yVel = new Vector3(0, bottleJumpVelocity, 0);
-            isBottling = false;
-        }
+            yVel = Vector3.zero;
+            move = Vector3.zero;
 
-        //GROUND CHECK
-        else if (Physics.CheckSphere(groundCheck.transform.position, 0.1f, groundMask))
-        {
-            isGrounded = true;
-            anim.SetBool("isGrounded", true);
-            bottlingEnabled = true;
+            if(elapsedCloudTime > maxCloudTime)
+            {
+                bodyMesh.SetActive(true);
+                cloudMesh.SetActive(false);
+                this.GetComponent<CapsuleCollider>().height = 2.75f;
+                isCloud = false;
+            }
+            else 
+                elapsedCloudTime += Time.fixedDeltaTime;
         }
-        else
-        {
-            isGrounded = false;
-            anim.SetBool("isGrounded", false);
-        }
-
-        oldInputX = inputX;
 
         //calcolo forza vento applicata
         if (!isJumping)
             totalWindForce = windForce;
         else
             totalWindForce = windForce / windForceJumpReduction;
+
+        if (isCloud)
+            totalWindForce = windForce * 2.5f;
 
         if (onLadder && isGrabbing)
         {

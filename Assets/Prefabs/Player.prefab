@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2405249793791140679}
   - component: {fileID: 2405249793791140678}
+  - component: {fileID: 5422898072489797859}
   - component: {fileID: 2405249793791140677}
   - component: {fileID: 2405249793791140676}
   - component: {fileID: 2405249793791140675}
@@ -689,6 +690,19 @@ CapsuleCollider:
   m_Height: 2.75
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &5422898072489797859
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405249793791140673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2405249793791140677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -729,7 +743,9 @@ MonoBehaviour:
   isJumping: 0
   onLadder: 0
   isGrabbing: 0
+  isShielded: 0
   windForceJumpReduction: 1
+  shield: {fileID: 0}
   windIdleClip: {fileID: -203655887218126122, guid: eafe1b3bdc7eb7d4f894d0a4de244179,
     type: 3}
   windWalkClip: {fileID: -203655887218126122, guid: 78b5bbd8b2763274e957eb4e50e38e9e,
@@ -754,6 +770,7 @@ MonoBehaviour:
   dashSpeed: 1.5
   rotationSpeed: 0.25
   dashTime: 0
+  weapon: {fileID: 0}
 --- !u!114 &2320969102865504879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07198ca8c8f22e64b82a9e47ea670411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_hp: 6
   hp: 0
   saved_hp: 0
   checkPoint: {fileID: 0}
