@@ -9253,8 +9253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91855d0e96d915544b3df8444672fa61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag_3d: 3d_object
+  tag_2d: 2d_object
   camera: {fileID: 1663261124}
   player: {fileID: 988663484}
+  gear3D: {fileID: 0}
+  gear2D: {fileID: 0}
   dimChange: 1
 --- !u!4 &1704541184
 Transform:

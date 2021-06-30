@@ -20,7 +20,7 @@ public class CC2D : MonoBehaviour
     private float maxJumpTime;
     private float elapsedJumpTime;
     private float jumpVelocity, bottleJumpVelocity;
-    public float maxCloudTime = 3;
+    public float maxCloudTime;
     private float elapsedCloudTime;
     private bool bottlingEnabled;
     private bool isGrounded;
