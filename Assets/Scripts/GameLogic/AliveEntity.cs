@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class AliveEntity : MonoBehaviour
 {
-    public int max_hp { protected set; get; }
-    public int hp;
+    public int max_hp;
+    public int hp { protected set; get; }
 
     protected Rigidbody rBody;
 
-    public void HPsum(int sum)
-    {
-        hp += sum;
-    }
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         hp = max_hp;
     }
 
-    // Update is called once per frame
-    void Update()
+    virtual public void HPsum(int sum)
     {
-        
+        hp += sum;
     }
 }

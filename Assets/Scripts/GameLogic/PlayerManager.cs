@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class PlayerManager : AliveEntity
 {
-    public int saved_hp;
-
     public GameObject checkPoint;
+    public GameObject fountainCheckPoint;
     private CC2D controller2d;
     private CC3D controller3d;
-
-    public void Respawn()
-    {
-        rBody.position = checkPoint.transform.position;
-        rBody.rotation = checkPoint.transform.rotation;
-
-        hp = saved_hp;
-
-        controller2d.Reset();
-    }
+    private HealthBar healthBar;
 
     void Start()
     {
+        hp = max_hp;
+        healthBar = GameObject.FindObjectOfType<HealthBar>();
+        controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
         rBody = this.GetComponent<Rigidbody>();
     }
@@ -31,13 +24,34 @@ public class PlayerManager : AliveEntity
         if (hp <= 0)
         {
             //DEBUG
-            Debug.Log("HAI PERSO STRONZO");
-            
-            this.Respawn();
+            Debug.Log("YOU DIED");
+            this.FountainRespawn();
         }
     }
-    public void SaveHP()
+
+    override public void HPsum(int sum)
     {
-        saved_hp = hp;
+        hp += sum;
+        healthBar.SetHP(hp);
+    }
+
+    public void Respawn()
+    {
+        rBody.position = checkPoint.transform.position;
+        rBody.rotation = checkPoint.transform.rotation;
+
+        controller2d.Reset();
+    }
+
+    public void FountainRespawn()
+    {
+        /* 
+        rBody.position = fountainCheckPoint.transform.position;
+        rBody.rotation = fountainCheckPoint.transform.rotation;
+
+        hp = saved_hp;
+        healthBar.SetHP(hp);
+
+        controller2d.Reset(); */
     }
 }

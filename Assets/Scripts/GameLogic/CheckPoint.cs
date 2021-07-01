@@ -18,7 +18,6 @@ public class CheckPoint : MonoBehaviour
         if (other.gameObject == player)
         {
             playerManager.checkPoint = this.gameObject;
-            playerManager.SaveHP();
         }
     }
 }

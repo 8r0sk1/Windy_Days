@@ -27,5 +27,11 @@ public class WeaponHitBox : MonoBehaviour
             //DEBUG
             Debug.Log("Hitted " + other);
         }
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerManager>().HPsum(-weapon.damage);
+            //DEBUG
+            Debug.Log("Hitted " + other);
+        }
     }
 }

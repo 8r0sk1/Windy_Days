@@ -63,9 +63,6 @@ public class CC2D : MonoBehaviour
 
         windAnimatorController = new AnimatorOverrideController(anim.runtimeAnimatorController);
 
-        rBody.freezeRotation = false;
-        rBody.constraints = RigidbodyConstraints.FreezePositionZ;
-
         //calcolo massimo tempo di jump
         jumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * minJumpHeight);
         bottleJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * bottleJumpHeight);

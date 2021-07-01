@@ -7,6 +7,7 @@ public class EnemyManager : AliveEntity
     // Start is called before the first frame update
     void Start()
     {
+        hp = max_hp;
     }
 
     // Update is called once per frame

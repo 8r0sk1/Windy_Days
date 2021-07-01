@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DeadPoint : MonoBehaviour
 {
-    public bool deadly;
+    public bool isPitfall;
     public int hp_loss;
     public float hurtTime = 1, elapsedTime;
 
@@ -22,14 +22,14 @@ public class DeadPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
-            if (deadly) {
-                playerManager.HPsum(-playerManager.max_hp);
-            }
-            else{
-                playerManager.HPsum(-hp_loss);
-                elapsedTime = 0f;
-            }
+        if (other.gameObject == player) {
+
+            playerManager.HPsum(-hp_loss);
+            elapsedTime = 0f;
+
+            if (isPitfall)
+                playerManager.Respawn();
+        }
     }
 
     private void OnTriggerStay(Collider other)

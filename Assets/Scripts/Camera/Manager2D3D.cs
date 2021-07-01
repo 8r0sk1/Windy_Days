@@ -59,8 +59,7 @@ public class Manager2D3D : MonoBehaviour
 
         //RigidBody setup
         //Blocco rotazione su X e Z, blocco posizione su Z
-        rbody.constraints = RigidbodyConstraints.FreezePositionZ;
-        rbody.freezeRotation = true;
+        rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
 
         //Camera setup
         followPlayer3D_script.enabled = false;
@@ -123,7 +122,6 @@ public class Manager2D3D : MonoBehaviour
 
                 //Blocco rotazione su X e Z, blocco posizione su Z
                 rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
-                rbody.freezeRotation = enabled;
 
                 //Camera setup
                 followPlayer3D_script.enabled = false;
@@ -146,7 +144,6 @@ public class Manager2D3D : MonoBehaviour
 
                 //RigidBody setup
                 rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-                rbody.freezeRotation = enabled;
 
                 //Camera setup
                 followPlayer2D_script.enabled = false;
