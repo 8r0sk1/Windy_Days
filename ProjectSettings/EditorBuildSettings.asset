@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Pitch_demo.unity
+    guid: 877913b441affdf45a7acb5188a56ae8
+  - enabled: 1
+    path: Assets/Scenes/TD_1_SmallCave.unity
+    guid: f2ba4e206e99c5349977bf5809667be1
+  - enabled: 1
+    path: Assets/Scenes/TD_2_Fountain_Room_1.unity
+    guid: 2d039c9e67fab1d40911699969f66cbe
+  - enabled: 1
+    path: Assets/Scenes/TD_3_ColumnsRoom.unity
+    guid: a1227437d1d22554290aaff1e1dadc0d
+  - enabled: 1
+    path: Assets/Scenes/TD_4_BossRoom.unity
+    guid: d7ca6b9603553d349986537d65b95375
+  - enabled: 1
+    path: Assets/Scenes/TD_5_AmuletRoom.unity
+    guid: b9eb9c961fe5c2844b5aad3eeb1c4f44
   m_configObjects: {}
