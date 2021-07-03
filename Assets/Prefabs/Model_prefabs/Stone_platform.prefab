@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4352224995904625251}
   - component: {fileID: 849471715774272966}
   - component: {fileID: 3183228341723816204}
+  - component: {fileID: -8049075242239815160}
   m_Layer: 0
   m_Name: Stone_platform
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &-8049075242239815160
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976086107028242649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04302133, y: 0.027044954, z: 0.0064604864}
+  m_Center: {x: -0.0011120318, y: 0.0006144274, z: 0.0030085475}
