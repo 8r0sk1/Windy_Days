@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class Manager2D3D : MonoBehaviour
 {
+    public Transform[] entryPoints = new Transform[3];
+
     public static Manager2D3D instance;
 
     public string tag_3d = "3d_object";
@@ -34,6 +37,10 @@ public class Manager2D3D : MonoBehaviour
     void Start()
     {
         instance = this;
+
+        //Position player
+        player.transform.position = entryPoints[GameData.entryPoint].position;
+        player.transform.rotation = entryPoints[GameData.entryPoint].rotation;
 
         //Get obj components
 

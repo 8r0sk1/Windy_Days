@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GameLib;
 
 public class HealthBar : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class HealthBar : MonoBehaviour
         playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         slider = this.GetComponent<Slider>();
 
-        slider.maxValue = playerManager.max_hp;
+        slider.maxValue = GameData.hp_max;
+        slider.value = GameData.hp;
     }
 
     public void SetHP(int current_hp)

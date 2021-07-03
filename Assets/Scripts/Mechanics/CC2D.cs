@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class CC2D : MonoBehaviour
 {
+    private PlayerManager playerManager;
     private Rigidbody rBody;
 
     private float inputX, inputY;
@@ -31,7 +33,6 @@ public class CC2D : MonoBehaviour
     private Vector3 totalWindForce;
     public float windForceJumpReduction;
 
-
     private Vector3 yVel;
     private Vector3 totalMove;
     //private Vector3 playerVelocity;
@@ -58,6 +59,7 @@ public class CC2D : MonoBehaviour
         isGrounded = false;
         bottlingEnabled = true;
 
+        playerManager = this.GetComponent<PlayerManager>();
         rBody = this.GetComponent<Rigidbody>();
         anim = this.GetComponentInChildren<Animator>();
 
@@ -100,7 +102,7 @@ public class CC2D : MonoBehaviour
             if (isGrabbing)
                 isGrabbing = false;
         }
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && playerManager.objFlags[(int)playerObj.bottle])
         {
             if (bottlingEnabled && !isShielded)
             {
@@ -108,7 +110,7 @@ public class CC2D : MonoBehaviour
                 bottlingEnabled = false;
             }
         }
-        if (Input.GetButtonDown("Shield") && !isCloud)
+        if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
             isShielded = !isShielded;
             shield.SetActive(!shield.active);
@@ -117,7 +119,7 @@ public class CC2D : MonoBehaviour
             else
                 moveSpeed = moveSpeed * 2;
         }
-        if (Input.GetButtonDown("Cloud") && !isShielded)
+        if (Input.GetButtonDown("Cloud") && !isShielded && playerManager.objFlags[(int)playerObj.necklace])
         {
             isCloud = true;
             elapsedCloudTime = 0;

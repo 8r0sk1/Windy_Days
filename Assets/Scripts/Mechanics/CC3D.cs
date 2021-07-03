@@ -9,7 +9,7 @@ namespace GameLib
 }
 public class CC3D : MonoBehaviour
 {
-
+    private PlayerManager playerManager;
     private Rigidbody rBody;
 
     public float movementSpeed = 5f, dashSpeed = 7.5f, rotationSpeed = 0.125f;
@@ -26,6 +26,7 @@ public class CC3D : MonoBehaviour
 
     void Start()
     {
+        playerManager = this.GetComponent<PlayerManager>();
         rBody = this.GetComponent<Rigidbody>();
         anim = this.GetComponentInChildren<Animator>();
 
@@ -83,7 +84,7 @@ public class CC3D : MonoBehaviour
             anim.SetTrigger("attack2");
             isAttacking = true;
         }
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && playerManager.objFlags[(int)playerObj.bottle])
         {
             if (bottlingEnabled)
             {
@@ -157,4 +158,5 @@ public class CC3D : MonoBehaviour
     {
         anim.SetFloat("animSpeed", arg);
     }
+
 }

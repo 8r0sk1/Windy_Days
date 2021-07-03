@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class PlayerManager : AliveEntity
 {
@@ -10,9 +11,13 @@ public class PlayerManager : AliveEntity
     private CC3D controller3d;
     private HealthBar healthBar;
 
+    public bool[] objFlags = new bool[3]; //flag per oggetti sbloccabili
+
     void Start()
     {
-        hp = max_hp;
+        objFlags = GameData.objFlags;
+        max_hp = GameData.hp_max;
+        hp = GameData.hp;
         healthBar = GameObject.FindObjectOfType<HealthBar>();
         controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
@@ -53,5 +58,12 @@ public class PlayerManager : AliveEntity
         healthBar.SetHP(hp);
 
         controller2d.Reset(); */
+    }
+
+    public void OnDestroy()
+    {
+        //aggiorno tutti i dati da mantenere tra le scene
+        GameData.objFlags = objFlags;
+        GameData.hp = hp;
     }
 }
