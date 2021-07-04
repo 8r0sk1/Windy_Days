@@ -5,6 +5,7 @@ using GameLib;
 
 public class PlayerManager : AliveEntity
 {
+    public bool debugMode;
     public GameObject checkPoint;
     public GameObject fountainCheckPoint;
     private CC2D controller2d;
@@ -15,7 +16,12 @@ public class PlayerManager : AliveEntity
 
     void Start()
     {
-        objFlags = GameData.objFlags;
+        if (debugMode)
+            for (int i = 0; i < objFlags.Length; i++)
+                objFlags[i] = true;
+        else
+            objFlags = GameData.objFlags;
+
         max_hp = GameData.hp_max;
         hp = GameData.hp;
         healthBar = GameObject.FindObjectOfType<HealthBar>();

@@ -5,7 +5,7 @@ using GameLib;
 
 namespace GameLib
 {
-    public enum attack_type { slash1, slash2 };
+    public enum attack_type { slash1, slash2, special};
 }
 public class CC3D : MonoBehaviour
 {
@@ -16,13 +16,18 @@ public class CC3D : MonoBehaviour
     private float InputX, InputZ;
     private bool isDashing = false;
     private bool isAttacking = false;
+    private bool isCloud = false;
+    private bool isParrying = false;
     private Vector2 speedVector;
     private Animator anim;
     public float dashTime;
+    public float maxCloudTime;
     private bool isBottling;
     private bool bottlingEnabled;
-    public MeleeWeapon weapon;
+    public MeleeWeapon weapon, shield;
     private attack_type attack;
+    public GameObject bodyMesh, cloudMesh;
+    private float elapsedCloudTime;
 
     void Start()
     {
@@ -34,35 +39,19 @@ public class CC3D : MonoBehaviour
         bottlingEnabled = true;
     }
 
-    public void DashEvent(int arg)
-    {
-        isDashing = (arg == 0) ? false : true;
-
-        //DEBUG
-        Debug.Log(isDashing);
-    }
-
-    public void AttackEvent(int arg)
-    {
-        isAttacking = (arg == 0) ? false : true;
-
-        //DEBUG
-        Debug.Log(isAttacking);
-    }
-
     void Update()
     {
         InputX = Input.GetAxis("Horizontal");
         InputZ = Input.GetAxis("Vertical");
         speedVector = new Vector2(InputX, InputZ);
-        if (speedVector.magnitude > 0.1) 
-                anim.SetBool("isRunning", true);
-        else 
-                anim.SetBool("isRunning", false);
-        anim.SetFloat("runSpeed", Mathf.Max(Mathf.Abs(speedVector.x),Mathf.Abs(speedVector.y)));
+        if (speedVector.magnitude > 0.1)
+            anim.SetBool("isRunning", true);
+        else
+            anim.SetBool("isRunning", false);
+        anim.SetFloat("runSpeed", Mathf.Max(Mathf.Abs(speedVector.x), Mathf.Abs(speedVector.y)));
         anim.SetFloat("dashSpeed", dashSpeed);
 
-        if (Input.GetButtonDown("Jump") && !isDashing)
+        if (Input.GetButtonDown("Jump") && !isDashing && !isCloud && !isParrying)
         {
             //dashElapsedTime = 0f;
             //toDash = true;
@@ -71,7 +60,7 @@ public class CC3D : MonoBehaviour
             anim.SetTrigger("toDash");
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") )
         {
             attack = attack_type.slash1;
             anim.SetTrigger("attack1");
@@ -91,6 +80,37 @@ public class CC3D : MonoBehaviour
                 isBottling = true;
                 bottlingEnabled = false;
             }
+        }
+
+        if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
+        {
+            anim.SetTrigger("parry");
+        }
+
+        if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace])
+        {
+            isCloud = true;
+            elapsedCloudTime = 0;
+            bodyMesh.SetActive(false);
+            this.GetComponent<CapsuleCollider>().enabled = false;
+            this.GetComponent<Rigidbody>().useGravity = false;
+            cloudMesh.SetActive(true);
+            cloudMesh.GetComponentInChildren<MeleeWeapon>().EnableHitbox(attack_type.special);
+        }
+
+        if (isCloud)
+        {
+            if (elapsedCloudTime > maxCloudTime)
+            {
+                isCloud = false;
+                bodyMesh.SetActive(true);
+                this.GetComponent<CapsuleCollider>().enabled = true;
+                this.GetComponent<Rigidbody>().useGravity = true;
+                cloudMesh.SetActive(false);
+                cloudMesh.GetComponentInChildren<MeleeWeapon>().DisableHitbox();
+            }
+            else
+                elapsedCloudTime += Time.deltaTime;
         }
 
         if (isDashing)
@@ -134,7 +154,7 @@ public class CC3D : MonoBehaviour
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
         
         //controllo move
-        if(!isDashing && !isAttacking)
+        if(!isDashing && !isAttacking && !isParrying)
         {
             float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
             rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);
@@ -154,9 +174,38 @@ public class CC3D : MonoBehaviour
         weapon.DisableHitbox();
     }
 
+    public void EnableShieldHitbox()
+    {
+        shield.EnableHitbox(attack);
+    }
+
+    public void DisableShieldHitbox()
+    {
+        shield.DisableHitbox();
+    }
+
     public void AnimSpeedChange(float arg)
     {
         anim.SetFloat("animSpeed", arg);
     }
 
+    public void DashEvent(int arg)
+    {
+        isDashing = (arg == 0) ? false : true;
+
+        //DEBUG
+        Debug.Log(isDashing);
+    }
+
+    public void AttackEvent(int arg)
+    {
+        isAttacking = (arg == 0) ? false : true;
+
+        //DEBUG
+        Debug.Log(isAttacking);
+    }
+
+    public void ParryEvent(int arg) { 
+        isParrying = (arg == 0) ? false : true;
+    }
 }

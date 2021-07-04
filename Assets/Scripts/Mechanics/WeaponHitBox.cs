@@ -12,12 +12,6 @@ public class WeaponHitBox : MonoBehaviour
         weapon = this.GetComponentInParent<MeleeWeapon>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
