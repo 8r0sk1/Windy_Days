@@ -26,7 +26,7 @@ public class CC3D : MonoBehaviour
     private bool bottlingEnabled;
     public MeleeWeapon weapon, shield;
     private attack_type attack;
-    public GameObject bodyMesh, cloudMesh;
+    //public GameObject bodyMesh, cloudMesh;
     private float elapsedCloudTime;
 
     void Start()
@@ -91,11 +91,11 @@ public class CC3D : MonoBehaviour
         {
             isCloud = true;
             elapsedCloudTime = 0;
-            bodyMesh.SetActive(false);
+            playerManager.bodyMesh.SetActive(false);
             this.GetComponent<CapsuleCollider>().enabled = false;
             this.GetComponent<Rigidbody>().useGravity = false;
-            cloudMesh.SetActive(true);
-            cloudMesh.GetComponentInChildren<MeleeWeapon>().EnableHitbox(attack_type.special);
+            playerManager.cloud.SetActive(true);
+            playerManager.cloud.GetComponentInChildren<MeleeWeapon>().EnableHitbox(attack_type.special);
         }
 
         if (isCloud)
@@ -103,11 +103,11 @@ public class CC3D : MonoBehaviour
             if (elapsedCloudTime > maxCloudTime)
             {
                 isCloud = false;
-                bodyMesh.SetActive(true);
+                playerManager.bodyMesh.SetActive(true);
                 this.GetComponent<CapsuleCollider>().enabled = true;
                 this.GetComponent<Rigidbody>().useGravity = true;
-                cloudMesh.SetActive(false);
-                cloudMesh.GetComponentInChildren<MeleeWeapon>().DisableHitbox();
+                playerManager.cloud.SetActive(false);
+                playerManager.cloud.GetComponentInChildren<MeleeWeapon>().DisableHitbox();
             }
             else
                 elapsedCloudTime += Time.deltaTime;

@@ -8,6 +8,11 @@ public class FollowPlayer3D : MonoBehaviour
 	public float smoothSpeed = 0.125f;
 	public Vector3 offset, targetOffset;
 
+	private void Awake()
+	{
+		target = GameObject.FindGameObjectWithTag("Player").transform;
+	}
+
 	private void OnEnable()
 	{
 		Vector3 desiredPosition = target.position + offset;

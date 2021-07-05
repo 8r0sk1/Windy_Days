@@ -23,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TD_5_AmuletRoom.unity
     guid: b9eb9c961fe5c2844b5aad3eeb1c4f44
+  - enabled: 1
+    path: Assets/Scenes/LR_1_Beginning.unity
+    guid: 7faec71c0548911489ec82bef2b78236
+  - enabled: 1
+    path: Assets/Scenes/LR_2.unity
+    guid: 699a3bc76805b6f48a40f5c8bca51aad
+  - enabled: 1
+    path: Assets/Scenes/LR_3.unity
+    guid: 8f88b9d12ba01834e9ab7ddddc538954
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

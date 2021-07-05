@@ -8,11 +8,6 @@ public abstract class Interactable : MonoBehaviour
 
     abstract public void Interact();
 
-    private void Start()
-    {
-        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

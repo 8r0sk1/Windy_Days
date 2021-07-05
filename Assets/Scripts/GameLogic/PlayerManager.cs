@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using GameLib;
 
 public class PlayerManager : AliveEntity
 {
     public bool debugMode;
-    public GameObject checkPoint;
-    public GameObject fountainCheckPoint;
+
+    public Transform checkPoint;
+
     private CC2D controller2d;
     private CC3D controller3d;
     private HealthBar healthBar;
+
+    public GameObject shield;
+    public GameObject bodyMesh;
+    public GameObject cloud;
+    public GameObject necklace;
+    public GameObject bottle;
 
     public bool[] objFlags = new bool[3]; //flag per oggetti sbloccabili
 
@@ -22,12 +30,32 @@ public class PlayerManager : AliveEntity
         else
             objFlags = GameData.objFlags;
 
-        max_hp = GameData.hp_max;
-        hp = GameData.hp;
+        //FOUNTAIN RESPAWN
+        if (GameData.haveToFountainRespawn)
+        {
+            this.gameObject.transform.position = GameData.fountainCheckpoint.position;
+            this.gameObject.transform.rotation = GameData.fountainCheckpoint.rotation;
+            GameData.haveToFountainRespawn = false;
+
+            hp = max_hp;
+            healthBar.SetHP(hp);
+        }
+        else
+        {
+            max_hp = GameData.hp_max;
+            hp = GameData.hp;
+        }
+
         healthBar = GameObject.FindObjectOfType<HealthBar>();
         controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
         rBody = this.GetComponent<Rigidbody>();
+
+        for(int i = 0; i < objFlags.Length; i++)
+        {
+            if (objFlags[i])
+                Wear((playerObj)i);
+        }
     }
 
     void Update()
@@ -56,20 +84,37 @@ public class PlayerManager : AliveEntity
 
     public void FountainRespawn()
     {
-        /* 
-        rBody.position = fountainCheckPoint.transform.position;
-        rBody.rotation = fountainCheckPoint.transform.rotation;
+        if(controller2d.isActiveAndEnabled)
+            controller2d.Reset();
 
-        hp = saved_hp;
-        healthBar.SetHP(hp);
+        GameData.entryPoint = 0; //reset dell'entry point
+        GameData.haveToFountainRespawn = true;
+        SceneManager.LoadScene(GameData.fountainCheckpointSceneIndex,LoadSceneMode.Single);
+    }
 
-        controller2d.Reset(); */
+    public void Wear(playerObj obj)
+    {
+        switch (obj)
+        {
+            case playerObj.bottle:
+                bottle.SetActive(true);
+                break;
+            case playerObj.shield:
+                shield.SetActive(true);
+                break;
+            case playerObj.necklace:
+                necklace.SetActive(true);
+                break;
+        }
     }
 
     public void OnDestroy()
     {
         //aggiorno tutti i dati da mantenere tra le scene
-        GameData.objFlags = objFlags;
-        GameData.hp = hp;
+        if (!GameData.haveToFountainRespawn)
+        {
+            GameData.objFlags = objFlags;
+            GameData.hp = hp;
+        }
     }
 }

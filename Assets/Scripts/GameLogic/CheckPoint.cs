@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using GameLib;
 
 public class CheckPoint : MonoBehaviour
 {
     GameObject player;
     PlayerManager playerManager;
+    public bool isFountainCheckpoint;
 
     void Start()
     {
@@ -17,7 +20,16 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            playerManager.checkPoint = this.gameObject;
+            if (!isFountainCheckpoint)
+                playerManager.checkPoint = this.transform;
+            else
+            {
+                //DEBUG
+                Debug.Log("Current scene index : " + SceneManager.GetActiveScene().buildIndex);
+
+                GameData.fountainCheckpointSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                GameData.fountainCheckpoint = player.transform;
+            }
         }
     }
 }

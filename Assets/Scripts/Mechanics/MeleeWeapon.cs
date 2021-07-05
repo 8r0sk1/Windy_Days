@@ -28,6 +28,12 @@ public class MeleeWeapon : MonoBehaviour
         hitBox.SetActive(true);
     }
 
+    public void EnableHitbox()
+    {
+        damage = damageA;
+        hitBox.SetActive(true);
+    }
+
     public void DisableHitbox()
     {
         hitBox.SetActive(false);

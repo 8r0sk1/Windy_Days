@@ -37,9 +37,11 @@ public class CC2D : MonoBehaviour
     private Vector3 totalMove;
     //private Vector3 playerVelocity;
 
+    /*
     public GameObject shield;
     public GameObject bodyMesh;
     public GameObject cloudMesh;
+    */
 
     public AnimationClip windIdleClip, windWalkClip, idleClip, runningClip;
     private AnimatorOverrideController windAnimatorController;
@@ -113,7 +115,6 @@ public class CC2D : MonoBehaviour
         if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
             isShielded = !isShielded;
-            shield.SetActive(!shield.active);
             if (isShielded)
                 moveSpeed = moveSpeed / 2;
             else
@@ -123,8 +124,8 @@ public class CC2D : MonoBehaviour
         {
             isCloud = true;
             elapsedCloudTime = 0;
-            bodyMesh.SetActive(false);
-            cloudMesh.SetActive(true);
+            playerManager.bodyMesh.SetActive(false);
+            playerManager.cloud.SetActive(true);
             this.GetComponent<CapsuleCollider>().height = 1f;
         }
 
@@ -197,8 +198,8 @@ public class CC2D : MonoBehaviour
 
             if(elapsedCloudTime > maxCloudTime)
             {
-                bodyMesh.SetActive(true);
-                cloudMesh.SetActive(false);
+                playerManager.bodyMesh.SetActive(true);
+                playerManager.cloud.SetActive(false);
                 this.GetComponent<CapsuleCollider>().height = 2.75f;
                 isCloud = false;
             }

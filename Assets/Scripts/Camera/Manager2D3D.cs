@@ -35,7 +35,11 @@ public class Manager2D3D : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        player = GameObject.FindGameObjectWithTag("Player");
+        gear3D = GameObject.FindGameObjectWithTag("3d_object");
+        gear2D = GameObject.FindGameObjectWithTag("2d_object");
+
         instance = this;
 
         //Position player
