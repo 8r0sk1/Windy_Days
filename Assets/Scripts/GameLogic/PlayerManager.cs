@@ -22,6 +22,8 @@ public class PlayerManager : AliveEntity
 
     public bool[] objFlags = new bool[3]; //flag per oggetti sbloccabili
 
+    private bool isInvincible = false;
+
     void Start()
     {
         if (debugMode)
@@ -68,10 +70,18 @@ public class PlayerManager : AliveEntity
         }
     }
 
+    public void SetInvincible(int flag)
+    {
+        isInvincible = flag != 0 ? true : false;
+    }
+
     override public void HPsum(int sum)
     {
-        hp += sum;
-        healthBar.SetHP(hp);
+        if (!isInvincible)
+        {
+            hp += sum;
+            healthBar.SetHP(hp);
+        }
     }
 
     public void Respawn()

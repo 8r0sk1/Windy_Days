@@ -115,7 +115,7 @@ public class CC3D : MonoBehaviour
 
         if (isDashing)
         {
-            if (weapon.hitBox.active) DisableWeaponHitbox();
+            if (weapon.hitBox.active) DisableWeaponHitbox(); //???
         }
     }
 

@@ -80,6 +80,22 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.5217391
+        functionName: SetInvincible
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 07198ca8c8f22e64b82a9e47ea670411,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: SetInvincible
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 07198ca8c8f22e64b82a9e47ea670411,
+          type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

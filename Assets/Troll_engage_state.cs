@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Engage_state : StateMachineBehaviour
+public class Troll_engage_state : StateMachineBehaviour
 {
-    private Robot_SearchMechanic robot_sight_script;
+    private Troll_search_mechanic troll_search_script;
     private Rigidbody body;
     public float rotSpeed = 30;
     public float moveSpeed = 1;
@@ -16,19 +16,27 @@ public class Engage_state : StateMachineBehaviour
         Debug.Log("Entered in " + this.name);
 
         body = animator.GetComponent<Rigidbody>();
-        robot_sight_script = animator.GetComponentInChildren<Robot_SearchMechanic>();
-
+        troll_search_script = animator.GetComponentInChildren<Troll_search_mechanic>();
+        animator.GetComponent<MeleeWeapon>().hitBox.SetActive(false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("isOutOfRange", robot_sight_script.isOutOfRange);
+        animator.SetBool("isOutOfRange", troll_search_script.isOutOfRange);
 
         //Rotate towards the player
-        Vector3 targetDirection = (robot_sight_script.player.transform.position - animator.transform.position);
+        Vector3 targetDirection = (troll_search_script.player.transform.position - animator.transform.position);
         targetDirection = new Vector3(targetDirection.x, 0, targetDirection.z).normalized;
+        
+        //DEBUG
+        //Debug.Log("targetDir: " + targetDirection);
+
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+
+        //DEBUG
+        //Debug.Log("targetRotation: " + targetRotation);
+
         body.MoveRotation(Quaternion.RotateTowards(body.rotation, targetRotation, Time.deltaTime * rotSpeed));
 
         //Move towards the player
