@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 61121dd766160ef4c89e65af8a035844
+=======
+<<<<<<< HEAD:Assets/Prefabs/Troll.prefab.meta
+guid: a4d402fb33ea25046b178c15c5ee08af
+>>>>>>> bbae58420be29b4401ce4627f47c9d4ab7d888b6
 PrefabImporter:
   externalObjects: {}
   userData: 
