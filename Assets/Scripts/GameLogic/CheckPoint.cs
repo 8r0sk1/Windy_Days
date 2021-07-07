@@ -28,7 +28,8 @@ public class CheckPoint : MonoBehaviour
                 Debug.Log("Current scene index : " + SceneManager.GetActiveScene().buildIndex);
 
                 GameData.fountainCheckpointSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                GameData.fountainCheckpoint = player.transform;
+                GameData.fountainCheckpointPosition = player.transform.position;
+                GameData.fountainCheckpointRotation = player.transform.rotation;
             }
         }
     }

@@ -35,22 +35,6 @@ public class PlayerManager : AliveEntity
         else
             objFlags = GameData.objFlags;
 
-        //FOUNTAIN RESPAWN
-        if (GameData.haveToFountainRespawn)
-        {
-            this.gameObject.transform.position = GameData.fountainCheckpoint.position;
-            this.gameObject.transform.rotation = GameData.fountainCheckpoint.rotation;
-            GameData.haveToFountainRespawn = false;
-
-            hp = max_hp;
-            healthBar.SetHP(hp);
-        }
-        else
-        {
-            max_hp = GameData.hp_max;
-            hp = GameData.hp;
-        }
-
         healthBar = GameObject.FindObjectOfType<HealthBar>();
         controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
@@ -60,6 +44,23 @@ public class PlayerManager : AliveEntity
         {
             if (objFlags[i])
                 Wear((playerObj)i);
+        }
+
+        max_hp = GameData.hp_max;
+
+        //FOUNTAIN RESPAWN
+        if (GameData.haveToFountainRespawn)
+        {
+            this.gameObject.transform.position = GameData.fountainCheckpointPosition;
+            this.gameObject.transform.rotation = GameData.fountainCheckpointRotation;
+            GameData.haveToFountainRespawn = false;
+
+            hp = max_hp;
+            healthBar.SetHP(hp);
+        }
+        else
+        {
+            hp = GameData.hp;
         }
     }
 
@@ -107,8 +108,11 @@ public class PlayerManager : AliveEntity
 
     public void Respawn()
     {
-        rBody.position = checkPoint.transform.position;
-        rBody.rotation = checkPoint.transform.rotation;
+        if (!GameData.haveToFountainRespawn)
+        {
+            rBody.position = checkPoint.transform.position;
+            rBody.rotation = checkPoint.transform.rotation;
+        }
 
         controller2d.Reset();
     }

@@ -11,7 +11,8 @@ namespace GameLib
 
         public static bool haveToFountainRespawn;
         public static int fountainCheckpointSceneIndex;
-        public static Transform fountainCheckpoint;
+        public static Vector3 fountainCheckpointPosition;
+        public static Quaternion fountainCheckpointRotation;
 
         public static bool[] objFlags = new bool[3];
 
