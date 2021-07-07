@@ -23,6 +23,9 @@ public class PlayerManager : AliveEntity
     public bool[] objFlags = new bool[3]; //flag per oggetti sbloccabili
 
     private bool isInvincible = false;
+    private float timer;
+
+    private bool isParrying;
 
     void Start()
     {
@@ -68,11 +71,29 @@ public class PlayerManager : AliveEntity
             Debug.Log("YOU DIED");
             this.FountainRespawn();
         }
+
+        if (timer > 0)
+            timer -= Time.deltaTime;
+        else if (isInvincible && isParrying)
+        {
+            SetInvincible(0);
+            isParrying = false;
+        }
     }
 
     public void SetInvincible(int flag)
     {
         isInvincible = flag != 0 ? true : false;
+
+        //DEBUG
+        Debug.Log("Invincible " + isInvincible);
+    }
+
+    public void SetInvincibleTimer(float invincibleTime)
+    {
+        SetInvincible(1);
+        timer = invincibleTime;
+        isParrying = true;
     }
 
     override public void HPsum(int sum)

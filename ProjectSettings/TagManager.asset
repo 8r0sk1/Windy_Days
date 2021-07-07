@@ -9,6 +9,7 @@ TagManager:
   - 3d_object
   - 2d_object
   - Enemy
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

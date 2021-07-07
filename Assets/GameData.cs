@@ -6,8 +6,8 @@ namespace GameLib
 {
     public static class GameData
     {
-        public static int hp_max = 6;
-        public static int hp = 6;
+        public static int hp_max = 15;
+        public static int hp = 15;
 
         public static bool haveToFountainRespawn;
         public static int fountainCheckpointSceneIndex;
