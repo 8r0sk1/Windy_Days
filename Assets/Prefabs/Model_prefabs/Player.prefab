@@ -1105,7 +1105,6 @@ MonoBehaviour:
   maxCloudTime: 1
   weapon: {fileID: 7778205260990929030}
   shield: {fileID: 3818269790009389762}
-  LightSwing_Audio: {fileID: 0}
 --- !u!114 &5459490175099874686
 MonoBehaviour:
   m_ObjectHideFlags: 0

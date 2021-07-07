@@ -47,9 +47,9 @@ public class CC3D : MonoBehaviour
         InputZ = Input.GetAxis("Vertical");
         speedVector = new Vector2(InputX, InputZ);
         if (speedVector.magnitude > 0.1)
-            anim.SetBool("isRunning", true);
+            anim.SetBool("isRunning_TD", true);
         else
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isRunning_TD", false);
         anim.SetFloat("runSpeed", Mathf.Max(Mathf.Abs(speedVector.x), Mathf.Abs(speedVector.y)));
         anim.SetFloat("dashSpeed", dashSpeed);
 

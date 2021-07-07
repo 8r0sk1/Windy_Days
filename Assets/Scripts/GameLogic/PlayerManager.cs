@@ -25,6 +25,9 @@ public class PlayerManager : AliveEntity
     private bool isInvincible = false;
     private float timer;
 
+    //healing data
+    
+
     private bool isParrying;
 
     void Start()
@@ -80,7 +83,13 @@ public class PlayerManager : AliveEntity
             SetInvincible(0);
             isParrying = false;
         }
+        if (Input.GetButtonDown("Heal") && GameData.current_potions > 0)
+        {
+            GameData.current_potions -= 1;
+            HPsum(1);
+        }
     }
+
 
     public void SetInvincible(int flag)
     {
@@ -104,6 +113,11 @@ public class PlayerManager : AliveEntity
             hp += sum;
             healthBar.SetHP(hp);
         }
+    }
+    public void RestoreHP()
+    {
+        hp = GameData.hp_max;
+        healthBar.SetHP(hp);
     }
 
     public void Respawn()

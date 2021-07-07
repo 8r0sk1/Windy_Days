@@ -9,7 +9,12 @@ public class TriggerNewScene : MonoBehaviour
     public int sceneIndex;
     public int nextEntryPoint;
     public bool isBackground;
+    private Animator Fade_anim;
 
+    private void Awake()
+    {
+        Fade_anim = GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!isBackground)
@@ -19,7 +24,8 @@ public class TriggerNewScene : MonoBehaviour
                 //DEBUG
                 Debug.Log("new scene loading: " + sceneIndex);
                 GameData.entryPoint = nextEntryPoint;
-                SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+                FadeOut_state.SetSceneIndex(sceneIndex);
+                Fade_anim.SetTrigger("_fadeOUT");
             }
         }
     }
@@ -33,7 +39,8 @@ public class TriggerNewScene : MonoBehaviour
                 //DEBUG
                 Debug.Log("new scene loading: " + sceneIndex);
                 GameData.entryPoint = nextEntryPoint;
-                SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+                FadeOut_state.SetSceneIndex(sceneIndex);
+                Fade_anim.SetTrigger("_fadeOUT"); 
             }
         }
     }

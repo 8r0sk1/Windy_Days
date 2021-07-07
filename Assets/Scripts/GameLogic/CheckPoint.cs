@@ -22,11 +22,12 @@ public class CheckPoint : MonoBehaviour
         {
             if (!isFountainCheckpoint)
                 playerManager.checkPoint = this.transform;
-            else
+            else //fountain checkpoint found
             {
                 //DEBUG
                 Debug.Log("Current scene index : " + SceneManager.GetActiveScene().buildIndex);
-
+                GameData.current_potions = GameData.max_potions;
+                playerManager.RestoreHP();
                 GameData.fountainCheckpointSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 GameData.fountainCheckpointPosition = player.transform.position;
                 GameData.fountainCheckpointRotation = player.transform.rotation;

@@ -8,6 +8,8 @@ namespace GameLib
     {
         public static int hp_max = 15;
         public static int hp = 15;
+        public static int max_potions = 3;
+        public static int current_potions = 3;
 
         public static bool haveToFountainRespawn;
         public static int fountainCheckpointSceneIndex;
