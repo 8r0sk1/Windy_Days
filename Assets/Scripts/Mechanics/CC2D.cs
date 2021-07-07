@@ -49,6 +49,11 @@ public class CC2D : MonoBehaviour
     //animator
     Animator anim;
 
+    //audio sources
+    public AudioSource Bottle_Audio;
+
+        
+
     // Start is called before the first frame update
     void Start()
     {
@@ -110,6 +115,7 @@ public class CC2D : MonoBehaviour
             {
                 isBottling = true;
                 bottlingEnabled = false;
+                Bottle_Audio.Play();
             }
         }
         if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])

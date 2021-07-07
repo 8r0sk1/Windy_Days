@@ -29,6 +29,8 @@ public class CC3D : MonoBehaviour
     //public GameObject bodyMesh, cloudMesh;
     private float elapsedCloudTime;
 
+ 
+
     void Start()
     {
         playerManager = this.GetComponent<PlayerManager>();
@@ -65,6 +67,10 @@ public class CC3D : MonoBehaviour
             attack = attack_type.slash1;
             anim.SetTrigger("attack1");
             isAttacking = true;
+
+        
+            
+
         }
 
         if (Input.GetButtonDown("Fire2"))
