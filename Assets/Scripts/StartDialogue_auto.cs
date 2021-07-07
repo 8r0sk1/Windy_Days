@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartDialogue : MonoBehaviour
+public class StartDialogue_auto : MonoBehaviour
 {
     private GameObject player;
     private PlayerManager playerManager;
     public DialogueTrigger trigger;
     public DialogueManager dialogueManager;
+    //private bool _dialogueStarted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class StartDialogue : MonoBehaviour
         if (other.gameObject == player)
         {
             trigger.TriggerDialogue();
+            //_dialogueStarted = true;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -29,7 +31,10 @@ public class StartDialogue : MonoBehaviour
             dialogueManager.DisplayNextSentence();
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        dialogueManager.EndDialogue();
+    }
     // Update is called once per frame
     void Update()
     {
