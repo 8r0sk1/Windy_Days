@@ -154,7 +154,7 @@ public class Manager2D3D : MonoBehaviour
                 characterController3D_script.enabled = true;
 
                 //RigidBody setup
-                rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
 
                 //Camera setup
                 followPlayer2D_script.enabled = false;
