@@ -6,8 +6,9 @@ namespace GameLib
 {
     public static class GameData
     {
-        public static int hp_max = 15;
-        public static int hp = 15;
+        public static int hp_max = 12;
+        public static int hp = 12;
+        public static int hp_max_armoured = 15;
         public static int max_potions = 3;
         public static int current_potions = 3;
 
@@ -16,7 +17,7 @@ namespace GameLib
         public static Vector3 fountainCheckpointPosition;
         public static Quaternion fountainCheckpointRotation;
 
-        public static bool[] objFlags = new bool[3];
+        public static bool[] objFlags = new bool[4];
 
         public static int entryPoint;
     }

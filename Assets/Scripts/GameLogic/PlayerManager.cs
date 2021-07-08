@@ -19,8 +19,10 @@ public class PlayerManager : AliveEntity
     public GameObject cloud;
     public GameObject necklace;
     public GameObject bottle;
+    public GameObject shoulderPads_left;
+    public GameObject shoulderPads_right;
 
-    public bool[] objFlags = new bool[3]; //flag per oggetti sbloccabili
+    public bool[] objFlags = new bool[4]; //flag per oggetti sbloccabili
 
     private bool isInvincible = false;
     private float timer;
@@ -125,13 +127,7 @@ public class PlayerManager : AliveEntity
 
     public void Respawn()
     {
-        if (!GameData.haveToFountainRespawn)
-        {
-            rBody.position = checkPoint.transform.position;
-            rBody.rotation = checkPoint.transform.rotation;
-        }
-
-        controller2d.Reset();
+        GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>().SetTrigger("_fadeOUTsameLvl");
     }
 
     public void FountainRespawn()
@@ -156,6 +152,11 @@ public class PlayerManager : AliveEntity
                 break;
             case playerObj.necklace:
                 necklace.SetActive(true);
+                break;
+            case playerObj.shoulderPads:
+                shoulderPads_left.SetActive(true);
+                shoulderPads_right.SetActive(true);
+                GameData.hp_max = GameData.hp_max_armoured;
                 break;
         }
     }

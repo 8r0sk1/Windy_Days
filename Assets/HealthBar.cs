@@ -13,8 +13,7 @@ public class HealthBar : MonoBehaviour
     {
         playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         slider = this.GetComponent<Slider>();
-
-        slider.maxValue = GameData.hp_max;
+        slider.maxValue = GameData.hp_max_armoured;
         slider.value = GameData.hp;
     }
 

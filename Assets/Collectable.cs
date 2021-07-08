@@ -5,7 +5,7 @@ using GameLib;
 
 namespace GameLib
 {
-    public enum playerObj { bottle, shield, necklace }
+    public enum playerObj { bottle, shield, necklace, shoulderPads}
 }
 
 public class Collectable : Interactable

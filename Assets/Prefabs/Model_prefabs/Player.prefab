@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8961926212126521020
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1190,8 @@ MonoBehaviour:
   cloud: {fileID: 7778205259769875697}
   necklace: {fileID: 148431359983082417}
   bottle: {fileID: 2731566019860738397}
+  shoulderPads_left: {fileID: 685201975563789015}
+  shoulderPads_right: {fileID: 6240488676632344470}
   objFlags: 000000
 --- !u!95 &5372958770028876883
 Animator:
@@ -1622,7 +1624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4038341231824778450
 Transform:
   m_ObjectHideFlags: 0
