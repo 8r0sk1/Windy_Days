@@ -95,8 +95,7 @@ public class CC3D : MonoBehaviour
         if ((Input.GetButtonDown("Shield") || (Input.GetAxis("Shield") > 0.1f)) && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
             if (!isParrying) anim.SetTrigger("parry");
-            else anim.ResetTrigger("parry");
-            
+            else anim.ResetTrigger("parry");  
         }
 
         if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace])
