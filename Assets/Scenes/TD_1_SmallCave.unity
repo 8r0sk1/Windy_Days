@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5fa8b6aed98522c46bdf8678860e3f26, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1684,6 +1684,120 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dd798612d0fe248864da1b70e89f7a, type: 3}
+--- !u!1001 &421445318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 617787200}
+    m_Modifications:
+    - target: {fileID: 9085977414493637617, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b313ffc98792c34d8d27f8cb8565df7, type: 2}
+    - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: Parry with your shield with Q/R2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Press SPACEBAR/A to pick up objects or to interact with them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogue.name
+      value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.2914
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1578
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.64685
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637628, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 617787199}
+    - target: {fileID: 9085977414493637629, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialogue_auto (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a98974c2b07f5849947a3c03b8fab50, type: 3}
 --- !u!4 &427308012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2318545480942775785, guid: 978e9ebb915dd1b4c81b1920c7c27359,
@@ -4790,8 +4904,12 @@ PrefabInstance:
     - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'Might come in handy... After all I''m no warrior with a weapon but
-        no shield! '
+      value: Press SPACEBAR/A to pick up objects or to interact with them.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637619, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: dialogue.name
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 9085977414493637623, guid: 7a98974c2b07f5849947a3c03b8fab50,
         type: 3}
@@ -6143,6 +6261,46 @@ PrefabInstance:
     - target: {fileID: 597883368275965430, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534270562457733945, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6860718284299641670, guid: 6609e903191f3ac478d3a81048fbd614,

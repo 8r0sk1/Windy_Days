@@ -27,6 +27,8 @@ public class Collectable : Interactable
 
     public override void Interact()
     {
+        Debug.Log(obj);
+        Debug.Log((int)obj);
         playerManager.objFlags[(int)obj] = true;
         playerManager.Wear(obj);
         controller3D.isRollDisabled = false;

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5fa8b6aed98522c46bdf8678860e3f26, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -5776,7 +5776,7 @@ Transform:
   - {fileID: 862369104}
   - {fileID: 794705510}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1181740078
 Animator:
@@ -5817,6 +5817,8 @@ MonoBehaviour:
   cloud: {fileID: 0}
   necklace: {fileID: 0}
   bottle: {fileID: 0}
+  shoulderPads_left: {fileID: 0}
+  shoulderPads_right: {fileID: 0}
   objFlags: 000000
 --- !u!114 &1181740080
 MonoBehaviour:
@@ -7787,7 +7789,7 @@ Transform:
   - {fileID: 380089523}
   - {fileID: 993741397}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1726303944
 PrefabInstance:
@@ -9265,5 +9267,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 60.247, y: -410.607, z: 2.6850002}

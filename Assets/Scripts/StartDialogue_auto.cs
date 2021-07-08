@@ -33,5 +33,6 @@ public class StartDialogue_auto : Interactable
         controller3D.isRollDisabled = false;
         controller2D.isJumpDisabled = false;
         isColliding = false;
+        this.gameObject.SetActive(false);
     }
 }

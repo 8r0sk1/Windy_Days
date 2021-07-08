@@ -142,9 +142,9 @@ public class CC2D : MonoBehaviour
 
             anim.SetBool("isShielded", isShielded);
             if (isShielded)
-                moveSpeed = moveSpeed / 2;
+                moveSpeed = moveSpeed / 1.5f;
             else
-                moveSpeed = moveSpeed * 2;
+                moveSpeed = moveSpeed * 1.5f;
         }
         if (Input.GetButtonDown("Cloud") && !isShielded && playerManager.objFlags[(int)playerObj.necklace])
         {
