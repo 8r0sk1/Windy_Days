@@ -15,8 +15,10 @@ public class Collectable : Interactable
 
     private void Start()
     {
-
-        playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        controller = player.GetComponent<CC3D>();
+        playerManager = player.GetComponent<PlayerManager>();
+        hasInputUse = false;
 
         if (GameData.objFlags[(int)obj])
             this.gameObject.SetActive(false);
@@ -24,10 +26,9 @@ public class Collectable : Interactable
 
     public override void Interact()
     {
-        this.GetComponent<Collider>().enabled = false;
-        this.GetComponent<MeshRenderer>().enabled = false;
-
         playerManager.objFlags[(int)obj] = true;
         playerManager.Wear(obj);
+        controller.isRollDisabled = false;
+        this.gameObject.SetActive(false);
     }
 }

@@ -28,6 +28,7 @@ public class CC3D : MonoBehaviour
     private attack_type attack;
     //public GameObject bodyMesh, cloudMesh;
     private float elapsedCloudTime;
+    public bool isRollDisabled;
 
  
 
@@ -53,7 +54,7 @@ public class CC3D : MonoBehaviour
         anim.SetFloat("runSpeed", Mathf.Max(Mathf.Abs(speedVector.x), Mathf.Abs(speedVector.y)));
         anim.SetFloat("dashSpeed", dashSpeed);
 
-        if (Input.GetButtonDown("Jump") && !isDashing && !isCloud && !isParrying)
+        if (Input.GetButtonDown("Jump") && !isDashing && !isCloud && !isParrying && !isRollDisabled)
         {
             //dashElapsedTime = 0f;
             //toDash = true;
