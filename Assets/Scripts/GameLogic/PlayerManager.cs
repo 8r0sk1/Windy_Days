@@ -85,8 +85,11 @@ public class PlayerManager : AliveEntity
         }
         if (Input.GetButtonDown("Heal") && GameData.current_potions > 0)
         {
-            GameData.current_potions -= 1;
-            HPsum(1);
+            if (hp != GameData.hp_max)
+            {
+                GameData.current_potions -= 1;
+                HPsum(1);
+            }
         }
     }
 

@@ -2,45 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartDialogue_interact : MonoBehaviour
+public class StartDialogue_interact : Interactable
 {
-    private GameObject player;
-    private PlayerManager playerManager;
     public DialogueTrigger trigger;
     public DialogueManager dialogueManager;
     private bool _hasToStart = true;
-    // Start is called before the first frame update
-    void Start()
+
+    override public void Interact()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerManager = player.GetComponent<PlayerManager>();
-    }
-    
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject == player && Input.GetButtonDown("Use"))
+        if (_hasToStart == true)
         {
-            if (_hasToStart == true)
-            {
-                trigger.TriggerDialogue();
-                _hasToStart = false;
-            }
-            //Debug.Log("next sentence");
-            else
-            {
-                dialogueManager.DisplayNextSentence();
-                
-            }
+            trigger.TriggerDialogue();
+            _hasToStart = false;
+        }
+        //Debug.Log("next sentence");
+        else
+        {
+            dialogueManager.DisplayNextSentence();
+
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         dialogueManager.EndDialogue();
         _hasToStart = true;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
+        controller.isRollDisabled = false;
+        isColliding = false;
     }
 }
