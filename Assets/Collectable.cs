@@ -16,7 +16,8 @@ public class Collectable : Interactable
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        controller = player.GetComponent<CC3D>();
+        controller3D = player.GetComponent<CC3D>();
+        controller2D = player.GetComponent<CC2D>();
         playerManager = player.GetComponent<PlayerManager>();
         hasInputUse = false;
 
@@ -28,7 +29,8 @@ public class Collectable : Interactable
     {
         playerManager.objFlags[(int)obj] = true;
         playerManager.Wear(obj);
-        controller.isRollDisabled = false;
+        controller3D.isRollDisabled = false;
+        controller2D.isJumpDisabled = false;
         this.gameObject.SetActive(false);
     }
 }
