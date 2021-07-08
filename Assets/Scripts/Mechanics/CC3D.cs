@@ -88,9 +88,14 @@ public class CC3D : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
+        //DEBUG
+        Debug.Log("Axis Input: " + Input.GetAxis("Shield"));
+
+        if ((Input.GetButtonDown("Shield") || (Input.GetAxis("Shield") > 0.1f)) && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
-            anim.SetTrigger("parry");
+            if (!isParrying) anim.SetTrigger("parry");
+            else anim.ResetTrigger("parry");
+            
         }
 
         if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace])

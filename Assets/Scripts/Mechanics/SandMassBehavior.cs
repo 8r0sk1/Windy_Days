@@ -13,9 +13,12 @@ public class SandMassBehavior : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Sand HIT");
+        if (other.CompareTag("Enemy"))
+        {
+            Debug.Log("Sand HIT");
             Animator robot_animator = other.gameObject.GetComponent<Animator>();
             robot_animator.SetBool("isStunned", true);
+        }
     }
     void Start()
     {
