@@ -53,6 +53,7 @@ public class CC2D : MonoBehaviour
     public AudioSource Bottle_Audio;
 
     public bool isJumpDisabled;
+    private bool shieldCanChange;
 
 
 
@@ -67,6 +68,8 @@ public class CC2D : MonoBehaviour
         isShielded = false;
         isGrounded = false;
         bottlingEnabled = true;
+
+        shieldCanChange = true;
 
         playerManager = this.GetComponent<PlayerManager>();
         rBody = this.GetComponent<Rigidbody>();
@@ -124,9 +127,19 @@ public class CC2D : MonoBehaviour
                 Bottle_Audio.Play();
             }
         }
-        if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
+
+
+        else if(Input.GetAxis("Shield") < 0.1f)
+        {
+            shieldCanChange = true;
+        }
+
+        if ((Input.GetButtonDown("Shield") || (Input.GetAxis("Shield") > 0.9f && shieldCanChange)) && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
             isShielded = !isShielded;
+            
+            shieldCanChange = false;
+
             anim.SetBool("isShielded", isShielded);
             if (isShielded)
                 moveSpeed = moveSpeed / 2;
