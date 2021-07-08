@@ -90,7 +90,11 @@ public class CC2D : MonoBehaviour
         //update animation condition
         if (Mathf.Abs(inputX) > 0.1) anim.SetBool("isRunning", true);
         else anim.SetBool("isRunning", false);
-        anim.SetFloat("runSpeed", Mathf.Abs(inputX));
+
+        float runSpeed = Mathf.Abs(inputX);
+        if (windForce.magnitude > 0 && inputX < 0)
+            runSpeed = runSpeed + windForce.magnitude/10;
+        anim.SetFloat("runSpeed", runSpeed);
 
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && (isGrounded || onLadder))
@@ -121,6 +125,7 @@ public class CC2D : MonoBehaviour
         if (Input.GetButtonDown("Shield") && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
             isShielded = !isShielded;
+            anim.SetBool("isShielded", isShielded);
             if (isShielded)
                 moveSpeed = moveSpeed / 2;
             else
