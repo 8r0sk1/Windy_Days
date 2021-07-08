@@ -52,7 +52,9 @@ public class CC2D : MonoBehaviour
     //audio sources
     public AudioSource Bottle_Audio;
 
-        
+    public bool isJumpDisabled;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +99,7 @@ public class CC2D : MonoBehaviour
         anim.SetFloat("runSpeed", runSpeed);
 
         //inputY = Input.GetAxis("Vertical");
-        if (Input.GetButtonDown("Jump") && (isGrounded || onLadder))
+        if (Input.GetButtonDown("Jump") && (isGrounded || onLadder) && !isJumpDisabled)
         {
             isJumping = true;
             isGrounded = onLadder = isGrabbing = false;
@@ -107,7 +109,7 @@ public class CC2D : MonoBehaviour
             else
                 elapsedJumpTime = 0;
         }
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetButtonUp("Jump") && !isJumpDisabled)
         {
             isJumping = false;
             if (isGrabbing)

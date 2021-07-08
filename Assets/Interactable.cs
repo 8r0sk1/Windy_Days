@@ -6,7 +6,8 @@ public abstract class Interactable : MonoBehaviour
 {
     protected GameObject player;
     protected PlayerManager playerManager;
-    protected CC3D controller;
+    protected CC3D controller3D;
+    protected CC2D controller2D;
 
     protected bool hasInputUse;
     protected bool isColliding;
@@ -16,7 +17,8 @@ public abstract class Interactable : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        controller = player.GetComponent<CC3D>();
+        controller3D = player.GetComponent<CC3D>();
+        controller2D = player.GetComponent<CC2D>();
         playerManager = player.GetComponent<PlayerManager>();
         hasInputUse = false;
         isColliding = false;
@@ -30,7 +32,8 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        controller.isRollDisabled = true;
+        controller3D.isRollDisabled = true;
+        controller2D.isJumpDisabled = true;
         isColliding = true;
     }
 
@@ -48,7 +51,8 @@ public abstract class Interactable : MonoBehaviour
 
     protected void OnTriggerExit(Collider other)
     {
-        controller.isRollDisabled = false;
+        controller3D.isRollDisabled = false;
+        controller2D.isJumpDisabled = false;
         isColliding = false;
     }
 }
