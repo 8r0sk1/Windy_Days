@@ -14,7 +14,7 @@ public class FallingPlat : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Invoke("DropPlat", 0.5f);
+            Invoke("DropPlat", 0.2f);
             Destroy(gameObject, 2f);
         }
     }
