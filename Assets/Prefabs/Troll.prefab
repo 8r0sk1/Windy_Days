@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 8152694709032853247}
   - component: {fileID: 3493679203985257292}
   - component: {fileID: 5566798911042601446}
+  - component: {fileID: 2850160889769496493}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Enemy
@@ -1539,6 +1540,21 @@ MonoBehaviour:
   damageA: 6
   damageB: 0
   damageC: 0
+--- !u!114 &2850160889769496493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3211010306781322815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9278faab996ebcd43a10c2edea9cdc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Troll
+  - Enemy
 --- !u!1 &3323880777315551771
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class Troll_engage_state : StateMachineBehaviour
 {
@@ -18,6 +19,9 @@ public class Troll_engage_state : StateMachineBehaviour
         body = animator.GetComponent<Rigidbody>();
         troll_search_script = animator.GetComponentInChildren<Troll_search_mechanic>();
         animator.GetComponent<MeleeWeapon>().hitBox.SetActive(false);
+
+        //if (!GameData.isTrollTrolling)
+          //  GameData.isTrollTrolling = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

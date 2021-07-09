@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class Engage_state : StateMachineBehaviour
 {
@@ -18,6 +19,8 @@ public class Engage_state : StateMachineBehaviour
         body = animator.GetComponent<Rigidbody>();
         robot_sight_script = animator.GetComponentInChildren<Robot_SearchMechanic>();
 
+        if(!GameData.isRobotRoboting)
+            GameData.isRobotRoboting = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

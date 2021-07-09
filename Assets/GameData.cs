@@ -19,6 +19,12 @@ namespace GameLib
 
         public static bool[] objFlags = new bool[4];
 
+        // :( public static bool isTrollTrolling = false;
+        public static bool isTrollDead = false;
+
+        public static bool isRobotRoboting = false;
+        public static bool isRobotDead = false;
+
         public static int entryPoint;
     }
 }

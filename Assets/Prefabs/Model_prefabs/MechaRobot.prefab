@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 3060615807020097053}
   - component: {fileID: 2448332001223662521}
   - component: {fileID: 1755946600644594004}
+  - component: {fileID: 5142600639417546138}
   m_Layer: 2
   m_Name: MechaRobot
   m_TagString: Enemy
@@ -220,6 +221,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponA: {fileID: 324096180765152488}
   weaponB: {fileID: 7847811983219349854}
+--- !u!114 &5142600639417546138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448332001223662402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9278faab996ebcd43a10c2edea9cdc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - Robot
+  - Enemy
 --- !u!64 &2448332001705259278
 MeshCollider:
   m_ObjectHideFlags: 0

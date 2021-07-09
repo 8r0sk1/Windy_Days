@@ -10,6 +10,10 @@ TagManager:
   - 2d_object
   - Enemy
   - EnemyWeapon
+  - Debug
+  - Fade
+  - Troll
+  - Robot
   layers:
   - Default
   - TransparentFX
