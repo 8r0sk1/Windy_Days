@@ -99,7 +99,7 @@ public class PlayerManager : AliveEntity
             if (hp != GameData.hp_max)
             {
                 GameData.current_potions -= 1;
-                HPsum(1);
+                HPsum(2);
                 potions_ui.SetPotions(GameData.current_potions);
             }
         }
