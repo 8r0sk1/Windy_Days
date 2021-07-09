@@ -483,6 +483,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6860718284299641670, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -639,6 +649,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302806496}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &310312826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2971941374073872497, guid: 6609e903191f3ac478d3a81048fbd614,
+    type: 3}
+  m_PrefabInstance: {fileID: 242934067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &456614100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -969,6 +991,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
+--- !u!114 &523591612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1310850079923721060, guid: 6609e903191f3ac478d3a81048fbd614,
+    type: 3}
+  m_PrefabInstance: {fileID: 242934067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596201984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1795,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
+--- !u!1 &1246374393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 207605788441443677, guid: 6609e903191f3ac478d3a81048fbd614,
+    type: 3}
+  m_PrefabInstance: {fileID: 242934067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1247626017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1981,18 +2021,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
---- !u!114 &1317257467 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3409029144585051796, guid: 6609e903191f3ac478d3a81048fbd614,
-    type: 3}
-  m_PrefabInstance: {fileID: 242934067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1377577565
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,7 +2158,7 @@ PrefabInstance:
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
@@ -2140,7 +2168,17 @@ PrefabInstance:
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Pick it up and press E/L1 to activate the Cloud Amulet.
+      value: Pick it up and press E/R1 to activate the Cloud Amulet.
+      objectReference: {fileID: 0}
+    - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: While in Cloud shape you are briefly intangible
+      objectReference: {fileID: 0}
+    - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: Indoors, static discharges may also dela AoE damage qround you.
       objectReference: {fileID: 0}
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
@@ -2202,17 +2240,17 @@ PrefabInstance:
         type: 3}
       propertyPath: panel
       value: 
-      objectReference: {fileID: 2146820135}
+      objectReference: {fileID: 1246374393}
     - target: {fileID: 760699528852391760, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 1897290640}
+      objectReference: {fileID: 523591612}
     - target: {fileID: 760699528852391760, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 1317257467}
+      objectReference: {fileID: 310312826}
     - target: {fileID: 760699528852391761, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3540,18 +3578,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
---- !u!114 &1897290640 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1697104122297250205, guid: 6609e903191f3ac478d3a81048fbd614,
-    type: 3}
-  m_PrefabInstance: {fileID: 242934067}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1927783637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3862,9 +3888,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
---- !u!1 &2146820135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7833619624480631586, guid: 6609e903191f3ac478d3a81048fbd614,
-    type: 3}
-  m_PrefabInstance: {fileID: 242934067}
-  m_PrefabAsset: {fileID: 0}
