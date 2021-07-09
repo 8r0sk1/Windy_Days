@@ -32,9 +32,12 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        controller3D.isRollDisabled = true;
-        controller2D.isJumpDisabled = true;
-        isColliding = true;
+        if (other.CompareTag("Player"))
+        {
+            controller3D.isRollDisabled = true;
+            controller2D.isJumpDisabled = true;
+            isColliding = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)

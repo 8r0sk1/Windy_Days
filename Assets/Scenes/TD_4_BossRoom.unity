@@ -6897,6 +6897,31 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -88.99997
       objectReference: {fileID: 0}
+    - target: {fileID: 5449996330830181518, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -81.00354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449996330933557302, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449996330933557302, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770221981597177140, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -165.01141
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770221981597177140, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -161.74982
+      objectReference: {fileID: 0}
     - target: {fileID: 6860718284299641670, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6961,6 +6986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -654
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736979002800926066, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.012817383
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6609e903191f3ac478d3a81048fbd614, type: 3}
@@ -11955,7 +11985,7 @@ PrefabInstance:
     - target: {fileID: 3211010306781322815, guid: 61121dd766160ef4c89e65af8a035844,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5350712924469806191, guid: 61121dd766160ef4c89e65af8a035844,
         type: 3}

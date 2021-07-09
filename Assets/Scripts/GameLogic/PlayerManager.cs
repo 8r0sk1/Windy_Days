@@ -13,6 +13,7 @@ public class PlayerManager : AliveEntity
     private CC2D controller2d;
     private CC3D controller3d;
     private HealthBar healthBar;
+    private Potions_UI potions_ui;
 
     public GameObject shield;
     public GameObject bodyMesh;
@@ -40,7 +41,11 @@ public class PlayerManager : AliveEntity
         else
             objFlags = GameData.objFlags;
 
+        //UI REFERENCES
         healthBar = GameObject.FindObjectOfType<HealthBar>();
+        potions_ui = GameObject.FindObjectOfType<Potions_UI>();
+
+        //COMPONENT REFERENCES
         controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
         rBody = this.GetComponent<Rigidbody>();
@@ -67,6 +72,10 @@ public class PlayerManager : AliveEntity
         {
             hp = GameData.hp;
         }
+
+        //SET UI VALUES
+        healthBar.SetHP(hp);
+        potions_ui.SetPotions(GameData.current_potions);
     }
 
     void Update()
@@ -91,6 +100,7 @@ public class PlayerManager : AliveEntity
             {
                 GameData.current_potions -= 1;
                 HPsum(1);
+                potions_ui.SetPotions(GameData.current_potions);
             }
         }
     }
