@@ -9,6 +9,7 @@ public class Troll_engage_state : StateMachineBehaviour
     private Rigidbody body;
     public float rotSpeed = 30;
     public float moveSpeed = 1;
+    private WarperLock warperlock;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,6 +20,9 @@ public class Troll_engage_state : StateMachineBehaviour
         body = animator.GetComponent<Rigidbody>();
         troll_search_script = animator.GetComponentInChildren<Troll_search_mechanic>();
         animator.GetComponent<MeleeWeapon>().hitBox.SetActive(false);
+
+        warperlock = animator.GetComponent<WarperLock>();
+        warperlock.warp.SetActive(false);
 
         //if (!GameData.isTrollTrolling)
           //  GameData.isTrollTrolling = true;
