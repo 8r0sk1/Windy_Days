@@ -49,7 +49,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7952672690730763922, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 96d9fe4b5ca9e5c478247386c43c76c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -569,7 +569,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9171952328373019990, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: a6750e8808557fa49b0615fdd9ee3b75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1278,7 +1278,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6edb7ed8960771f4db462e53f5843013, type: 2}
+  - {fileID: 2100000, guid: a6750e8808557fa49b0615fdd9ee3b75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1375,7 +1375,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 61db1a6a917100342bfe05403d1feb2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1822,7 +1822,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9171952328373019990, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: a6750e8808557fa49b0615fdd9ee3b75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2000,7 +2000,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 61db1a6a917100342bfe05403d1feb2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2250,7 +2250,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7952672690730763922, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 96d9fe4b5ca9e5c478247386c43c76c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2394,7 +2394,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 61db1a6a917100342bfe05403d1feb2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2664,7 +2664,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 61db1a6a917100342bfe05403d1feb2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2788,7 +2788,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9171952328373019990, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: a6750e8808557fa49b0615fdd9ee3b75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2878,7 +2878,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8980270400253499179, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 61db1a6a917100342bfe05403d1feb2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3243,7 +3243,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7952672690730763922, guid: b8cb6161c3576c04bb03fbff422ec33c, type: 3}
+  - {fileID: 2100000, guid: 96d9fe4b5ca9e5c478247386c43c76c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3694,7 +3694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c2911b618c39edc4f967fb758cf7448b, type: 2}
+      objectReference: {fileID: 2100000, guid: 61c1bb9bd46d7414d841f77ba953a783, type: 2}
     - target: {fileID: 919132149155446097, guid: 125872a7199873f4299fa5feb49722ee,
         type: 3}
       propertyPath: m_Name
