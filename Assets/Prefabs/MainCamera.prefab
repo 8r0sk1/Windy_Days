@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6660437701295107346}
   - component: {fileID: 8249307965740478935}
   - component: {fileID: 1348698589950265876}
+  - component: {fileID: 3164076078220795394}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -253,3 +254,16 @@ MonoBehaviour:
   boss: {fileID: 8300000, guid: f0e6f51dc38c7324486e99c1367a5993, type: 3}
   robot: {fileID: 8300000, guid: 70249a1838864084d9b7bff1c0f472f9, type: 3}
   fountain: {fileID: 8300000, guid: c5ebfb5333b15ee4ea242a3e3f9c2ee8, type: 3}
+--- !u!114 &3164076078220795394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975288444078386989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae705832f6a9361458bb19a706f2ff6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DEBUG_MODE: 0

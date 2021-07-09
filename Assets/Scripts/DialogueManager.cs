@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	public void EndDialogue()
+	virtual public void EndDialogue()
 	{
 		//animator.SetBool("IsOpen", false);
 		panel.SetActive(false);

@@ -149,7 +149,7 @@ public class CC3D : MonoBehaviour
                 {
                     Debug.Log("SAND");
                     //Play disappearing sand animation from sand mass animator 
-                    MeshRenderer m = hit.transform.gameObject.GetComponent<MeshRenderer>();
+                    MeshRenderer m = hit.transform.gameObject.GetComponentInChildren<MeshRenderer>();
                     BoxCollider b = hit.transform.gameObject.GetComponent<BoxCollider>();
                     m.enabled = false;
                     b.enabled = false;

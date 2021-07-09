@@ -18,11 +18,12 @@ public class SandMassBehavior : MonoBehaviour
             Debug.Log("Sand HIT");
             Animator robot_animator = other.gameObject.GetComponent<Animator>();
             robot_animator.SetBool("isStunned", true);
+            robot_animator.SetTrigger("triggerStun");
         }
     }
     void Start()
     {
-        m = this.GetComponent<MeshRenderer>();
+        m = this.GetComponentInChildren<MeshRenderer>();
         b = this.GetComponent<BoxCollider>();
         p = this.GetComponent<ParticleSystem>();
         p.Stop();
