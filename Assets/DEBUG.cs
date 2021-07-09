@@ -8,7 +8,7 @@ public class DEBUG : MonoBehaviour
     public bool DEBUG_MODE;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (!DEBUG_MODE)
         {

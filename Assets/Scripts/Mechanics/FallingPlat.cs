@@ -9,6 +9,7 @@ public class FallingPlat : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
     }
     private void OnCollisionEnter(Collision collision)
     {
