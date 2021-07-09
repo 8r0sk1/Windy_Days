@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 10)
+        if (SceneManager.GetActiveScene().buildIndex == 4)
         {
             if (GameData.isTrollDead && source.clip != dungeon)
             {
