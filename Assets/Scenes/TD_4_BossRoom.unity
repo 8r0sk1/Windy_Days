@@ -2027,6 +2027,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978e9ebb915dd1b4c81b1920c7c27359, type: 3}
+--- !u!1 &520638208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3211010306781322815, guid: 61121dd766160ef4c89e65af8a035844,
+    type: 3}
+  m_PrefabInstance: {fileID: 2784184966182404899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &520638209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520638208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f88fd51ea13ee34e85206096fb930d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warper: {fileID: 1982955511}
 --- !u!1001 &527530944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6914,7 +6933,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.00549
+      value: -81.00598
       objectReference: {fileID: 0}
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -11239,6 +11258,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8330653076614499142, guid: 2c262f71c82241b4092c7e6d1ad15585, type: 3}
+--- !u!1 &1982955511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7422718300666348679, guid: b035a213d8f943848bb2e22128edda83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1946849510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1983436405
 PrefabInstance:
   m_ObjectHideFlags: 0

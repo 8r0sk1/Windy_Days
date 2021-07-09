@@ -22,7 +22,7 @@ public class Troll_engage_state : StateMachineBehaviour
         animator.GetComponent<MeleeWeapon>().hitBox.SetActive(false);
 
         warperlock = animator.GetComponent<WarperLock>();
-        warperlock.warp.SetActive(false);
+        warperlock.Lock();
 
         //if (!GameData.isTrollTrolling)
           //  GameData.isTrollTrolling = true;

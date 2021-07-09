@@ -7501,6 +7501,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -165.01135
+      objectReference: {fileID: 0}
     - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -9597,7 +9602,7 @@ PrefabInstance:
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Luckily those guys were to small to wield it!
+      value: Unfortunately i'm too small to wield it!
       objectReference: {fileID: 0}
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}

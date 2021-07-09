@@ -60,10 +60,11 @@ public class PlayerManager : AliveEntity
 
         //FOUNTAIN RESPAWN
         if (GameData.haveToFountainRespawn)
-        {
+        {   
             this.gameObject.transform.position = GameData.fountainCheckpointPosition;
             this.gameObject.transform.rotation = GameData.fountainCheckpointRotation;
             GameData.haveToFountainRespawn = false;
+
 
             hp = max_hp;
             healthBar.SetHP(hp);
