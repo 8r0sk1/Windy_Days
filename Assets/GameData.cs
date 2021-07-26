@@ -23,7 +23,8 @@ namespace GameLib
         public static bool isTrollDead = false;
 
         public static bool isRobotRoboting = false;
-        public static bool isRobotDead = false;
+        public static bool isRobotDead_A = false;
+        public static bool isRobotDead_B = false;
 
         public static int entryPoint;
     }

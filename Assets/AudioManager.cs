@@ -71,11 +71,15 @@ public class AudioManager : MonoBehaviour
                 source.clip = robot;
                 source.Play();
             }
-            if (GameData.isRobotDead && source.clip != dungeon)
+            if (GameData.isRobotDead_A && GameData.isRobotDead_B && source.clip != dungeon)
             {
+                GameData.isRobotRoboting = false;
                 source.Stop();
                 source.clip = dungeon;
                 source.Play();
+
+                //DEBUG
+                Debug.Log("DUNGEON MUSIC PLAYING");
             }
         }
 

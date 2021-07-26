@@ -8,7 +8,9 @@ public class EnemyManager : AliveEntity
     // Start is called before the first frame update
     void Start()
     {
-        if (this.GetComponent<CustomTag>().HasTag("Robot") && GameData.isRobotDead)
+        if (this.GetComponent<CustomTag>().HasTag("Robot_A") && GameData.isRobotDead_A)
+            this.gameObject.SetActive(false);
+        if (this.GetComponent<CustomTag>().HasTag("Robot_B") && GameData.isRobotDead_B)
             this.gameObject.SetActive(false);
         if (this.GetComponent<CustomTag>().HasTag("Troll") && GameData.isTrollDead)
             this.gameObject.SetActive(false);
@@ -27,8 +29,10 @@ public class EnemyManager : AliveEntity
 
             this.gameObject.SetActive(false); //de-enable
 
-            if (this.GetComponent<CustomTag>().HasTag("Robot"))
-                GameData.isRobotDead = true;
+            if (this.GetComponent<CustomTag>().HasTag("Robot_A"))
+                GameData.isRobotDead_A = true;
+            if (this.GetComponent<CustomTag>().HasTag("Robot_B"))
+                GameData.isRobotDead_B = true;
             if (this.GetComponent<CustomTag>().HasTag("Troll"))
                 GameData.isTrollDead = true;
 

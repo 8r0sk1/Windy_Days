@@ -605,6 +605,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.data[0]
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.data[1]
+      value: Robot_B
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2295e6a1909cc4590c630c2193504f, type: 3}
 --- !u!1 &573382314 stripped
@@ -1989,12 +2004,12 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.00562
+      value: -81.00574
       objectReference: {fileID: 0}
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -165.01132
+      value: -165.01135
       objectReference: {fileID: 0}
     - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -7378,6 +7393,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.data[0]
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142600639417546138, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: tags.Array.data[1]
+      value: Robot_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2295e6a1909cc4590c630c2193504f, type: 3}
