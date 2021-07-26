@@ -23,6 +23,10 @@ public class PlayerManager : AliveEntity
     public GameObject shoulderPads_left;
     public GameObject shoulderPads_right;
 
+    private AudioSource Player_Audio;
+    public AudioClip Player_Damaged, Player_Healed;
+
+
     public bool[] objFlags = new bool[4]; //flag per oggetti sbloccabili
 
     private bool isInvincible = false;
@@ -35,6 +39,7 @@ public class PlayerManager : AliveEntity
 
     void Start()
     {
+
         if (debugMode)
             for (int i = 0; i < objFlags.Length; i++)
                 objFlags[i] = true;
@@ -49,6 +54,9 @@ public class PlayerManager : AliveEntity
         controller3d = this.GetComponent<CC3D>();
         controller2d = this.GetComponent<CC2D>();
         rBody = this.GetComponent<Rigidbody>();
+
+        //AUDIO SOURCE
+        Player_Audio = this.GetComponent<AudioSource>();
 
         for(int i = 0; i < objFlags.Length; i++)
         {
@@ -127,6 +135,24 @@ public class PlayerManager : AliveEntity
         {
             hp += sum;
             healthBar.SetHP(hp);
+
+            if (sum < 0)
+            {
+                Player_Audio.volume = 0.3f;
+                Player_Audio.pitch = 1;
+                Player_Audio.Stop();
+                Player_Audio.clip = Player_Damaged;
+                Player_Audio.Play();
+            }
+
+            if (sum > 0)
+            {
+                Player_Audio.volume = 0.4f;
+                Player_Audio.pitch = 1.2f;
+                Player_Audio.Stop();
+                Player_Audio.clip = Player_Healed;
+                Player_Audio.Play();
+            }
         }
     }
     public void RestoreHP()

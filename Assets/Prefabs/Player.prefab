@@ -1208,6 +1208,8 @@ MonoBehaviour:
   bottle: {fileID: 2731566019860738397}
   shoulderPads_left: {fileID: 685201975563789015}
   shoulderPads_right: {fileID: 6240488676632344470}
+  Player_Damaged: {fileID: 8300000, guid: dde3f0a181760ed48b815121a38f8616, type: 3}
+  Player_Healed: {fileID: 8300000, guid: 8e99cd1dc1538344eba8c9e0c57fccf5, type: 3}
   objFlags: 000000
 --- !u!95 &5372958770028876883
 Animator:

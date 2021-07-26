@@ -9,6 +9,7 @@ public class Engage_state : StateMachineBehaviour
     private Rigidbody body;
     public float rotSpeed = 30;
     public float moveSpeed = 1;
+    private AudioSource Engage_Audio;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -16,8 +17,11 @@ public class Engage_state : StateMachineBehaviour
         //DEBUG
         Debug.Log("Entered in " + this.name);
 
+        Engage_Audio = GameObject.FindGameObjectWithTag("RobotEngageAudio").GetComponent<AudioSource>();
+
         body = animator.GetComponent<Rigidbody>();
         robot_sight_script = animator.GetComponentInChildren<Robot_SearchMechanic>();
+        Engage_Audio.Play();
 
         if(!GameData.isRobotRoboting)
             GameData.isRobotRoboting = true;
@@ -36,5 +40,10 @@ public class Engage_state : StateMachineBehaviour
 
         //Move towards the player
         body.MovePosition(animator.transform.position + moveSpeed * animator.transform.forward * Time.deltaTime);
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Engage_Audio.Stop();
     }
 }

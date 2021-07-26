@@ -6,14 +6,18 @@ public class Search_state : StateMachineBehaviour
 {
     private Robot_SearchMechanic robot_sight_script;
     public float rotSpeed = 20;
+    private AudioSource Robot_Idle;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //DEBUG
         Debug.Log("Entered in " + this.name);
+        Robot_Idle = GameObject.FindGameObjectWithTag("RobotIdleAudio").GetComponent<AudioSource>();
 
         robot_sight_script = animator.GetComponentInChildren<Robot_SearchMechanic>();
+        Robot_Idle.Play();
+
 
     }
 
