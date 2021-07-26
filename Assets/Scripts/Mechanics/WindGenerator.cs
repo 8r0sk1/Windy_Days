@@ -8,7 +8,7 @@ public class WindGenerator : MonoBehaviour
     public float windForce = 5;
     private CC2D controller;
     private float elapsedTime;
-    private float damageTime = 1;
+    private float damageTime = 0.7f;
     private int damage = 3;
     private bool toAddForwardForce, toAddBackwardForce;
     private PlayerManager playerManager;
