@@ -27,8 +27,8 @@ public class StartDialogue_interact : Interactable
     {
         dialogueManager.EndDialogue();
         _hasToStart = true;
-        controller3D.isRollDisabled = false;
-        controller2D.isJumpDisabled = false;
+        //controller3D.isRollDisabled = false;
+        //controller2D.isJumpDisabled = false;
         isColliding = false;
     }
 }

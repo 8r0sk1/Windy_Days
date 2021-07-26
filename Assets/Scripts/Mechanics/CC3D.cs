@@ -30,8 +30,6 @@ public class CC3D : MonoBehaviour
     private float elapsedCloudTime;
     public bool isRollDisabled;
 
- 
-
     void Start()
     {
         playerManager = this.GetComponent<PlayerManager>();

@@ -9,7 +9,11 @@ public class DialogueManager : MonoBehaviour
 	public Text nameText;
 	public Text dialogueText;
 	public GameObject panel;
-	//public Animator animator;
+	public Animator animator;
+
+	private CC3D controller3d;
+	private CC2D controller2d;
+	private bool was2d;
 
 	private Queue<string> sentences;
 
@@ -17,10 +21,29 @@ public class DialogueManager : MonoBehaviour
 	void Start()
 	{
 		sentences = new Queue<string>();
+
+		controller2d = GameObject.FindGameObjectWithTag("Player").GetComponent<CC2D>();
+		controller3d = GameObject.FindGameObjectWithTag("Player").GetComponent<CC3D>();
+		animator = controller3d.GetComponent<Animator>();
 	}
 
 	public void StartDialogue(Dialogue dialogue)
 	{
+		//DISABILITA PLAYER
+		if (controller2d.isActiveAndEnabled)
+		{
+			was2d = true;
+			animator.SetBool("isRunning", false);
+			animator.SetBool("isGrounded", true);
+			controller2d.enabled = false;
+		}
+		else
+		{
+			was2d = false;
+			animator.SetBool("isRunning_TD", false);
+			controller3d.enabled = false;
+		}
+
 		//animator.SetBool("IsOpen", true);
 
 		nameText.text = dialogue.name;
@@ -62,6 +85,14 @@ public class DialogueManager : MonoBehaviour
 
 	virtual public void EndDialogue()
 	{
+        //RIABILITA PLAYER
+        if (was2d)
+        {
+			controller2d.enabled = true;
+		}
+		else
+			controller3d.enabled = true;
+
 		//animator.SetBool("IsOpen", false);
 		panel.SetActive(false);
 	}

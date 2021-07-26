@@ -34,8 +34,8 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            controller3D.isRollDisabled = true;
-            controller2D.isJumpDisabled = true;
+            //controller3D.isRollDisabled = true;
+            //controller2D.isJumpDisabled = true;
             isColliding = true;
         }
     }
@@ -54,8 +54,8 @@ public abstract class Interactable : MonoBehaviour
 
     protected void OnTriggerExit(Collider other)
     {
-        controller3D.isRollDisabled = false;
-        controller2D.isJumpDisabled = false;
+        //controller3D.isRollDisabled = false;
+        //controller2D.isJumpDisabled = false;
         isColliding = false;
     }
 }

@@ -10,8 +10,8 @@ public class StartDialogue_auto : Interactable
 
     private void OnTriggerEnter(Collider other)
     {
-        controller3D.isRollDisabled = true;
-        controller2D.isJumpDisabled = true;
+        //controller3D.isRollDisabled = true;
+        //controller2D.isJumpDisabled = true;
         isColliding = true;
 
         if (other.gameObject == player)
@@ -30,8 +30,8 @@ public class StartDialogue_auto : Interactable
     private void OnTriggerExit(Collider other)
     {
         dialogueManager.EndDialogue();
-        controller3D.isRollDisabled = false;
-        controller2D.isJumpDisabled = false;
+        //controller3D.isRollDisabled = false;
+        //controller2D.isJumpDisabled = false;
         isColliding = false;
         this.gameObject.SetActive(false);
     }
