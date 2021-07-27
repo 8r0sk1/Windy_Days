@@ -50,7 +50,8 @@ public class CC2D : MonoBehaviour
     Animator anim;
 
     //audio sources
-    public AudioSource Bottle_Audio;
+    public AudioSource Player_Audio;
+    public AudioClip Cloud_Clip, Bottle_Clip;
 
     public bool isJumpDisabled;
     private bool shieldCanChange;
@@ -124,7 +125,11 @@ public class CC2D : MonoBehaviour
             {
                 isBottling = true;
                 bottlingEnabled = false;
-                Bottle_Audio.Play();
+                Player_Audio.Stop();
+                Player_Audio.pitch = 0.7f;
+                Player_Audio.volume = 0.4f;
+                Player_Audio.clip = Bottle_Clip;
+                Player_Audio.Play();
             }
         }
 
@@ -153,6 +158,11 @@ public class CC2D : MonoBehaviour
             playerManager.bodyMesh.SetActive(false);
             playerManager.cloud.SetActive(true);
             this.GetComponent<CapsuleCollider>().height = 1f;
+            Player_Audio.Stop();
+            Player_Audio.pitch = 0.9f;
+            Player_Audio.volume = 0.5f;
+            Player_Audio.clip = Cloud_Clip;
+            Player_Audio.Play();
         }
 
             //Gestione rotazione

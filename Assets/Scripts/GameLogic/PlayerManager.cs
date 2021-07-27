@@ -178,6 +178,8 @@ public class PlayerManager : AliveEntity
 
     public void Wear(playerObj obj)
     {
+      
+
         switch (obj)
         {
             case playerObj.bottle:
@@ -195,6 +197,8 @@ public class PlayerManager : AliveEntity
                 GameData.hp_max = GameData.hp_max_armoured;
                 break;
         }
+
+        
     }
 
     public void OnDestroy()

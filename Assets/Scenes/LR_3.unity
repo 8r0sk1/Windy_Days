@@ -21698,6 +21698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: 3
+  Player_Audio: {fileID: 1171423226}
+  Loot_Audio: {fileID: 8300000, guid: 589194e1f08823243aa898ac1d11840b, type: 3}
 --- !u!65 &1077018426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22472,7 +22474,7 @@ PrefabInstance:
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -165.01134
+      value: -165.01135
       objectReference: {fileID: 0}
     - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -22803,6 +22805,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2f1866d8bf1ab6498da284a3e5836dd, type: 3}
+--- !u!82 &1171423226 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5922957023006224260, guid: c2f1866d8bf1ab6498da284a3e5836dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1171423225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1173716099
 PrefabInstance:
   m_ObjectHideFlags: 0

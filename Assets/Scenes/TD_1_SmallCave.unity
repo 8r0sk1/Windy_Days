@@ -1966,6 +1966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: 1
+  Player_Audio: {fileID: 1717827458}
+  Loot_Audio: {fileID: 8300000, guid: 589194e1f08823243aa898ac1d11840b, type: 3}
 --- !u!4 &454285085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2318545480942775785, guid: 978e9ebb915dd1b4c81b1920c7c27359,
@@ -6195,6 +6197,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978e9ebb915dd1b4c81b1920c7c27359, type: 3}
+--- !u!82 &1717827458 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5922957023006224260, guid: c2f1866d8bf1ab6498da284a3e5836dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136739389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1765797010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6428,7 +6436,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.00529
+      value: -81.005295
       objectReference: {fileID: 0}
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}

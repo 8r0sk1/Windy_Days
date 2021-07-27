@@ -1646,7 +1646,10 @@ AnimatorController:
     - serializedVersion: 2
       m_State: {fileID: -8034471304142433566}
       m_Motion: {fileID: 7400000, guid: 9f3d588c677cf6841b301a0f76cabe53, type: 2}
-    m_Behaviours: []
+    m_Behaviours:
+    - m_State: {fileID: 1787499920590936966}
+      m_StateMachineBehaviours:
+      - {fileID: 6386526326496507120}
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
     m_DefaultWeight: 0
@@ -1741,6 +1744,35 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &459626852506499859
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4f48f952730a64eafc498c42bd2313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useMultiple: 0
+  clip: {fileID: 8300000, guid: 4cf600cfaf4dc5e4aa3c0911d76a2afb, type: 3}
+  clips: []
+  condition: 0
+  delayer:
+    delayType: 0
+    timer:
+      loops: 0
+      time: 0
+    frameTimer:
+      loops: 0
+      frame: 0
+  frequencyTimer:
+    loops: 0
+    time: 0
+  volume: 0.2
+  pitch: 0.9
 --- !u!1102 &809099883751988883
 AnimatorState:
   serializedVersion: 5
@@ -2025,7 +2057,8 @@ AnimatorState:
   - {fileID: -7499975456958247193}
   - {fileID: 6538358310814293874}
   - {fileID: 451368631292213741}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 459626852506499859}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2354,6 +2387,35 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &6386526326496507120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4f48f952730a64eafc498c42bd2313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useMultiple: 0
+  clip: {fileID: 8300000, guid: 4cf600cfaf4dc5e4aa3c0911d76a2afb, type: 3}
+  clips: []
+  condition: 0
+  delayer:
+    delayType: 0
+    timer:
+      loops: 0
+      time: 0
+    frameTimer:
+      loops: 0
+      frame: 0
+  frequencyTimer:
+    loops: 0
+    time: 0
+  volume: 0.2
+  pitch: 0.9
 --- !u!1102 &6436201110888342875
 AnimatorState:
   serializedVersion: 5

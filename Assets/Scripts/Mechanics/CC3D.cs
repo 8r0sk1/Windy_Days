@@ -30,6 +30,10 @@ public class CC3D : MonoBehaviour
     private float elapsedCloudTime;
     public bool isRollDisabled;
 
+    //audio sources
+    public AudioSource Player_Audio;
+    public AudioClip Cloud_Clip, Bottle_Clip, Parry_Clip;
+
     void Start()
     {
         playerManager = this.GetComponent<PlayerManager>();
@@ -84,6 +88,11 @@ public class CC3D : MonoBehaviour
             {
                 isBottling = true;
                 bottlingEnabled = false;
+                Player_Audio.Stop();
+                Player_Audio.pitch = 0.7f;
+                Player_Audio.volume = 0.3f;
+                Player_Audio.clip = Bottle_Clip;
+                Player_Audio.Play();
             }
         }
 
@@ -92,6 +101,11 @@ public class CC3D : MonoBehaviour
 
         if ((Input.GetButtonDown("Shield") || (Input.GetAxis("Shield") > 0.1f)) && !isCloud && playerManager.objFlags[(int)playerObj.shield])
         {
+            Player_Audio.Stop();
+            Player_Audio.pitch = 0.8f;
+            Player_Audio.volume = 0.2f;
+            Player_Audio.clip = Parry_Clip;
+            Player_Audio.Play();
             if (!isParrying) anim.SetTrigger("parry");
             else anim.ResetTrigger("parry");  
         }
@@ -105,6 +119,11 @@ public class CC3D : MonoBehaviour
             this.GetComponent<Rigidbody>().useGravity = false;
             playerManager.cloud.SetActive(true);
             playerManager.cloud.GetComponentInChildren<MeleeWeapon>().EnableHitbox(attack_type.special);
+            Player_Audio.Stop();
+            Player_Audio.pitch = 0.9f;
+            Player_Audio.volume = 0.4f;
+            Player_Audio.clip = Cloud_Clip;
+            Player_Audio.Play();
         }
 
         if (isCloud)
@@ -117,6 +136,7 @@ public class CC3D : MonoBehaviour
                 this.GetComponent<Rigidbody>().useGravity = true;
                 playerManager.cloud.SetActive(false);
                 playerManager.cloud.GetComponentInChildren<MeleeWeapon>().DisableHitbox();
+               
             }
             else
                 elapsedCloudTime += Time.deltaTime;

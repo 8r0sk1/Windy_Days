@@ -11,7 +11,10 @@ namespace GameLib
 public class Collectable : Interactable
 {
 
+
     public playerObj obj;
+    public AudioSource Player_Audio;
+    public AudioClip Loot_Audio;
 
     private void Start()
     {
@@ -27,6 +30,12 @@ public class Collectable : Interactable
 
     public override void Interact()
     {
+        Player_Audio.Stop();
+        Player_Audio.clip = Loot_Audio;
+        Player_Audio.pitch = 1;
+        Player_Audio.volume = 0.8f;
+        Player_Audio.Play();
+
         Debug.Log(obj);
         Debug.Log((int)obj);
         playerManager.objFlags[(int)obj] = true;
