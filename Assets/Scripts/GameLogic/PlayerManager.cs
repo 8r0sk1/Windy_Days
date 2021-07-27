@@ -22,9 +22,11 @@ public class PlayerManager : AliveEntity
     public GameObject bottle;
     public GameObject shoulderPads_left;
     public GameObject shoulderPads_right;
+    public GameObject heal_Light;
 
     private AudioSource Player_Audio;
     public AudioClip Player_Damaged, Player_Healed;
+   
 
 
     public bool[] objFlags = new bool[4]; //flag per oggetti sbloccabili
@@ -106,6 +108,7 @@ public class PlayerManager : AliveEntity
         {
             if (hp < GameData.hp_max)
             {
+                heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
                 GameData.current_potions -= 1;
                 HPsum(2);
                 potions_ui.SetPotions(GameData.current_potions);
