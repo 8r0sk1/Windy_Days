@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 1ee595b521fcb2644ae102411aa98998
+guid: 6e7ff9445a74d5046a43b7b2b57a738a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: LR_Shimming
+    second: LR_Climbing_idle
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,19 +35,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LR_Shimming
+      name: LR_Climbing_idle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 82
+      lastFrame: 140
       wrapMode: 0
-      orientationOffsetY: -90
+      orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1

@@ -37,6 +37,9 @@ public class CC2D : MonoBehaviour
     private Vector3 totalMove;
     //private Vector3 playerVelocity;
 
+    private float climbingSpeed;
+    public bool onVine = false;
+
     /*
     public GameObject shield;
     public GameObject bodyMesh;
@@ -55,8 +58,6 @@ public class CC2D : MonoBehaviour
 
     public bool isJumpDisabled;
     private bool shieldCanChange;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -102,11 +103,16 @@ public class CC2D : MonoBehaviour
             runSpeed = runSpeed + windForce.magnitude/10;
         anim.SetFloat("runSpeed", runSpeed);
 
+        climbingSpeed = inputY;
+        anim.SetFloat("climbingSpeed", climbingSpeed);
+
         //inputY = Input.GetAxis("Vertical");
         if (Input.GetButtonDown("Jump") && (isGrounded || onLadder) && !isJumpDisabled)
         {
             isJumping = true;
             isGrounded = onLadder = isGrabbing = false;
+            this.GetComponent<Animator>().SetBool("isShimming", false);
+            this.GetComponent<Animator>().SetBool("isClimbing", false);
 
             if (isShielded)
                 elapsedJumpTime = maxJumpTime - 0.1f;
@@ -165,17 +171,19 @@ public class CC2D : MonoBehaviour
             Player_Audio.Play();
         }
 
-            //Gestione rotazione
+        //Gestione rotazione
 
-
-        if (inputX < 0f)
+        if (!onLadder && !onVine)
         {
-            this.transform.forward = Vector3.left;
+            if (inputX < 0f)
+            {
+                this.transform.forward = Vector3.left;
+            }
+            if (inputX > 0f)
+            {
+                this.transform.forward = Vector3.right;
+            }
         }
-        if(inputX > 0f)
-        {
-            this.transform.forward = Vector3.right;
-        }  
 
     }
 

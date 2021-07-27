@@ -9711,6 +9711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27aee0a7d8fe4a438ff86fa34021f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVine: 0
 --- !u!65 &558836643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12423,6 +12424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27aee0a7d8fe4a438ff86fa34021f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVine: 1
 --- !u!65 &769143238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15883,6 +15885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27aee0a7d8fe4a438ff86fa34021f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVine: 1
 --- !u!65 &1054667569
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27044,6 +27047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27aee0a7d8fe4a438ff86fa34021f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVine: 0
 --- !u!65 &1714392084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33303,7 +33307,12 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.00481
+      value: -81.005035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 37.49994
       objectReference: {fileID: 0}
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LadderMechanic : MonoBehaviour
 {
     CC2D player;
+    public bool isVine = true;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,30 @@ public class LadderMechanic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             player.onLadder = player.isGrabbing = true;
+            if (isVine)
+            {
+                player.onVine = true;
+                player.GetComponent<Animator>().SetBool("isShimming", true);
+            }
+            else
+                player.GetComponent<Animator>().SetBool("isClimbing", true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             player.onLadder = player.isGrabbing = false;
+            if (isVine)
+            {
+                player.onVine = false;
+                player.GetComponent<Animator>().SetBool("isShimming", false);
+            }
+            else
+                player.GetComponent<Animator>().SetBool("isClimbing", false);
+        }
     }
 }
