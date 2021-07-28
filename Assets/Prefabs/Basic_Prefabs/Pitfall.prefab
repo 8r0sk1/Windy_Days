@@ -108,5 +108,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPitfall: 0
   hp_loss: 3
-  hurtTime: 1
+  hurtTime: 1.5
   elapsedTime: 0

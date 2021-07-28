@@ -13022,6 +13022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue_auto (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637629, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a98974c2b07f5849947a3c03b8fab50, type: 3}
 --- !u!1001 &801899668
@@ -19241,6 +19246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue_auto (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085977414493637629, guid: 7a98974c2b07f5849947a3c03b8fab50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a98974c2b07f5849947a3c03b8fab50, type: 3}
@@ -33307,7 +33317,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.005035
+      value: -81.00504
       objectReference: {fileID: 0}
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}

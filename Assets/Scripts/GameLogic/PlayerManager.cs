@@ -146,6 +146,7 @@ public class PlayerManager : AliveEntity
                 Player_Audio.Stop();
                 Player_Audio.clip = Player_Damaged;
                 Player_Audio.Play();
+                GameObject.FindObjectOfType<HurtFeedback>().TriggerHurtFeedback();
             }
 
             if (sum > 0)
