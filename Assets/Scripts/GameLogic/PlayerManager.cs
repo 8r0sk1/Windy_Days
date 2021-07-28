@@ -26,16 +26,11 @@ public class PlayerManager : AliveEntity
 
     private AudioSource Player_Audio;
     public AudioClip Player_Damaged, Player_Healed;
-   
-
 
     public bool[] objFlags = new bool[4]; //flag per oggetti sbloccabili
 
     private bool isInvincible = false;
     private float timer;
-
-    //healing data
-    
 
     private bool isParrying;
 
@@ -163,6 +158,7 @@ public class PlayerManager : AliveEntity
     {
         hp = GameData.hp_max;
         healthBar.SetHP(hp);
+        potions_ui.SetPotions(GameData.current_potions);
     }
 
     public void Respawn()

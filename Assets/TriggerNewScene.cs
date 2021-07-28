@@ -32,7 +32,7 @@ public class TriggerNewScene : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (isBackground && Input.GetAxis("Vertical") > 0.95f)
+        if (isBackground && (Input.GetAxis("Vertical") > 0.95f || Input.GetKeyDown(KeyCode.W)))
         {
             if (other.CompareTag("Player"))
             {
