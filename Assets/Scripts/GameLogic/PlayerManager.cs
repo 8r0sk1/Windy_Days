@@ -103,7 +103,7 @@ public class PlayerManager : AliveEntity
         {
             if (hp < GameData.hp_max)
             {
-                heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
+                //heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
                 GameData.current_potions -= 1;
                 HPsum(2);
                 potions_ui.SetPotions(GameData.current_potions);
@@ -151,12 +151,17 @@ public class PlayerManager : AliveEntity
                 Player_Audio.Stop();
                 Player_Audio.clip = Player_Healed;
                 Player_Audio.Play();
+                GameObject.FindObjectOfType<HealFeedback>().TriggerHealFeedback();
             }
         }
     }
     public void RestoreHP()
     {
-        hp = GameData.hp_max;
+        if (hp != GameData.hp_max)
+        {
+            hp = GameData.hp_max;
+            GameObject.FindObjectOfType<HealFeedback>().TriggerHealFeedback();
+        }
         healthBar.SetHP(hp);
         potions_ui.SetPotions(GameData.current_potions);
     }

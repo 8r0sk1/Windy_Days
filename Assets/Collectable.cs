@@ -24,6 +24,9 @@ public class Collectable : Interactable
         playerManager = player.GetComponent<PlayerManager>();
         hasInputUse = false;
 
+        UI_buttonA = GameObject.FindGameObjectWithTag("UI_buttonA").GetComponent<SpriteRenderer>();
+        UI_buttonA.enabled = false;
+
         if (GameData.objFlags[(int)obj])
             this.gameObject.SetActive(false);
     }
@@ -42,6 +45,9 @@ public class Collectable : Interactable
         playerManager.Wear(obj);
         controller3D.isRollDisabled = false;
         controller2D.isJumpDisabled = false;
+
+        UI_buttonA.enabled = false;
+
         this.gameObject.SetActive(false);
     }
 }

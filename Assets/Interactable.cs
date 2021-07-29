@@ -36,7 +36,7 @@ public abstract class Interactable : MonoBehaviour
             hasInputUse = true;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

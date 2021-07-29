@@ -10,9 +10,6 @@ public class HealFeedback : MonoBehaviour
     public float light_time;
     public float light_intensity;
 
-    
-   
-
     public void TriggerHealFeedback()
     {
         timer = light_time;

@@ -23,7 +23,7 @@ public class StartDialogue_interact : Interactable
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    new private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
