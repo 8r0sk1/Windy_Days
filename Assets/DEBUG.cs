@@ -8,13 +8,14 @@ public class DEBUG : MonoBehaviour
     public bool DEBUG_MODE;
 
     // Start is called before the first frame update
-    void Awake()
+    void Update()
     {
         if (!DEBUG_MODE)
         {
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Debug"))
             {
-                obj.GetComponent<MeshRenderer>().enabled = false;
+                if (obj.GetComponent<MeshRenderer>().enabled == true)
+                    obj.GetComponent<MeshRenderer>().enabled = false;
             }
         }
     }
