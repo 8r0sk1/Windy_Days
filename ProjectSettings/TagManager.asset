@@ -18,6 +18,7 @@ TagManager:
   - RobotIdleAudio
   - RobotEngageAudio
   - UI_stickUp
+  - UI_buttonA
   layers:
   - Default
   - TransparentFX

@@ -29,10 +29,13 @@ public class StartDialogue_auto : Interactable
 
     private void OnTriggerExit(Collider other)
     {
-        dialogueManager.EndDialogue();
-        controller3D.isRollDisabled = false;
-        //controller2D.isJumpDisabled = false;
-        isColliding = false;
-        this.gameObject.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            dialogueManager.EndDialogue();
+            controller3D.isRollDisabled = false;
+            //controller2D.isJumpDisabled = false;
+            isColliding = false;
+            this.gameObject.SetActive(false);
+        }
     }
 }

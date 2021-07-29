@@ -12,6 +12,8 @@ public abstract class Interactable : MonoBehaviour
     protected bool hasInputUse;
     protected bool isColliding;
 
+    protected SpriteRenderer UI_buttonA;
+
     abstract public void Interact();
 
     private void Start()
@@ -20,6 +22,10 @@ public abstract class Interactable : MonoBehaviour
         controller3D = player.GetComponent<CC3D>();
         controller2D = player.GetComponent<CC2D>();
         playerManager = player.GetComponent<PlayerManager>();
+
+        UI_buttonA = GameObject.FindGameObjectWithTag("UI_buttonA").GetComponent<SpriteRenderer>();
+        UI_buttonA.enabled = false;
+
         hasInputUse = false;
         isColliding = false;
     }
@@ -34,6 +40,8 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            UI_buttonA.enabled = true;
+
             controller3D.isRollDisabled = true;
             //controller2D.isJumpDisabled = true;
             isColliding = true;
@@ -54,8 +62,13 @@ public abstract class Interactable : MonoBehaviour
 
     protected void OnTriggerExit(Collider other)
     {
-        controller3D.isRollDisabled = false;
-        //controller2D.isJumpDisabled = false;
-        isColliding = false;
+        if (other.CompareTag("Player"))
+        {
+            UI_buttonA.enabled = false;
+
+            controller3D.isRollDisabled = false;
+            //controller2D.isJumpDisabled = false;
+            isColliding = false;
+        }
     }
 }

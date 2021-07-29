@@ -15,6 +15,6 @@ public class Potions_UI : MonoBehaviour
 
     public void SetPotions(int value)
     {
-        textComponent.text = "potions: " + value; 
+        textComponent.text = "x " + value; 
     }
 }

@@ -25,10 +25,15 @@ public class StartDialogue_interact : Interactable
 
     private void OnTriggerExit(Collider other)
     {
-        dialogueManager.EndDialogue();
-        _hasToStart = true;
-        controller3D.isRollDisabled = false;
-        //controller2D.isJumpDisabled = false;
-        isColliding = false;
+        if (other.CompareTag("Player"))
+        {
+            UI_buttonA.enabled = false;
+
+            dialogueManager.EndDialogue();
+            _hasToStart = true;
+            controller3D.isRollDisabled = false;
+            //controller2D.isJumpDisabled = false;
+            isColliding = false;
+        }
     }
 }
