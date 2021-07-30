@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour
+using UnityEngine.Audio;
+public class MenuFunctions : MonoBehaviour
     // MAIN MENU functions
+
 {
+
+    public AudioMixerGroup OST_mixer;
+    public AudioMixerGroup SFX_mixer;
     public void StartGame()
     {
         SceneManager.LoadScene(6);
