@@ -1,21 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using GameLib;
 public class DEBUG : MonoBehaviour
 {
 
-    public bool DEBUG_MODE;
+    private bool DEBUG_MODE;
 
     // Start is called before the first frame update
     void Update()
     {
-        if (!DEBUG_MODE)
+        if(DEBUG_MODE != GameData.DM_toggle)
+        {
+            DEBUG_MODE = GameData.DM_toggle;
+        }
+        
+        if (DEBUG_MODE)
         {
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Debug"))
             {
-                if (obj.GetComponent<MeshRenderer>().enabled == true)
-                    obj.GetComponent<MeshRenderer>().enabled = false;
+                Debug.Log(obj.name);
+                foreach (MeshRenderer renderer in obj.GetComponentsInChildren<MeshRenderer>())
+                {
+                    Debug.Log(renderer);
+                    if (renderer.enabled == false)
+                        renderer.enabled = true;
+                }
             }
         }
     }

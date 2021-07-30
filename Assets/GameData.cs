@@ -27,5 +27,8 @@ namespace GameLib
         public static bool isRobotDead_B = false;
 
         public static int entryPoint;
+
+        public static float blur_strength = 0.5f;
+        public static bool DM_toggle = false;
     }
 }

@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 //
 using UnityEngine;
+using GameLib;
 
 namespace Kino
 {
@@ -95,6 +96,10 @@ namespace Kino
         void Update()
         {
             // Enable motion vector rendering if reuqired.
+            if(GameData.blur_strength != _frameBlending)
+            {
+                _frameBlending = GameData.blur_strength;
+            }
             if (_shutterAngle > 0)
                 GetComponent<Camera>().depthTextureMode |=
                     DepthTextureMode.Depth | DepthTextureMode.MotionVectors;

@@ -7163,6 +7163,16 @@ PrefabInstance:
       propertyPath: offset.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 3164076078220795394, guid: 90cb33f81d9d799418345d0467c015a9,
+        type: 3}
+      propertyPath: DEBUG_MODE
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660437701295107346, guid: 90cb33f81d9d799418345d0467c015a9,
+        type: 3}
+      propertyPath: _frameBlending
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cb33f81d9d799418345d0467c015a9, type: 3}
 --- !u!20 &826852783 stripped
@@ -9693,7 +9703,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.006256
+      value: -81.006226
       objectReference: {fileID: 0}
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -9703,7 +9713,7 @@ PrefabInstance:
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -165.01143
+      value: -165.01141
       objectReference: {fileID: 0}
     - target: {fileID: 2670176279260461089, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
