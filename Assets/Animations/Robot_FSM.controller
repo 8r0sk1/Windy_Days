@@ -468,7 +468,7 @@ MonoBehaviour:
   frequencyTimer:
     loops: 0
     time: 0
-  volume: 0.2
+  volume: 0.25
   pitch: 0.9
 --- !u!1101 &854046338612358216
 AnimatorStateTransition:
@@ -522,7 +522,7 @@ MonoBehaviour:
   frequencyTimer:
     loops: 0
     time: 0
-  volume: 0.6
+  volume: 0.4
   pitch: 1
 --- !u!114 &1731810414450537204
 MonoBehaviour:

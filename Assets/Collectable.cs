@@ -36,7 +36,7 @@ public class Collectable : Interactable
         Player_Audio.Stop();
         Player_Audio.clip = Loot_Audio;
         Player_Audio.pitch = 1;
-        Player_Audio.volume = 0.8f;
+        Player_Audio.volume = 0.4f;
         Player_Audio.Play();
 
         Debug.Log(obj);

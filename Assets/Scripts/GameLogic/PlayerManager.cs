@@ -136,7 +136,7 @@ public class PlayerManager : AliveEntity
 
             if (sum < 0)
             {
-                Player_Audio.volume = 0.3f;
+                Player_Audio.volume = 0.4f;
                 Player_Audio.pitch = 1;
                 Player_Audio.Stop();
                 Player_Audio.clip = Player_Damaged;
@@ -146,7 +146,7 @@ public class PlayerManager : AliveEntity
 
             if (sum > 0)
             {
-                Player_Audio.volume = 0.4f;
+                Player_Audio.volume = 0.3f;
                 Player_Audio.pitch = 1.2f;
                 Player_Audio.Stop();
                 Player_Audio.clip = Player_Healed;

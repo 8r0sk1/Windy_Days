@@ -4883,6 +4883,11 @@ PrefabInstance:
       propertyPath: offset.z
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 8249307965740478935, guid: 90cb33f81d9d799418345d0467c015a9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cb33f81d9d799418345d0467c015a9, type: 3}
 --- !u!4 &1281183588 stripped
@@ -6436,7 +6441,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -81.00531
+      value: -81.0053
       objectReference: {fileID: 0}
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}

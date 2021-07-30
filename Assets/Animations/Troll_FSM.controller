@@ -27,7 +27,7 @@ MonoBehaviour:
   frequencyTimer:
     loops: 0
     time: 2.2
-  volume: 0.6
+  volume: 0.3
   pitch: 1
 --- !u!1101 &-3738308871639317895
 AnimatorStateTransition:

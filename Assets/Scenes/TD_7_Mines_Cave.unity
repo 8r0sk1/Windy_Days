@@ -620,6 +620,21 @@ PrefabInstance:
       propertyPath: tags.Array.data[1]
       value: Robot_B
       objectReference: {fileID: 0}
+    - target: {fileID: 8166380762196505108, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166380762196505108, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166380762196505108, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2295e6a1909cc4590c630c2193504f, type: 3}
 --- !u!1 &573382314 stripped
@@ -7408,6 +7423,16 @@ PrefabInstance:
         type: 3}
       propertyPath: tags.Array.data[1]
       value: Robot_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166380762196505108, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166380762196505108, guid: fa2295e6a1909cc4590c630c2193504f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2295e6a1909cc4590c630c2193504f, type: 3}
@@ -14580,6 +14605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: offset.z
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249307965740478935, guid: 90cb33f81d9d799418345d0467c015a9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cb33f81d9d799418345d0467c015a9, type: 3}
