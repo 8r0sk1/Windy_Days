@@ -7387,7 +7387,7 @@ PrefabInstance:
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.name
-      value: Traveler's Journal
+      value: 'Traveler''s Journal:'
       objectReference: {fileID: 0}
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
