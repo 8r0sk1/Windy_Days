@@ -28,6 +28,9 @@ namespace GameLib
 
         public static int entryPoint;
 
+        public static float SFX_volume = 0.5f;
+        public static float OST_volume = 0.5f;
+
         public static float blur_strength = 0.5f;
         public static bool DM_toggle = false; //DA SETTARE FALSE!
     }

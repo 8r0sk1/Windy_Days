@@ -20,6 +20,12 @@ public class MenuFunctions : MonoBehaviour
 
     private void Start()
     {
+        MB_slider.value = GameData.blur_strength;
+        DM_toggle.isOn = GameData.DM_toggle;
+
+        OST_slider.value = GameData.OST_volume;
+        SFX_slider.value = GameData.SFX_volume;
+
         mixer.SetFloat("OST_Volume", Mathf.Log(OST_slider.value) * 20);
         mixer.SetFloat("SFX_Volume", Mathf.Log(SFX_slider.value) * 20);
     }
@@ -39,6 +45,8 @@ public class MenuFunctions : MonoBehaviour
     }
     public void SetVolume()
     {
+        GameData.OST_volume = OST_slider.value;
+        GameData.SFX_volume = SFX_slider.value;
         mixer.SetFloat("OST_Volume", Mathf.Log(OST_slider.value) * 20);
         mixer.SetFloat("SFX_Volume", Mathf.Log(SFX_slider.value) * 20);
     }
@@ -50,7 +58,7 @@ public class MenuFunctions : MonoBehaviour
     //ENDSCREEN functions
     public void BackToMenu()
     {
-
+        SceneManager.LoadScene(0);
     }
 
 }

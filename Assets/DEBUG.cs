@@ -6,6 +6,12 @@ public class DEBUG : MonoBehaviour
 {
 
     private bool DEBUG_MODE;
+    private bool debugApplied;
+
+    private void Start()
+    {
+        debugApplied = false;
+    }
 
     // Start is called before the first frame update
     void Update()
@@ -15,7 +21,7 @@ public class DEBUG : MonoBehaviour
             DEBUG_MODE = GameData.DM_toggle;
         }
         
-        if (DEBUG_MODE)
+        if (DEBUG_MODE && !debugApplied)
         {
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Debug"))
             {
@@ -38,6 +44,8 @@ public class DEBUG : MonoBehaviour
                         renderer.enabled = true;
                 }
             }
+
+            debugApplied = true;
         }
     }
 }

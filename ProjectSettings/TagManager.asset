@@ -19,6 +19,7 @@ TagManager:
   - RobotEngageAudio
   - UI_stickUp
   - UI_buttonA
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
