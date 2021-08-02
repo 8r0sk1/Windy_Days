@@ -100,7 +100,7 @@ public class CC2D : MonoBehaviour
 
         float runSpeed = Mathf.Abs(inputX);
         if (windForce.magnitude > 0 && inputX < 0)
-            runSpeed = runSpeed + windForce.magnitude/10;
+            runSpeed = runSpeed + windForce.magnitude/40;
         anim.SetFloat("runSpeed", runSpeed);
 
         climbingSpeed = inputY;
@@ -262,7 +262,14 @@ public class CC2D : MonoBehaviour
 
         if (onLadder && isGrabbing)
         {
-            totalMove = (move + new Vector3(0,inputY,0)) * moveSpeed / 400;
+            if (onVine)
+            {
+                totalMove = (new Vector3(inputX, 0, 0)) * moveSpeed / 400;
+            }
+            else
+            {
+                totalMove = (new Vector3(0, inputY, 0)) * moveSpeed / 400;             
+            }
             rBody.MovePosition(rBody.position + totalMove);
             //playerVelocity = rBody.velocity;
         }

@@ -14,6 +14,7 @@ public class EnemyManager : AliveEntity
             this.gameObject.SetActive(false);
         if (this.GetComponent<CustomTag>().HasTag("Troll") && GameData.isTrollDead)
             this.gameObject.SetActive(false);
+       
 
         hp = max_hp;
     }
@@ -27,14 +28,23 @@ public class EnemyManager : AliveEntity
             //DEBUG
             Debug.Log(this.name+" is dead");
 
-            this.gameObject.SetActive(false); //de-enable
 
             if (this.GetComponent<CustomTag>().HasTag("Robot_A"))
                 GameData.isRobotDead_A = true;
             if (this.GetComponent<CustomTag>().HasTag("Robot_B"))
                 GameData.isRobotDead_B = true;
             if (this.GetComponent<CustomTag>().HasTag("Troll"))
+            {
+
+                if (GameData.isTrollDead == false)
+                {
+                    this.GetComponent<Animator>().SetTrigger("isDead");
+                }
+
                 GameData.isTrollDead = true;
+            }
+            //this.gameObject.SetActive(false); //de-enable
+
 
             //AGGIUNGERE DEAD ANIMATION
         }

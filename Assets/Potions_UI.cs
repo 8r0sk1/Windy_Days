@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using GameLib;
 
 public class Potions_UI : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Potions_UI : MonoBehaviour
     private void Start()
     {
         textComponent = this.GetComponent<TextMeshProUGUI>();
+        SetPotions(GameData.current_potions);
     }
 
     public void SetPotions(int value)

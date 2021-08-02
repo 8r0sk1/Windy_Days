@@ -20,7 +20,7 @@ public class LadderMechanic : MonoBehaviour
             player.onLadder = player.isGrabbing = true;
             if (isVine)
             {
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+                //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
                 player.onVine = true;
                 player.GetComponent<Animator>().SetBool("isShimming", true);
               
@@ -38,7 +38,7 @@ public class LadderMechanic : MonoBehaviour
             player.onLadder = player.isGrabbing = false;
             if (isVine)
             {
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+                //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
                 player.onVine = false;
                 player.GetComponent<Animator>().SetBool("isShimming", false);
               
