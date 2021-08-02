@@ -28,19 +28,28 @@ public class EnemyManager : AliveEntity
             //DEBUG
             Debug.Log(this.name+" is dead");
 
-
             if (this.GetComponent<CustomTag>().HasTag("Robot_A"))
+            {
+                if (GameData.isRobotDead_A == false)
+                {
+                    this.GetComponent<Animator>().SetTrigger("isDead");
+                }
                 GameData.isRobotDead_A = true;
+            }
             if (this.GetComponent<CustomTag>().HasTag("Robot_B"))
+            {
+                if (GameData.isRobotDead_B == false)
+                {
+                    this.GetComponent<Animator>().SetTrigger("isDead");
+                }
                 GameData.isRobotDead_B = true;
+            }
             if (this.GetComponent<CustomTag>().HasTag("Troll"))
             {
-
                 if (GameData.isTrollDead == false)
                 {
                     this.GetComponent<Animator>().SetTrigger("isDead");
                 }
-
                 GameData.isTrollDead = true;
             }
             //this.gameObject.SetActive(false); //de-enable

@@ -33,6 +33,7 @@ public class PlayerManager : AliveEntity
     private float timer;
 
     private bool isParrying;
+    private bool isDead = false;
 
     void Start()
     {
@@ -89,7 +90,11 @@ public class PlayerManager : AliveEntity
         {
             //DEBUG
             Debug.Log("YOU DIED");
-            this.FountainRespawn();
+
+            if (!isDead) {
+                this.GetComponent<Animator>().SetTrigger("isDead");
+                isDead = true;
+            }
         }
 
         if (timer > 0)
@@ -178,12 +183,11 @@ public class PlayerManager : AliveEntity
 
         GameData.entryPoint = 0; //reset dell'entry point
         GameData.haveToFountainRespawn = true;
-        SceneManager.LoadScene(GameData.fountainCheckpointSceneIndex,LoadSceneMode.Single);
+        SceneManager.LoadScene(GameData.fountainCheckpointSceneIndex, LoadSceneMode.Single);
     }
 
     public void Wear(playerObj obj)
     {
-      
 
         switch (obj)
         {
@@ -202,7 +206,6 @@ public class PlayerManager : AliveEntity
                 GameData.hp_max = GameData.hp_max_armoured;
                 break;
         }
-
         
     }
 

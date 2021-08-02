@@ -27,6 +27,17 @@ public class DEBUG : MonoBehaviour
                         renderer.enabled = true;
                 }
             }
+
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("EnemyWeapon"))
+            {
+                Debug.Log(obj.name);
+                foreach (MeshRenderer renderer in obj.GetComponentsInChildren<MeshRenderer>())
+                {
+                    Debug.Log(renderer);
+                    if (renderer.enabled == false)
+                        renderer.enabled = true;
+                }
+            }
         }
     }
 }

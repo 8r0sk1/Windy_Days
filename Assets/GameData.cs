@@ -29,6 +29,6 @@ namespace GameLib
         public static int entryPoint;
 
         public static float blur_strength = 0.5f;
-        public static bool DM_toggle = false;
+        public static bool DM_toggle = false; //DA SETTARE FALSE!
     }
 }
