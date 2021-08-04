@@ -67,7 +67,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.627451
+      - time: 0.45418367
         functionName: DisableHitbox
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c0d4c052f3c0a6241beb1a3363647993,

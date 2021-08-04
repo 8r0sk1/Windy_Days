@@ -21,6 +21,7 @@ TagManager:
   - UI_buttonA
   - PauseMenu
   - PlayerWeapon
+  - AdditionalAudioSource
   layers:
   - Default
   - TransparentFX

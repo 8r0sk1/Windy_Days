@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DeadBehavior : StateMachineBehaviour
 {
+
+    public AudioClip clip;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -11,6 +14,12 @@ public class DeadBehavior : StateMachineBehaviour
         animator.GetComponent<Rigidbody>().isKinematic = true;
         animator.GetComponent<CapsuleCollider>().enabled = false;
         animator.GetComponentInChildren<WarperLock>().Unlock();
+
+        AudioSource source = GameObject.FindGameObjectWithTag("AdditionalAudioSource").GetComponent<AudioSource>();
+        source.Stop();
+        source.volume = 1f;
+        source.pitch = 1f;
+        source.Play();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

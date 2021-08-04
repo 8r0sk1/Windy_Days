@@ -41,6 +41,7 @@ public class Collectable : Interactable
 
         Debug.Log(obj);
         Debug.Log((int)obj);
+        GameData.objFlags[(int)obj] = true;
         playerManager.objFlags[(int)obj] = true;
         playerManager.Wear(obj);
         controller3D.isRollDisabled = false;

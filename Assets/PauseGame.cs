@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameLib;
 
 public class PauseGame : MonoBehaviour
 {
     public GameObject pauseMenu;
     private bool isPaused;
+    public GameObject[] objects_ui = new GameObject[4];
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,16 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         isPaused = true;
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (GameData.objFlags[i])
+            {
+                objects_ui[i].SetActive(true);
+            }
+            else
+                objects_ui[i].SetActive(false);
+        }
 
         FindObjectOfType<CC2D>().isMovementDisabled = true;
     }

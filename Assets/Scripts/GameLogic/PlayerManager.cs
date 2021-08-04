@@ -210,7 +210,6 @@ public class PlayerManager : AliveEntity
                 GameData.hp_max = GameData.hp_max_armoured;
                 break;
         }
-        
     }
 
     public void OnDestroy()
@@ -218,7 +217,7 @@ public class PlayerManager : AliveEntity
         //aggiorno tutti i dati da mantenere tra le scene
         if (!GameData.haveToFountainRespawn)
         {
-            GameData.objFlags = objFlags;
+            //GameData.objFlags = objFlags;
             GameData.hp = hp;
         }
     }
