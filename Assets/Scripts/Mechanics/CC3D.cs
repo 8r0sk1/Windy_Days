@@ -30,6 +30,7 @@ public class CC3D : MonoBehaviour
     private float elapsedCloudTime;
     public bool isRollDisabled;
     public bool isMovementDisabled;
+    public bool cloudCharge;
 
     //audio sources
     public AudioSource Player_Audio;
@@ -44,6 +45,7 @@ public class CC3D : MonoBehaviour
         rBody.useGravity = true;
         bottlingEnabled = true;
         isMovementDisabled = false;
+        cloudCharge = true;
     }
 
     void Update()
@@ -112,9 +114,10 @@ public class CC3D : MonoBehaviour
             else anim.ResetTrigger("parry");  
         }
 
-        if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace])
+        if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace] && cloudCharge)
         {
             isCloud = true;
+            cloudCharge = false;
             elapsedCloudTime = 0;
             playerManager.bodyMesh.SetActive(false);
             this.GetComponent<CapsuleCollider>().enabled = false;
