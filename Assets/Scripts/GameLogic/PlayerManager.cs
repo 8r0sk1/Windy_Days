@@ -93,6 +93,8 @@ public class PlayerManager : AliveEntity
 
             if (!isDead) {
                 this.GetComponent<Animator>().SetTrigger("isDead");
+                controller3d.isRollDisabled = true;
+                controller3d.isMovementDisabled = true;
                 isDead = true;
             }
         }

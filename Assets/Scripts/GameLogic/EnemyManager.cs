@@ -28,7 +28,7 @@ public class EnemyManager : AliveEntity
             //DEBUG
             Debug.Log(this.name+" is dead");
 
-            if (this.GetComponent<CustomTag>().HasTag("Robot_A"))
+            if (this.GetComponent<CustomTag>().HasTag("Robot_A") && !GameData.isRobotDead_A)
             {
                 if (GameData.isRobotDead_A == false)
                 {
@@ -36,7 +36,7 @@ public class EnemyManager : AliveEntity
                 }
                 GameData.isRobotDead_A = true;
             }
-            if (this.GetComponent<CustomTag>().HasTag("Robot_B"))
+            if (this.GetComponent<CustomTag>().HasTag("Robot_B") && !GameData.isRobotDead_B)
             {
                 if (GameData.isRobotDead_B == false)
                 {
@@ -44,7 +44,7 @@ public class EnemyManager : AliveEntity
                 }
                 GameData.isRobotDead_B = true;
             }
-            if (this.GetComponent<CustomTag>().HasTag("Troll"))
+            if (this.GetComponent<CustomTag>().HasTag("Troll") && !GameData.isTrollDead)
             {
                 if (GameData.isTrollDead == false)
                 {

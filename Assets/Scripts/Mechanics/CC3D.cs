@@ -29,6 +29,7 @@ public class CC3D : MonoBehaviour
     //public GameObject bodyMesh, cloudMesh;
     private float elapsedCloudTime;
     public bool isRollDisabled;
+    public bool isMovementDisabled;
 
     //audio sources
     public AudioSource Player_Audio;
@@ -42,6 +43,7 @@ public class CC3D : MonoBehaviour
 
         rBody.useGravity = true;
         bottlingEnabled = true;
+        isMovementDisabled = false;
     }
 
     void Update()
@@ -178,17 +180,19 @@ public class CC3D : MonoBehaviour
             bottlingEnabled = true;
         }
 
-        //rotazione
-        if (Mathf.Clamp(move.magnitude,0,1) > 0f && !isDashing)
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized),rotationSpeed);
-        
-        //controllo move
-        if(!isDashing && !isAttacking && !isParrying)
+        if (!isMovementDisabled)
         {
-            float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
-            rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);
-        }
+            //rotazione
+            if (Mathf.Clamp(move.magnitude, 0, 1) > 0f && !isDashing)
+                this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(move.normalized), rotationSpeed);
 
+            //controllo move
+            if (!isDashing && !isAttacking && !isParrying)
+            {
+                float speedFactor = Mathf.Clamp(Mathf.Abs(move.x) + Mathf.Abs(move.z), 0f, 1f);
+                rBody.MovePosition(this.transform.position + move.normalized * speedFactor * movementSpeed * Time.deltaTime);
+            }
+        }
         //DEBUG
         //Debug.Log(rBody.velocity);
     }

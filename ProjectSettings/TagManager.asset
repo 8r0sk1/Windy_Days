@@ -20,6 +20,7 @@ TagManager:
   - UI_stickUp
   - UI_buttonA
   - PauseMenu
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

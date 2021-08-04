@@ -40,6 +40,8 @@ public class CC2D : MonoBehaviour
     private float climbingSpeed;
     public bool onVine = false;
 
+    public bool isMovementDisabled;
+
     /*
     public GameObject shield;
     public GameObject bodyMesh;
@@ -85,6 +87,7 @@ public class CC2D : MonoBehaviour
         maxJumpTime = (maxJumpHeight - minJumpHeight)/jumpVelocity; //moto rettilineo uniforme finchè si tiene premuto spazio
 
         rBody.useGravity = false; ////////////////
+        isMovementDisabled = false;
     }
 
     // Update is called once per frame
@@ -260,6 +263,14 @@ public class CC2D : MonoBehaviour
         if (isCloud)
             totalWindForce = windForce * 2.5f;
 
+        if (isMovementDisabled)
+        {
+            inputX = 0f;
+            inputY = 0f;
+            move = Vector3.zero;
+            isJumpDisabled = true;
+        }
+
         if (onLadder && isGrabbing)
         {
             if (onVine)
@@ -312,5 +323,7 @@ public class CC2D : MonoBehaviour
 
         isGrounded = false;
         bottlingEnabled = true;
+        isMovementDisabled = false;
+        isJumpDisabled = false;
     }
 }

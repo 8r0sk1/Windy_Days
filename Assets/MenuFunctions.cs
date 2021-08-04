@@ -6,12 +6,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using GameLib;
 public class MenuFunctions : MonoBehaviour
-    // MAIN MENU functions
-
 {
-
-    //public AudioMixerGroup OST_mixer;
-    //public AudioMixerGroup SFX_mixer;
     public AudioMixer mixer;
     public Slider OST_slider;
     public Slider SFX_slider;
@@ -29,6 +24,9 @@ public class MenuFunctions : MonoBehaviour
         mixer.SetFloat("OST_Volume", Mathf.Log(OST_slider.value) * 20);
         mixer.SetFloat("SFX_Volume", Mathf.Log(SFX_slider.value) * 20);
     }
+
+    // MAIN MENU functions
+
     public void StartGame()
     {
         SceneManager.LoadScene(6);
@@ -37,19 +35,28 @@ public class MenuFunctions : MonoBehaviour
     {
         Application.Quit();
     }
+
     //OPTIONS functions
 
     public void ToggleDebug()
     {
         GameData.DM_toggle = DM_toggle.isOn;
     }
-    public void SetVolume()
+
+    public void SetVolume(bool isMusic)
     {
-        GameData.OST_volume = OST_slider.value;
-        GameData.SFX_volume = SFX_slider.value;
-        mixer.SetFloat("OST_Volume", Mathf.Log(OST_slider.value) * 20);
-        mixer.SetFloat("SFX_Volume", Mathf.Log(SFX_slider.value) * 20);
+        if (isMusic)
+        {
+            mixer.SetFloat("OST_Volume", Mathf.Log(OST_slider.value) * 20);
+            GameData.OST_volume = OST_slider.value;
+        }
+        else
+        {
+            mixer.SetFloat("SFX_Volume", Mathf.Log(SFX_slider.value) * 20);
+            GameData.SFX_volume = SFX_slider.value;
+        }
     }
+
     public void SetBlur()
     {
         GameData.blur_strength = MB_slider.value;

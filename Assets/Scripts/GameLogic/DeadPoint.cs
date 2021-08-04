@@ -28,7 +28,10 @@ public class DeadPoint : MonoBehaviour
             elapsedTime = 0f;
 
             if (isPitfall)
+            {
+                other.GetComponent<CC2D>().isMovementDisabled = true;
                 playerManager.Respawn();
+            }
         }
     }
 
