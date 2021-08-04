@@ -2036,6 +2036,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6819417520965420830, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819417520965420830, guid: 6609e903191f3ac478d3a81048fbd614,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6860718284299641670, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18359,7 +18369,7 @@ PrefabInstance:
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Light objects could be blown away
+      value: Sand could be blown away
       objectReference: {fileID: 0}
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
@@ -18677,6 +18687,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5276135286047606809}
     m_Modifications:
+    - target: {fileID: 5125036939145040500, guid: 7627c5e06f48e4f47a7e825bb29086dc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581740958323375356, guid: 7627c5e06f48e4f47a7e825bb29086dc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7581740958323375359, guid: 7627c5e06f48e4f47a7e825bb29086dc,
         type: 3}
       propertyPath: m_Name
