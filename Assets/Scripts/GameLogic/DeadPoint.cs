@@ -30,7 +30,10 @@ public class DeadPoint : MonoBehaviour
             if (isPitfall)
             {
                 other.GetComponent<CC2D>().isMovementDisabled = true;
-                playerManager.Respawn();
+                if (playerManager.hp <= 0)
+                    playerManager.FountainRespawn();
+                else
+                    playerManager.Respawn();
             }
         }
     }

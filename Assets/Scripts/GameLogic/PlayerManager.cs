@@ -185,7 +185,9 @@ public class PlayerManager : AliveEntity
 
         GameData.entryPoint = 0; //reset dell'entry point
         GameData.haveToFountainRespawn = true;
-        SceneManager.LoadScene(GameData.fountainCheckpointSceneIndex, LoadSceneMode.Single);
+        FadeOut_state.SetSceneIndex(GameData.fountainCheckpointSceneIndex);
+        GameObject.FindGameObjectWithTag("Fade").GetComponent<Animator>().SetTrigger("_fadeOUT");
+        //SceneManager.LoadScene(GameData.fountainCheckpointSceneIndex, LoadSceneMode.Single);
     }
 
     public void Wear(playerObj obj)

@@ -104,7 +104,10 @@ public class CC2D : MonoBehaviour
         float runSpeed = Mathf.Abs(inputX);
         if (windForce.magnitude > 0 && inputX < 0)
             runSpeed = runSpeed + windForce.magnitude/40;
-        anim.SetFloat("runSpeed", runSpeed);
+        if(!isMovementDisabled)
+            anim.SetFloat("runSpeed", runSpeed);
+        else
+            anim.SetFloat("runSpeed", 0f);
 
         climbingSpeed = inputY;
         anim.SetFloat("climbingSpeed", climbingSpeed);
@@ -176,7 +179,7 @@ public class CC2D : MonoBehaviour
 
         //Gestione rotazione
 
-        if (!onLadder && !onVine)
+        if (!onLadder && !onVine && !isMovementDisabled)
         {
             if (inputX < 0f)
             {

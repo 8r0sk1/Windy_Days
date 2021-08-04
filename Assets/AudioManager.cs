@@ -93,4 +93,9 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public void PauseSource()
+    {
+        source.Pause();
+    }
 }

@@ -41,6 +41,8 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         isPaused = true;
+
+        FindObjectOfType<CC2D>().isMovementDisabled = true;
     }
 
     public void Resume()
@@ -48,5 +50,7 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         isPaused = false;
+
+        FindObjectOfType<CC2D>().isMovementDisabled = false;
     }
 }
