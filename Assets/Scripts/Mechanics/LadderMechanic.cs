@@ -17,6 +17,8 @@ public class LadderMechanic : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player.isGrounded = false;
+            player.GetComponent<Animator>().SetBool("isGrounded", false);
             player.onLadder = player.isGrabbing = true;
             if (isVine)
             {
@@ -25,7 +27,10 @@ public class LadderMechanic : MonoBehaviour
                 player.GetComponent<Animator>().SetBool("isShimming", true);
             }
             else
+            {
                 player.GetComponent<Animator>().SetBool("isClimbing", true);
+                player.transform.forward = this.transform.right;
+            }
         }
     }
 

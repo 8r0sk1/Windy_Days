@@ -25,7 +25,7 @@ public class CC2D : MonoBehaviour
     public float maxCloudTime;
     private float elapsedCloudTime;
     private bool bottlingEnabled;
-    private bool isGrounded;
+    public bool isGrounded;
     public bool isJumping, onLadder, isGrabbing, isShielded, isCloud;
     private bool isBottling;
     private bool isOpposingDirection;
@@ -125,11 +125,17 @@ public class CC2D : MonoBehaviour
             else
                 elapsedJumpTime = 0;
         }
+        if (Input.GetButtonDown("Jump") && onLadder && !isJumpDisabled)
+        {
+            if (isGrabbing)
+            {
+                isGrabbing = false;
+                isJumping = false;
+            }
+        }
         if (Input.GetButtonUp("Jump") && !isJumpDisabled)
         {
             isJumping = false;
-            if (isGrabbing)
-                isGrabbing = false;
         }
         if (Input.GetButtonDown("Crouch") && playerManager.objFlags[(int)playerObj.bottle])
         {
