@@ -174,11 +174,13 @@ public class CC3D : MonoBehaviour
                     //Play disappearing sand animation from sand mass animator 
                     MeshRenderer m = hit.transform.gameObject.GetComponentInChildren<MeshRenderer>();
                     BoxCollider b = hit.transform.gameObject.GetComponent<BoxCollider>();
+                    SpriteRenderer srend = hit.transform.GetComponentInChildren<SpriteRenderer>();
+                    srend.enabled = false;
                     m.enabled = false;
                     b.enabled = false;
                 }
-
             }
+
             isBottling = false;
             bottlingEnabled = true;
         }

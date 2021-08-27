@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 	private CC2D controller2d;
 	private bool was2d;
 
+	public StartDialogue_interact current_dialogue;
+
 	private Queue<string> sentences;
 
 	// Use this for initialization
@@ -95,6 +97,10 @@ public class DialogueManager : MonoBehaviour
 
 		//animator.SetBool("IsOpen", false);
 		panel.SetActive(false);
+
+		//reset dialogue
+		if (current_dialogue != null) 
+			current_dialogue._hasToStart = true;
 	}
 
 }

@@ -16,9 +16,8 @@ public class Search_state : StateMachineBehaviour
         Robot_Idle = GameObject.FindGameObjectWithTag("RobotIdleAudio").GetComponent<AudioSource>();
 
         robot_sight_script = animator.GetComponentInChildren<Robot_SearchMechanic>();
+        Robot_Idle.Stop();
         Robot_Idle.Play();
-
-
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

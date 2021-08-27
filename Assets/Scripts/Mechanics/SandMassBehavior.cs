@@ -7,8 +7,9 @@ public class SandMassBehavior : MonoBehaviour
     private MeshRenderer m;
     private BoxCollider b;
     private ParticleSystem p;
+    private SpriteRenderer srend;
     private GameObject Player;
-    private bool blown;
+    public bool blown;
     // Start is called before the first frame update
 
     private void OnParticleCollision(GameObject other)
@@ -24,6 +25,7 @@ public class SandMassBehavior : MonoBehaviour
     void Start()
     {
         m = this.GetComponentInChildren<MeshRenderer>();
+        srend = this.GetComponentInChildren<SpriteRenderer>();
         b = this.GetComponent<BoxCollider>();
         p = this.GetComponent<ParticleSystem>();
         p.Stop();
@@ -39,7 +41,6 @@ public class SandMassBehavior : MonoBehaviour
             blown = true;
             p.transform.rotation = Player.transform.rotation;
             p.Play();
-            
         }
     }
 }

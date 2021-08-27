@@ -33,5 +33,24 @@ namespace GameLib
 
         public static float blur_strength = 0.5f;
         public static bool DM_toggle = false; //DA SETTARE FALSE!
+
+        public static void Reset()
+        {
+             hp_max = 12;
+             hp = 12;
+             hp_max_armoured = 15;
+             max_potions = 3;
+             current_potions = 3;
+
+             objFlags = new bool[4];
+
+             isTrollDead = false;
+
+             isRobotRoboting = false;
+             isRobotDead_A = false;
+             isRobotDead_B = false;
+
+             DM_toggle = false; 
+        }
     }
 }

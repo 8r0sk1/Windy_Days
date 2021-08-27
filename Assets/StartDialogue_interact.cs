@@ -6,10 +6,12 @@ public class StartDialogue_interact : Interactable
 {
     public DialogueTrigger trigger;
     public DialogueManager dialogueManager;
-    private bool _hasToStart = true;
+    public bool _hasToStart = true;
 
     override public void Interact()
     {
+        dialogueManager.current_dialogue = this;
+
         if (_hasToStart == true)
         {
             trigger.TriggerDialogue();

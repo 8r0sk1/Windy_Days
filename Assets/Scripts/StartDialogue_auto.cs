@@ -6,6 +6,7 @@ public class StartDialogue_auto : Interactable
 {
     public DialogueTrigger trigger;
     public DialogueManager dialogueManager;
+
     //private bool _dialogueStarted = false;
 
     private void OnTriggerEnter(Collider other)

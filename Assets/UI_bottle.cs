@@ -15,7 +15,7 @@ public class UI_bottle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !this.GetComponentInParent<SandMassBehavior>().blown)
         {
             renderer.enabled = true;
         }

@@ -28,6 +28,14 @@ public class EnemyManager : AliveEntity
             //DEBUG
             Debug.Log(this.name+" is dead");
 
+            foreach (AudioSource source in this.GetComponentsInChildren<AudioSource>())
+            {
+                if (source.CompareTag("RobotIdleAudio") || source.CompareTag("Enemy"))
+                {
+                    source.Stop();
+                }
+            }
+
             if (this.GetComponent<CustomTag>().HasTag("Robot_A") && !GameData.isRobotDead_A)
             {
                 if (GameData.isRobotDead_A == false)
@@ -54,8 +62,6 @@ public class EnemyManager : AliveEntity
             }
             //this.gameObject.SetActive(false); //de-enable
 
-
-            //AGGIUNGERE DEAD ANIMATION
         }
     }
 }

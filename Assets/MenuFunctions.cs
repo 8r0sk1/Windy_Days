@@ -65,6 +65,7 @@ public class MenuFunctions : MonoBehaviour
     //ENDSCREEN functions
     public void BackToMenu()
     {
+        GameData.Reset();
         SceneManager.LoadScene(0);
     }
 

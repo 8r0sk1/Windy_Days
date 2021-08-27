@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     private float m_VolumeRef = 1f;
     private bool m_Paused;
 
-
     void Awake()
     {
         m_MenuToggle = GetComponent <Toggle> ();
