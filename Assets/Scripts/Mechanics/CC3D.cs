@@ -117,7 +117,7 @@ public class CC3D : MonoBehaviour
         if (Input.GetButtonDown("Cloud") && !isParrying && playerManager.objFlags[(int)playerObj.necklace] && cloudCharge)
         {
             isCloud = true;
-            //cloudCharge = false;
+            cloudCharge = false;
             elapsedCloudTime = 0;
             playerManager.bodyMesh.SetActive(false);
             this.GetComponent<CapsuleCollider>().enabled = false;

@@ -108,13 +108,32 @@ public class PlayerManager : AliveEntity
         }
         if (Input.GetButtonDown("Heal") && GameData.current_potions > 0)
         {
-            if (hp < GameData.hp_max)
+            if(controller2d.enabled == true)
             {
-                //heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
-                GameData.current_potions -= 1;
-                HPsum(2);
-                potions_ui.SetPotions(GameData.current_potions);
+                if (controller2d.isGrounded)
+                {
+                    if (hp < GameData.hp_max)
+                    {
+                        //heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
+                        GameData.current_potions -= 1;
+                        HPsum(2);
+                        potions_ui.SetPotions(GameData.current_potions);
+                    }
+                }
+                
             }
+            else
+            {
+                if (hp < GameData.hp_max)
+                {
+                    //heal_Light.GetComponent<HealFeedback>().TriggerHealFeedback();
+                    GameData.current_potions -= 1;
+                    HPsum(2);
+                    potions_ui.SetPotions(GameData.current_potions);
+                }
+            }
+
+            
         }
     }
 

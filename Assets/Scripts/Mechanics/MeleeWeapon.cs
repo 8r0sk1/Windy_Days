@@ -34,6 +34,7 @@ public class MeleeWeapon : MonoBehaviour
                 //activate lighning particles
                 script_lightning.enabled = true;
                 
+                
 
 
                 break;

@@ -8,6 +8,7 @@ public class WeaponHitBox : MonoBehaviour
     private MeleeWeapon weapon;
     public Collider obj_hit;
     private LightningBoltScript script_lightning;
+    public AudioSource cloudSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,8 @@ public class WeaponHitBox : MonoBehaviour
             obj_hit = other;
             other.GetComponent<EnemyManager>().HPsum(-weapon.damage);
             other.GetComponent<Animator>().SetTrigger("hasBeenDamaged");
+            //activate audio source
+            cloudSounds.Play();
             script_lightning.EndObject = other.gameObject;
             //DEBUG
             Debug.Log("Hitted " + other);

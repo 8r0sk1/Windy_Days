@@ -560,7 +560,7 @@ PrefabInstance:
     - target: {fileID: 2321838054049365293, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 37.49976
+      value: 37.499756
       objectReference: {fileID: 0}
     - target: {fileID: 2534903405444992152, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 4546104326034585360, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 21.999998
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6819417520965420830, guid: 6609e903191f3ac478d3a81048fbd614,
         type: 3}
@@ -2550,7 +2550,7 @@ PrefabInstance:
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
@@ -2571,6 +2571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
       value: Indoors, static discharges may also deal AoE damage around you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 760699527828772510, guid: a44180efdd9f71944860be57de004c92,
+        type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: IBut use it wisely, you will only have one charge per room.
       objectReference: {fileID: 0}
     - target: {fileID: 760699528681393224, guid: a44180efdd9f71944860be57de004c92,
         type: 3}
