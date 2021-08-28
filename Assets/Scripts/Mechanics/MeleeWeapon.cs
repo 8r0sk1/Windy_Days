@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameLib;
+using DigitalRuby.LightningBolt;
 
 public class MeleeWeapon : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class MeleeWeapon : MonoBehaviour
     public int damageA;
     public int damageB;
     public int damageC;
+    public LightningBoltScript script_lightning;
+    public WeaponHitBox weaponHitBox;
+
+    public void Start()
+    {
+        script_lightning = gameObject.GetComponentInChildren<LightningBoltScript>();
+        weaponHitBox = gameObject.GetComponentInChildren<WeaponHitBox>();
+    }
 
     public void EnableHitbox(attack_type attack)
     {
@@ -22,6 +31,11 @@ public class MeleeWeapon : MonoBehaviour
                 break;
             case attack_type.special:
                 damage = damageC;
+                //activate lighning particles
+                script_lightning.enabled = true;
+                
+
+
                 break;
         }
 
@@ -37,5 +51,6 @@ public class MeleeWeapon : MonoBehaviour
     public void DisableHitbox()
     {
         hitBox.SetActive(false);
+        script_lightning.enabled = false;
     }
 }
