@@ -22,6 +22,7 @@ TagManager:
   - PauseMenu
   - PlayerWeapon
   - AdditionalAudioSource
+  - Light
   layers:
   - Default
   - TransparentFX

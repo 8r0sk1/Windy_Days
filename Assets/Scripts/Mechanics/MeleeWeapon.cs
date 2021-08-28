@@ -51,6 +51,7 @@ public class MeleeWeapon : MonoBehaviour
     public void DisableHitbox()
     {
         hitBox.SetActive(false);
+        script_lightning.EndObject = script_lightning.StartObject;
         script_lightning.enabled = false;
     }
 }

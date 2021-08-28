@@ -11,8 +11,10 @@ public class RobotDeadBehavior : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        foreach(MeleeWeapon script in animator.GetComponentsInChildren<MeleeWeapon>())
+        foreach (MeleeWeapon script in animator.GetComponentsInChildren<MeleeWeapon>())
+        {
             script.DisableHitbox();
+        }
 
         light = animator.GetComponentInChildren<Light>();
 
