@@ -46,7 +46,14 @@ public class LadderMechanic : MonoBehaviour
                 player.GetComponent<Animator>().SetBool("isShimming", false);
             }
             else
+            {
                 player.GetComponent<Animator>().SetBool("isClimbing", false);
+
+                //exit ladder help
+                other.GetComponent<CC2D>().ResetJumpTime();
+                other.GetComponent<CC2D>().isJumping = true;
+                other.GetComponent<CC2D>().isGrabbing = false;
+            }
         }
     }
 }

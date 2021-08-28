@@ -335,4 +335,9 @@ public class CC2D : MonoBehaviour
         isMovementDisabled = false;
         isJumpDisabled = false;
     }
+
+    public void ResetJumpTime()
+    {
+        elapsedJumpTime = 0f;
+    }
 }
