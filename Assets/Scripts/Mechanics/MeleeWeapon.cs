@@ -16,7 +16,7 @@ public class MeleeWeapon : MonoBehaviour
 
     public void Start()
     {
-        script_lightning = gameObject.GetComponentInChildren<LightningBoltScript>();
+        script_lightning = GameObject.FindObjectOfType<LightningBoltScript>();
         weaponHitBox = gameObject.GetComponentInChildren<WeaponHitBox>();
     }
 
@@ -33,10 +33,6 @@ public class MeleeWeapon : MonoBehaviour
                 damage = damageC;
                 //activate lighning particles
                 script_lightning.enabled = true;
-                
-                
-
-
                 break;
         }
 
@@ -52,7 +48,10 @@ public class MeleeWeapon : MonoBehaviour
     public void DisableHitbox()
     {
         hitBox.SetActive(false);
-        script_lightning.EndObject = script_lightning.StartObject;
-        script_lightning.enabled = false;
+        if (damage == damageC)
+        {
+            script_lightning.EndObject = script_lightning.StartObject;
+            script_lightning.enabled = false;
+        }
     }
 }

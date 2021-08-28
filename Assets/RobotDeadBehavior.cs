@@ -16,7 +16,13 @@ public class RobotDeadBehavior : StateMachineBehaviour
             script.DisableHitbox();
         }
 
+        //DEBUG
+        Debug.Log("EXECUTING OnStateEnter of DEAD");
+
         light = animator.GetComponentInChildren<Light>();
+
+        //DEBUG
+        Debug.Log("Light: " + light);
 
         light_intensity = light.intensity;
     }
