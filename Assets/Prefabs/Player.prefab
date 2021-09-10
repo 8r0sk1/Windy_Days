@@ -6345,7 +6345,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cc1962ff4cd5c33458ae3ff7a5931c6a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.3
   m_Pitch: 0.8
   Loop: 0
   Mute: 0
@@ -7298,6 +7298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c1b90ca8b09154f8828ce4c3fdb222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trollHitAudio: {fileID: 8300000, guid: cc1962ff4cd5c33458ae3ff7a5931c6a, type: 3}
+  robotHitAudio: {fileID: 8300000, guid: eca5fafe1b3971c47bb12a7360573313, type: 3}
   source: {fileID: 8738273685555738864}
   bloodParticles: {fileID: 5424577368485538436, guid: 66a89dfbfddcceb498cf32b6fa61d43e,
     type: 3}
